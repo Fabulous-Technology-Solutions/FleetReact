@@ -1,0 +1,13 @@
+export { default as DashboardIcon } from './DashboardIcon';
+export { default as DriversIcon } from './DriversIcon';
+export { default as HiringIcon } from './HiringIcon';
+export { default as DocumentsIcon } from './DocumentsIcon';
+export { default as RoutesIcon } from './RoutesIcon';
+export { default as FinanceIcon } from './FinanceIcon';
+export { default as ReportsIcon } from './ReportsIcon';
+export { default as CheveronIcon } from './CheveronIcon';
+export { default as SearchIcon } from './SearchIcon';
+export { default as SolorIcon } from './SolorIcon';
+export { default as NotificationIcon } from './NotificationIcon';
+export { default as BarsIcon } from './BarsIcon';
+export { default as NavLinkBorder } from './NavLinkBorder';
