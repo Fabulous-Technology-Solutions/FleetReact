@@ -46,7 +46,7 @@ export default function Sidebar({ lists }) {
         </div>
       </div>
       <div className="h-[calc(100%-131px)] p-2">
-        <div className="h-full overflow-y-auto scroll-y-hidden">
+        <div className="h-full overflow-y-auto">
           <div className="flex flex-col gap-2 h-full">
             {lists?.map((sublist, index) => {
               const list = sublist.list;

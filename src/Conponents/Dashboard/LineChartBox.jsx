@@ -41,7 +41,7 @@ export default function LineChartBox() {
             <div key={index} className="flex items-center gap-2">
               <div
                 className="size-2 rounded-full"
-                style={{ backgroundColor: item.backgroundColor }}
+                style={{ backgroundColor: item.borderColor }}
               ></div>
               <p className="c-secondary text-xs">{item.label}</p>
             </div>
