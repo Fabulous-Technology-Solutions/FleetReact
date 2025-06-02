@@ -11,3 +11,4 @@ export { default as SolorIcon } from './SolorIcon';
 export { default as NotificationIcon } from './NotificationIcon';
 export { default as BarsIcon } from './BarsIcon';
 export { default as NavLinkBorder } from './NavLinkBorder';
+export { default as ArrowIcon } from './ArrowIcon';

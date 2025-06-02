@@ -94,9 +94,15 @@ button {
     --bgsidebar: #F3F4F6;
     --bgcardcontainer: #F9FAFB;
     --navlinkbg: #0058E8;
+    --bgsuccess: #3DD5981A;
+    --bgwarning: #FACC151A;
+    --bgatblue: #60A5FA1A;
     --cprimary: #111827;
     --csecondary: #4B5563;
     --cinverted: #F3F4F6;
+    --csuccess: #22C55E;
+    --cwarning: #FACC15;
+    --catblue: #60A5FA;
     --borderColor: #E5E7EB;
 }
 
@@ -133,15 +139,24 @@ button {
 }
 
 .border-main {
-    color: var(--borderColor);
+    border-color: var(--borderColor);
 }
 
 .border-secondary {
     border-color: var(--csecondary);
 }
 
+.scroll-x-hidden::-webkit-scrollbar {
+    height: 0px;
+}
+
+.scroll-y-hidden::-webkit-scrollbar {
+    width: 0px;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
