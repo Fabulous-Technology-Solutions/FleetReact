@@ -1,5 +1,9 @@
 import React from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
+import BarChartBox from "../../Conponents/Dashboard/BarChartBox";
+import LineChartBox from "../../Conponents/Dashboard/LineChartBox";
+import DoughnutChartBox from "../../Conponents/Dashboard/DoughnutChartBox";
+import MapBox from "../../Conponents/Dashboard/MapBox";
 
 export default function Dashboard() {
   const cards = [
@@ -30,6 +34,20 @@ export default function Dashboard() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <div>
+          <BarChartBox />
+        </div>
+        <div>
+          <LineChartBox />
+        </div>
+        <div>
+          <DoughnutChartBox />
+        </div>
+        <div>
+          <MapBox />
+        </div>
       </div>
     </div>
   );
