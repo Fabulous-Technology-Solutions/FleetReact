@@ -29,7 +29,7 @@ export default function BarChartBox() {
     ],
   };
   return (
-    <div className="border border-main p-4 rounded-[16px] bg-sidebar flex flex-col justify-between h-full">
+    <div className="p-4 rounded-[16px] bg-cardcontainer flex flex-col justify-between h-full">
       <div className="flex items-center gap-x-4 gap-y-2 justify-between flex-wrap">
         <p className="c-primary text-sm font-semibold">
           Fleet Performance Overview
