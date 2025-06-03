@@ -251,7 +251,7 @@ export default function Dashboard() {
           <MapBox />
         </div>
       </div>
-      <div className="mt-4 bg-sidebar border border-main rounded-[12px]">
+      <div className="mt-4 bg-sidebar border border-main rounded-[12px] overflow-hidden">
         <div className="flex items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">Route Management</p>
           <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">

@@ -206,7 +206,7 @@ export default function CustomersManagement() {
           </div>
         ))}
       </div>
-      <div className="mt-4 bg-sidebar border border-main rounded-[12px]">
+      <div className="mt-4 bg-sidebar border border-main rounded-[12px] overflow-hidden">
         <div className="flex gap-x-4 gap-y-2 flex-wrap items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">Customer Directory</p>
           <div className="flex items-center gap-2 ms-auto flex-wrap justify-end">

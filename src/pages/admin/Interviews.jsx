@@ -247,7 +247,7 @@ export default function Interviews() {
           </div>
         ))}
       </div>
-      <div className="mt-4 bg-sidebar border border-main rounded-[12px]">
+      <div className="mt-4 bg-sidebar border border-main rounded-[12px] overflow-hidden">
         <div className="flex gap-x-4 gap-y-2 flex-wrap items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">
             AI-Powered Application Pipeline

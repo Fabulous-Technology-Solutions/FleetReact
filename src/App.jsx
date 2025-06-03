@@ -17,34 +17,40 @@ import PayrollOverview from "./pages/admin/PayrollOverview";
 import InvoicesExpenses from "./pages/admin/InvoicesExpenses";
 import Reports from "./pages/admin/Reports";
 import AccountSettings from "./pages/admin/AccountSettings";
+import { ThemeProvider } from "./theme/ThemeContext";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/icons" element={<IconGallery />} />
-        <Route element={<AdminLayout />}>
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/AllMembers" element={<AllMembers />} />
-          <Route path="/Attendance" element={<Attendance />} />
-          <Route path="/IncidentReports" element={<IncidentReports />} />
-          <Route path="/JobRequests" element={<JobRequests />} />
-          <Route path="/Interviews" element={<Interviews />} />
-          <Route path="/Documents" element={<Documents />} />
-          <Route path="/LiveMap" element={<LiveMap />} />
-          <Route path="/RouteAssignments" element={<RouteAssignments />} />
-          <Route path="/VehicleMaintenance" element={<VehicleMaintenance />} />
-          <Route path="/PayrollOverview" element={<PayrollOverview />} />
-          <Route path="/InvoicesExpenses" element={<InvoicesExpenses />} />
-          <Route path="/Reports" element={<Reports />} />
-          <Route path="/AccountSettings" element={<AccountSettings />} />
-          <Route
-            path="/CustomersManagement"
-            element={<CustomersManagement />}
-          />
-        </Route>
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/icons" element={<IconGallery />} />
+          <Route element={<AdminLayout />}>
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/AllMembers" element={<AllMembers />} />
+            <Route path="/Attendance" element={<Attendance />} />
+            <Route path="/IncidentReports" element={<IncidentReports />} />
+            <Route path="/JobRequests" element={<JobRequests />} />
+            <Route path="/Interviews" element={<Interviews />} />
+            <Route path="/Documents" element={<Documents />} />
+            <Route path="/LiveMap" element={<LiveMap />} />
+            <Route path="/RouteAssignments" element={<RouteAssignments />} />
+            <Route
+              path="/VehicleMaintenance"
+              element={<VehicleMaintenance />}
+            />
+            <Route path="/PayrollOverview" element={<PayrollOverview />} />
+            <Route path="/InvoicesExpenses" element={<InvoicesExpenses />} />
+            <Route path="/Reports" element={<Reports />} />
+            <Route path="/AccountSettings" element={<AccountSettings />} />
+            <Route
+              path="/CustomersManagement"
+              element={<CustomersManagement />}
+            />
+          </Route>
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
