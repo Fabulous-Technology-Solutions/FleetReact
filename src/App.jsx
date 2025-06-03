@@ -18,6 +18,10 @@ import InvoicesExpenses from "./pages/admin/InvoicesExpenses";
 import Reports from "./pages/admin/Reports";
 import AccountSettings from "./pages/admin/AccountSettings";
 import { ThemeProvider } from "./theme/ThemeContext";
+import { ProfileSetting } from "./pages/admin/ProfileSetting";
+import SecuritySettings from "./pages/admin/SecuritySettings";
+import UserRole from "./pages/admin/UserRole";
+import NotificationPreference from "./pages/admin/NotificationPreference";
 
 function App() {
   return (
@@ -35,14 +39,15 @@ function App() {
             <Route path="/Documents" element={<Documents />} />
             <Route path="/LiveMap" element={<LiveMap />} />
             <Route path="/RouteAssignments" element={<RouteAssignments />} />
-            <Route
-              path="/VehicleMaintenance"
-              element={<VehicleMaintenance />}
-            />
+            <Route path="/VehicleMaintenance" element={<VehicleMaintenance />}/>
             <Route path="/PayrollOverview" element={<PayrollOverview />} />
             <Route path="/InvoicesExpenses" element={<InvoicesExpenses />} />
             <Route path="/Reports" element={<Reports />} />
             <Route path="/AccountSettings" element={<AccountSettings />} />
+            <Route path="/ProfileSetting" element={<ProfileSetting />} />
+            <Route path="/SecuritySettings" element={<SecuritySettings />} />
+            <Route path="/UserRole" element={<UserRole />} />
+            <Route path="/Notification" element={<NotificationPreference />} />
             <Route
               path="/CustomersManagement"
               element={<CustomersManagement />}
