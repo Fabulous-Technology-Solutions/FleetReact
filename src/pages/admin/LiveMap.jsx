@@ -141,12 +141,16 @@ export default function LiveMap() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center justify-end">
-                <img src={truckimg} alt="img" />
+              <div className="relative min-h-[130px]">
+                <img
+                  className="w-full h-full object-contain object-right absolute right-[-16px]"
+                  src={truckimg}
+                  alt="img"
+                />
               </div>
             </div>
             <div className="mt-auto">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-5">
                 {boxes.map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -249,7 +253,7 @@ export default function LiveMap() {
                                 : status === "3"
                                 ? "bg-[var(--catblue)]"
                                 : status === "4"
-                                ? "bg-[var(--cinverted]"
+                                ? "bg-[var(--cinverted)]"
                                 : "bg-[var(--cwarning)]"
                             }`}
                           ></div>
