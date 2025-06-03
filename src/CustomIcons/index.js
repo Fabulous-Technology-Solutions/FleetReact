@@ -12,3 +12,6 @@ export { default as NotificationIcon } from './NotificationIcon';
 export { default as BarsIcon } from './BarsIcon';
 export { default as NavLinkBorder } from './NavLinkBorder';
 export { default as ArrowIcon } from './ArrowIcon';
+export { default as FiltersIcon } from './FiltersIcon';
+export { default as EditIcon } from './EditIcon';
+export { default as DeleteIcon } from './DeleteIcon';

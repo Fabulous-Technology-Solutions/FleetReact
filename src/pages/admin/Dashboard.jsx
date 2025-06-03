@@ -220,14 +220,14 @@ export default function Dashboard() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="border border-main p-4 rounded-[16px] bg-sidebar flex flex-col justify-between h-full"
+            className="p-4 rounded-[16px] bg-cardcontainer flex flex-col justify-between h-full"
           >
             <p className="c-secondary text-sm">{card.title}</p>
             <div className="flex justify-between items-center mt-2">
               <p className="text-xl font-semibold c-primary">{card.value}</p>
               {card.percentage ? (
                 <div className="flex items-center gap-2">
-                  <p className="text-sm c-secondary">+11.01%</p>
+                  <p className="text-sm c-secondary">{card.percentage}</p>
                   <FaArrowTrendUp className="c-secondary" />
                 </div>
               ) : (
@@ -254,7 +254,7 @@ export default function Dashboard() {
       <div className="mt-4 bg-sidebar border border-main rounded-[12px]">
         <div className="flex items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">Route Management</p>
-          <button className="text-sm font-semibold bg-navlink c-inverted py-3 px-4 rounded-[12px]">
+          <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
             Add New Route
           </button>
         </div>

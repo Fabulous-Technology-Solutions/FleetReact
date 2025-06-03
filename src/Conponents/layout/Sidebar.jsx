@@ -95,7 +95,7 @@ export default function Sidebar({ lists }) {
                           <Collapse
                             in={openItems[`${sublist.title}-${subitemindex}`]}
                           >
-                            <div className="ml-4 pl-2 border-l-2 border-main flex flex-col gap-1 pt-2">
+                            <div className="ml-4 pl-2 border-l-2 border-[var(--csecondary)] flex flex-col gap-1 pt-2">
                               {item.subItems.map((subItem, subIndex) => {
                                 const subPath = subItem.path;
                                 const isSubActive =
@@ -119,7 +119,7 @@ export default function Sidebar({ lists }) {
                                         {subItem.label}
                                       </p>
                                     </Link>
-                                    <NavLinkBorder className="absolute top-1/2 translate-y-[-18px] text-border-main left-[-14.5px] text-[18px]" />
+                                    <NavLinkBorder className="absolute top-1/2 translate-y-[-18px] text-[var(--csecondary)] left-[-14.5px] text-[18px]" />
                                   </div>
                                 );
                               })}

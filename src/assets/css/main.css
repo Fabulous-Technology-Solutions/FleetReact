@@ -97,12 +97,14 @@ button {
     --bgsuccess: #3DD5981A;
     --bgwarning: #FACC151A;
     --bgatblue: #60A5FA1A;
+    --bgdanger: #F43F5E1A;
     --cprimary: #111827;
     --csecondary: #4B5563;
     --cinverted: #F3F4F6;
     --csuccess: #22C55E;
     --cwarning: #FACC15;
     --catblue: #60A5FA;
+    --cdanger: #F43F5E;
     --borderColor: #E5E7EB;
 }
 
