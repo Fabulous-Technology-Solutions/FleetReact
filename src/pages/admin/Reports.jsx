@@ -96,8 +96,8 @@ export default function Reports() {
           </div>
         ))}
       </div>
-      <div className="grid lg:grid-cols-3 gap-4 mt-4">
-        <div className="lg:col-span-2">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-2 mt-4">
+        <div className='lg:col-span-2'>
           <LineChartBox />
         </div>
         <div className="p-4 rounded-[16px] bg-cardcontainer flex flex-col justify-between h-full">

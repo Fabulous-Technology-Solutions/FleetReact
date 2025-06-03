@@ -192,7 +192,9 @@ export default function LiveMap() {
                     ? "2"
                     : item.status.toLowerCase() === "charging"
                     ? "3"
-                    : "4";
+                    : item.status.toLowerCase() === "needs check"
+                    ? "4"
+                    : "5";
                   return (
                     <div
                       key={index}
@@ -233,6 +235,8 @@ export default function LiveMap() {
                               ? "bg-[var(--bgdanger)]"
                               : status === "3"
                               ? "bg-[var(--bgatblue)]"
+                              : status === "4"
+                              ? "bg-[var(--csecondary)]"
                               : "bg-[var(--bgwarning)]"
                           }`}
                         >
@@ -244,6 +248,8 @@ export default function LiveMap() {
                                 ? "bg-[var(--cdanger)]"
                                 : status === "3"
                                 ? "bg-[var(--catblue)]"
+                                : status === "4"
+                                ? "bg-[var(--cinverted]"
                                 : "bg-[var(--cwarning)]"
                             }`}
                           ></div>
@@ -255,6 +261,8 @@ export default function LiveMap() {
                                 ? "text-[var(--cdanger)]"
                                 : status === "3"
                                 ? "text-[var(--catblue)]"
+                                : status === "4"
+                                ? "text-[var(--cinverted)]"
                                 : "text-[var(--cwarning)]"
                             }`}
                           >

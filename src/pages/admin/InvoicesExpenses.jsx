@@ -184,16 +184,14 @@ export default function InvoiceExpenses() {
           </div>
         ))}
       </div>
-      <div className="border border-main rounded-[12px] bg-sidebar mt-4 overflow-hidden">
-        <div className="flex items-center justify-between p-4">
+      <div className='border border-main rounded-[16px] bg-sidebar mt-4'>
+        <div className='md:flex items-center justify-between p-4'>
           <div>
             <h4 className="c-primary font-semibold text-xl">Invoices</h4>
           </div>
-          <div className="flex items-center justify-end gap-3">
+          <div className='flex items-center justify-end gap-3 md:mt-0 mt-3 flex-wrap'>
             <div>
-              <button className="c-primary py-2 px-5 border border-csecondary rounded-md bg-sidebar flex items-center gap-1">
-                Filter <SlideIcon className="c-primary" />
-              </button>
+              <button className='c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main'>Filter <SlideIcon className='c-primary' /></button>
             </div>
             <div>
               <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md">
