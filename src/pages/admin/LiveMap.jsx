@@ -9,6 +9,7 @@ import {
   TollIcon,
 } from "../../CustomIcons";
 import busimg from "../../assets/images/busimg.png";
+import MapComponent from "../../Conponents/Dashboard/MapComponent";
 
 export default function LiveMap() {
   const boxes = [
@@ -107,17 +108,12 @@ export default function LiveMap() {
   return (
     <div>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 xl:col-span-7 p-3 bg-cardcontainer rounded-[16px] order-2 xl:order-1">
+        <div className="col-span-12 xl:col-span-7 p-3 bg-cardcontainer rounded-[16px]">
           <div className="h-full rounded-[10px] min-h-[300px] overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3366.18302727438!2d74.51262507524432!3d32.467795973794416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI4JzA0LjEiTiA3NMKwMzAnNTQuNyJF!5e0!3m2!1sen!2s!4v1748848088452!5m2!1sen!2s"
-              className="w-full h-full"
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+            <MapComponent />
           </div>
         </div>
-        <div className="col-span-12 xl:col-span-5 order-1 xl:order-2 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-4">
+        <div className="col-span-12 xl:col-span-5 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-4">
           <div className="p-4 bg-cardcontainer rounded-[24px] flex flex-col">
             <div className="border-b border-main pb-2">
               <p className="c-primary text-sm font-semibold">BUS-204</p>
