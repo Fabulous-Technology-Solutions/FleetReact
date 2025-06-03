@@ -24,3 +24,6 @@ export {default as LogoutIcon} from './LogoutIcon';
 export {default as MessageIcon} from './MessageIcon';
 export {default as PhoneIcon} from './PhoneIcon';
 export {default as UploadIcon} from './UploadIcon'
+export {default as LockClosed} from './LockClosed';
+export {default as LockOpened} from './LockOpened';
+

@@ -142,7 +142,7 @@ export default function LiveMap() {
                 </div>
               </div>
               <div className="relative min-h-[130px]">
-                <img
+                <im
                   className="w-full h-full object-contain object-right absolute right-[-16px]"
                   src={truckimg}
                   alt="img"
@@ -202,7 +202,7 @@ export default function LiveMap() {
                   return (
                     <div
                       key={index}
-                      className="p-2 bg-sidebar rounded-[10px] flex items-center gap-2 justify-between"
+                      className="p-2 bg-sidebar rounded-[10px] flex items-center gap-2 justify-between border border-transparent hover:border-[var(--catblue)] hover:shadow-[0px_4px_24px_0px_#60A5FA33]"
                     >
                       <div className="flex items-center gap-2">
                         <img
