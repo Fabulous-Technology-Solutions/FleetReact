@@ -7,7 +7,7 @@ const Table = ({ headers = [], rows = [], rowsPerPage = 5 }) => {
   const endIndex = startIndex + rowsPerPage;
   const paginatedRows = rows.slice(startIndex, endIndex);
   return (
-    <div className="border border-main rounded-[12px] overflow-hidden">
+    <div>
       <div className="main-table overflow-x-auto">
         <table className="w-full text-nowrap border-separate border-spacing-0">
           <thead>

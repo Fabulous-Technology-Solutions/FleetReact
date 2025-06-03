@@ -15,3 +15,7 @@ export { default as ArrowIcon } from './ArrowIcon';
 export { default as FiltersIcon } from './FiltersIcon';
 export { default as EditIcon } from './EditIcon';
 export { default as DeleteIcon } from './DeleteIcon';
+export { default as GasIcon } from './GasIcon';
+export { default as OilIcon } from './OilIcon';
+export { default as CarWashIcon } from './CarWashIcon';
+export { default as TollIcon } from './TollIcon';
