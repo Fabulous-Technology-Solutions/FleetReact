@@ -5,11 +5,13 @@ import {
   DocumentsIcon,
   DriversIcon,
   HiringIcon,
+  LogoutIcon,
   ReportsIcon,
   RoutesIcon,
 } from "../CustomIcons";
 import Sidebar from "../Conponents/layout/Sidebar";
 import Navbar from "../Conponents/layout/Navbar";
+import SettingIcon from "../CustomIcons/SettingIcon";
 
 export default function AdminLayout() {
   const [showsidebar, setshowsidebar] = useState(false);
@@ -124,15 +126,33 @@ export default function AdminLayout() {
         },
         {
           label: "Settings",
-          icon: RoutesIcon,
+          icon: SettingIcon,
           path: "",
           subItems: [
             {
-              label: "Account Settings",
-              path: "/AccountSettings",
+              label: "Profile Settings",
+              path: "/ProfileSetting",
+            },
+            {
+              label: "Security Settings",
+              path: "/SecuritySettings",
+            },
+            {
+              label: "User Roles & Permissions",
+              path: "/UserRole",
+            },
+            {
+              label: "Notification Preferences",
+              path: "/Notification",
             },
           ],
-          activePath: ["/AccountSettings"],
+          activePath: ["/ProfileSetting", "/SecuritySettings", "/UserRole", "/Notification"],
+        },
+        {
+          label: "Log out",
+          icon: LogoutIcon,
+          path: "",
+          activePath: [],
         },
       ],
     },
