@@ -21,3 +21,6 @@ export { default as CarWashIcon } from './CarWashIcon';
 export { default as TollIcon } from './TollIcon';
 export {default as SettinIcon} from './SettingIcon';
 export {default as LogoutIcon} from './LogoutIcon';
+export {default as MessageIcon} from './MessageIcon';
+export {default as PhoneIcon} from './PhoneIcon';
+export {default as UploadIcon} from './UploadIcon'
