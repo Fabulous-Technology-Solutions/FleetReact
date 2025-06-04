@@ -3,9 +3,13 @@ import PasswordInput from "../../Conponents/settings/PasswordInput";
 
 const SecuritySettings = () => {
   const list = [
-    { label: "Current Password", id: "CurrentPassword" },
-    { label: "New Password", id: "NewPassword" },
-    { label: "Confirm New Password", id: "ConfirmNewPassword" },
+    { label: "Current Password", id: "CurrentPassword", placeholder: "Current Password" },
+    { label: "New Password", id: "NewPassword", placeholder: "New Password" },
+    {
+      label: "Confirm New Password",
+      id: "ConfirmNewPassword",
+      placeholder: "Confirm New Password",
+    },
   ];
   return (
     <div>
@@ -27,7 +31,7 @@ const SecuritySettings = () => {
                   {item.label}
                 </label>
                 <div className="mt-1">
-                  <PasswordInput id={item.id} />
+                  <PasswordInput id={item.id} placeholder={item.placeholder} />
                 </div>
               </div>
             ))}

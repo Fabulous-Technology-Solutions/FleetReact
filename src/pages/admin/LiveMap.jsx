@@ -142,7 +142,7 @@ export default function LiveMap() {
                 </div>
               </div>
               <div className="relative min-h-[130px]">
-                <im
+                <img
                   className="w-full h-full object-contain object-right absolute right-[-16px]"
                   src={truckimg}
                   alt="img"
