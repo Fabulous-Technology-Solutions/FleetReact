@@ -40,7 +40,7 @@ export default function DoughnutChartBox() {
         </p>
       </div>
       <div className="flex flex-col min-[480px]:flex-row items-center gap-4 justify-between mt-4">
-        <div className="size-[150px]">
+        <div className="size-100 h-[250px]">
           <DoughnutChart data={data} />
         </div>
         <div className="flex-1 w-full min-[480px]:max-w-[250px]">

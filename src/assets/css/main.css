@@ -171,3 +171,6 @@ button {
     border: 1px solid var(--borderColor);
     border-radius: 999px;
 }
+.test{
+    border: 2px solid red !important;
+}
