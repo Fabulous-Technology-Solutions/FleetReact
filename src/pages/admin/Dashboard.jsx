@@ -6,6 +6,8 @@ import DoughnutChartBox from "../../Conponents/Dashboard/DoughnutChartBox";
 import MapBox from "../../Conponents/Dashboard/MapBox";
 import Table from "../../Conponents/Table";
 import ArrowIcon from "../../CustomIcons/ArrowIcon";
+import TableMui from "../../Conponents/TableMui";
+import { GoDotFill } from "react-icons/go";
 
 export default function Dashboard() {
   const cards = [
@@ -15,17 +17,9 @@ export default function Dashboard() {
     { title: "Fleet Health Score", value: "92%" },
   ];
 
-  const headers = [
-    "Route",
-    "Vehicle",
-    "Assigned Driver",
-    "Departure Time",
-    "ETA",
-    "Status",
-  ];
-
   const data = [
     {
+      id: 1,
       start: "Newark",
       end: "Jersey City",
       vehicle: "BUS-204",
@@ -35,6 +29,7 @@ export default function Dashboard() {
       status: "On Route",
     },
     {
+      id: 2,
       start: "Queens",
       end: "Bronx",
       vehicle: "BUS-115",
@@ -44,6 +39,7 @@ export default function Dashboard() {
       status: "Delayed",
     },
     {
+      id: 3,
       start: "West Loop",
       end: "East Loop (CHI)",
       vehicle: "VAN-104",
@@ -52,168 +48,22 @@ export default function Dashboard() {
       eta: "May 15, 2025 1:03 am",
       status: "Scheduled",
     },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
-      status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
-      status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
-      status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
-      status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
+    // ... rest of your data objects
   ];
-
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "on route"
-        ? "1"
-        : item.status.toLowerCase() === "delayed"
-        ? "2"
-        : "3";
-    return [
-      <div className="flex items-center gap-2">
-        <p>{item.start}</p>
-        <div className="transform rotate-180">
-          <ArrowIcon />
-        </div>
-        <p>{item.end}</p>
-      </div>,
-      item.vehicle,
-      item.driver,
-      item.departure,
-      item.eta,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgwarning)]"
-            : "bg-[var(--bgatblue)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cwarning)]"
-              : "bg-[var(--catblue)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cwarning)]"
-              : "text-[var(--catblue)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-    ];
-  });
-
+  const statusStyles = {
+    "On Route": {
+      text: "text-[var(--csuccess)]",
+      bg: "bg-[var(--bgsuccess)]",
+    },
+    Delayed: {
+      text: "text-[var(--cwarning)]",
+      bg: "bg-[var(--bgwarning)]",
+    },
+    Scheduled: {
+      text: "text-[var(--catblue)]",
+      bg: "bg-[var(--bgatblue)]",
+    },
+  };
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -258,8 +108,58 @@ export default function Dashboard() {
             Add New Route
           </button>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              route: "Route",
+              vehicle: "Vehicle",
+              driver: "Assigned Driver",
+              departure: "Departure Time",
+              eta: "ETA",
+              status: "Status",
+            }}
+            td={data}
+            btnName="Detail"
+            customFields={[
+              {
+                name: "route",
+                data: (value, item) => (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <p>{item.start}</p>
+                    <div style={{ transform: "rotate(180deg)" }}>
+                      <ArrowIcon />
+                    </div>
+                    <p>{item.end}</p>
+                  </div>
+                ),
+              },
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

@@ -3,19 +3,19 @@ import Pagination from "@mui/material/Pagination";
 import { PaginationItem } from "@mui/material";
 import ArrowIcon from "../CustomIcons/ArrowIcon";
 
-export default function MuiPagination({ count, page, setPage, rowsPerPage }) {
-  const totalPages = Math.ceil(count / rowsPerPage);
-  const handleChangePage = (event, value) => {
-    setPage(value);
-  };
-
+export default function MuiPagination({
+  count = 50,
+  page = 1,
+  onChange,
+  limit = 5,
+}) {
   return (
     <div className="overflow-x-auto scroll-x-hidden">
       <div>
         <Pagination
-          count={totalPages}
+          count={Math.ceil(count / limit)}
           page={page}
-          onChange={handleChangePage}
+          onChange={(event, value) => onChange(event, value)}
           shape="rounded"
           renderItem={(item) => (
             <PaginationItem
