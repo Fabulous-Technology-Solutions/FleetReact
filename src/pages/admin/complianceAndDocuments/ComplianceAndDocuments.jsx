@@ -2,7 +2,7 @@ import React from "react";
 import CompliantOne from "../../../assets/images/comliant1.png";
 import { GoDotFill } from "react-icons/go";
 
-export default function Documents() {
+export default function ComplianceAndDocuments() {
   const cards = [
     { title: "Documents Expiring Soon", value: "9" },
     { title: "Incomplete Profiles", value: "6" },

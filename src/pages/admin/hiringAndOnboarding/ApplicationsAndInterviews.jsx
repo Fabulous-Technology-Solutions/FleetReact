@@ -6,7 +6,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 import TableMui from "../../../components/TableMui";
 
-export default function Interviews() {
+export default function ApplicationsAndInterviews() {
   const cards = [
     { title: "Total Applications", value: "124", desc: "This Week" },
     {

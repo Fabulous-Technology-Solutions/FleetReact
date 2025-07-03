@@ -4,7 +4,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
 import TableMui from "../../../components/TableMui";
 
-const UserRole = () => {
+const UserRolesAndPermissions = () => {
   const cards = [
     { title: "Total Employees", value: "80" },
     { title: "Drivers", value: "85" },
@@ -80,4 +80,4 @@ const UserRole = () => {
   );
 };
 
-export default UserRole;
+export default UserRolesAndPermissions;

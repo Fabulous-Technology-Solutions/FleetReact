@@ -5,22 +5,22 @@ import { ThemeProvider } from "./theme/ThemeContext";
 import AdminLayout from "./layouts/AdminLayout";
 import IconGallery from "./components/IconGallery";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
-import AllMembers from "./pages/admin/driversAndEmployees/AllMembers";
-import Attendance from "./pages/admin/driversAndEmployees/Attendance";
+import AllTeamMembers from "./pages/admin/driversAndEmployees/AllTeamMembers";
+import AttendanceAndPerformance from "./pages/admin/driversAndEmployees/AttendanceAndPerformance";
 import IncidentReports from "./pages/admin/driversAndEmployees/IncidentReports";
 import CustomersManagement from "./pages/admin/driversAndEmployees/CustomersManagement";
-import Interviews from "./pages/admin/hiringAndOnboarding/Interviews";
+import ApplicationsAndInterviews from "./pages/admin/hiringAndOnboarding/ApplicationsAndInterviews";
 import JobRequests from "./pages/admin/hiringAndOnboarding/JobRequests";
-import Documents from "./pages/admin/complianceAndDocuments/Documents";
-import LiveMap from "./pages/admin/fleetsAndRoutes/LiveMap";
+import ComplianceAndDocuments from "./pages/admin/complianceAndDocuments/ComplianceAndDocuments";
+import LiveFleetMap from "./pages/admin/fleetsAndRoutes/LiveFleetMap";
 import RouteAssignments from "./pages/admin/fleetsAndRoutes/RouteAssignments";
 import VehicleMaintenance from "./pages/admin/fleetsAndRoutes/VehicleMaintenance";
 import PayrollOverview from "./pages/admin/finance/PayrollOverview";
-import InvoicesExpenses from "./pages/admin/finance/InvoicesExpenses";
+import InvoicesAndExpenses from "./pages/admin/finance/InvoicesAndExpenses";
 import Reports from "./pages/admin/reports/Reports";
-import { ProfileSetting } from "./pages/admin/settings/ProfileSetting";
+import { ProfileSettings } from "./pages/admin/settings/ProfileSettings";
 import SecuritySettings from "./pages/admin/settings/SecuritySettings";
-import UserRole from "./pages/admin/settings/UserRole";
+import UserRolesAndPermissions from "./pages/admin/settings/UserRolesAndPermissions";
 import NotificationPreference from "./pages/admin//settings/NotificationPreference";
 
 function App() {
@@ -30,28 +30,26 @@ function App() {
         <Routes>
           <Route path="/icons" element={<IconGallery />} />
           <Route element={<AdminLayout />}>
-            <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/AllMembers" element={<AllMembers />} />
-            <Route path="/Attendance" element={<Attendance />} />
-            <Route path="/IncidentReports" element={<IncidentReports />} />
-            <Route path="/JobRequests" element={<JobRequests />} />
-            <Route path="/Interviews" element={<Interviews />} />
-            <Route path="/Documents" element={<Documents />} />
-            <Route path="/LiveMap" element={<LiveMap />} />
-            <Route path="/RouteAssignments" element={<RouteAssignments />} />
-            <Route path="/VehicleMaintenance" element={<VehicleMaintenance />}/>
-            <Route path="/PayrollOverview" element={<PayrollOverview />} />
-            <Route path="/InvoicesExpenses" element={<InvoicesExpenses />} />
-            <Route path="/Reports" element={<Reports />} />
-            <Route path="/ProfileSetting" element={<ProfileSetting />} />
-            <Route path="/SecuritySettings" element={<SecuritySettings />} />
-            <Route path="/UserRole" element={<UserRole />} />
-            <Route path="/Notification" element={<NotificationPreference />} />
-            <Route
-              path="/CustomersManagement"
-              element={<CustomersManagement />}
-            />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/all-team-members" element={<AllTeamMembers />} />
+            <Route path="/attendance-and-performance" element={<AttendanceAndPerformance />} />
+            <Route path="/incident-reports" element={<IncidentReports />} />
+            <Route path="/customers-management" element={<CustomersManagement />} />
+            <Route path="/job-requests" element={<JobRequests />} />
+            <Route path="/applications-and-interviews" element={<ApplicationsAndInterviews />} />
+            <Route path="/compliance-documents" element={<ComplianceAndDocuments />} />
+            <Route path="/live-fleet-map" element={<LiveFleetMap />} />
+            <Route path="/route-assignments" element={<RouteAssignments />} />
+            <Route path="/vehicle-maintenance" element={<VehicleMaintenance />} />
+            <Route path="/payroll-overview" element={<PayrollOverview />} />
+            <Route path="/invoices-and-expenses" element={<InvoicesAndExpenses />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/profile-setting" element={<ProfileSettings />} />
+            <Route path="/security-settings" element={<SecuritySettings />} />
+            <Route path="/user-roles-and-permissions" element={<UserRolesAndPermissions />} />
+            <Route path="/notification-preferences" element={<NotificationPreference />} />
           </Route>
+
         </Routes>
       </Router>
     </ThemeProvider>

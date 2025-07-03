@@ -6,7 +6,7 @@ import { statusStyles } from "../../../modules/helpers";
 import { Avatar } from "@mui/material";
 import TableMui from "../../../components/TableMui";
 
-export default function Attendance() {
+export default function AttendanceAndPerformance() {
   const cards = [
     { title: "Today’s Attendance", value: "85%" },
     { title: "Late Check-ins Today", value: "12" },

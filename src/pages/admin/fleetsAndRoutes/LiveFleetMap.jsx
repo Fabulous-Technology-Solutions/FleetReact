@@ -11,7 +11,7 @@ import {
 import busimg from "../../../assets/images/busimg.png";
 import MapComponent from "../../../components/dashboard/MapComponent";
 
-export default function LiveMap() {
+export default function LiveFleetMap() {
   const boxes = [
     { icon: GasIcon, title: "Gas", value: "$500" },
     { icon: OilIcon, title: "Oil", value: "$250" },

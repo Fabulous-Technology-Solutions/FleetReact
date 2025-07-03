@@ -7,7 +7,7 @@ import { Avatar } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 
-export default function AllMembers() {
+export default function AllTeamMembers() {
   const cards = [
     { title: "Total Employees", value: "80" },
     { title: "Drivers", value: "85" },

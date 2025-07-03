@@ -23,7 +23,7 @@ export default function AdminLayout() {
         {
           label: "Dashboard",
           icon: DashboardIcon,
-          path: "/Dashboard",
+          path: "/dashboard",
           activePath: [],
         },
         {
@@ -33,26 +33,26 @@ export default function AdminLayout() {
           subItems: [
             {
               label: "All Team Members",
-              path: "/AllMembers",
+              path: "/all-team-members",
             },
             {
               label: "Attendance & Performance",
-              path: "/Attendance",
+              path: "/attendance-and-performance",
             },
             {
               label: "Incident Reports",
-              path: "/IncidentReports",
+              path: "/incident-reports",
             },
             {
               label: "Customers Management",
-              path: "/CustomersManagement",
+              path: "/customers-management",
             },
           ],
           activePath: [
-            "/AllMembers",
-            "/Attendance",
-            "/IncidentReports",
-            "/CustomersManagement",
+            "/all-team-members",
+            "/attendance-and-performance",
+            "/incident-reports",
+            "/customers-management",
           ],
         },
         {
@@ -62,19 +62,19 @@ export default function AdminLayout() {
           subItems: [
             {
               label: "Job Requests",
-              path: "/JobRequests",
+              path: "/job-requests",
             },
             {
               label: "Applications & Interviews",
-              path: "/Interviews",
+              path: "/applications-and-interviews",
             },
           ],
-          activePath: ["/JobRequests", "/Interviews"],
+          activePath: ["/job-requests", "/applications-and-interviews"],
         },
         {
           label: "Compliance & Documents",
           icon: DocumentsIcon,
-          path: "/Documents",
+          path: "/compliance-documents",
           activePath: [],
         },
         {
@@ -84,18 +84,18 @@ export default function AdminLayout() {
           subItems: [
             {
               label: "Live Fleet Map",
-              path: "/LiveMap",
+              path: "/live-fleet-map",
             },
             {
               label: "Route Assignments",
-              path: "/RouteAssignments",
+              path: "/route-assignments",
             },
             {
               label: "Vehicle Maintenance",
-              path: "/VehicleMaintenance",
+              path: "/vehicle-maintenance",
             },
           ],
-          activePath: ["/LiveMap", "/RouteAssignments", "/VehicleMaintenance"],
+          activePath: ["/live-fleet-map", "/route-assignments", "/vehicle-maintenance"],
         },
         {
           label: "Finance",
@@ -104,14 +104,14 @@ export default function AdminLayout() {
           subItems: [
             {
               label: "Payroll Overview",
-              path: "/PayrollOverview",
+              path: "/payroll-overview",
             },
             {
               label: "Invoices & Expenses",
-              path: "/InvoicesExpenses",
+              path: "/invoices-and-expenses",
             },
           ],
-          activePath: ["/PayrollOverview", "/InvoicesExpenses"],
+          activePath: ["/payroll-overview", "/invoices-and-expenses"],
         },
       ],
     },
@@ -121,7 +121,7 @@ export default function AdminLayout() {
         {
           label: "Reports",
           icon: ReportsIcon,
-          path: "/Reports",
+          path: "/reports",
           activePath: [],
         },
         {
@@ -131,22 +131,22 @@ export default function AdminLayout() {
           subItems: [
             {
               label: "Profile Settings",
-              path: "/ProfileSetting",
+              path: "/profile-setting",
             },
             {
               label: "Security Settings",
-              path: "/SecuritySettings",
+              path: "/security-settings",
             },
             {
               label: "User Roles & Permissions",
-              path: "/UserRole",
+              path: "/user-roles-and-permissions",
             },
             {
               label: "Notification Preferences",
-              path: "/Notification",
+              path: "/notification-preferences",
             },
           ],
-          activePath: ["/ProfileSetting", "/SecuritySettings", "/UserRole", "/Notification"],
+          activePath: ["/profile-setting", "/security-settings", "/user-roles-and-permissions", "/notification-preferences"],
         },
         {
           label: "Log out",

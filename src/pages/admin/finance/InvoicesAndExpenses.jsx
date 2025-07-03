@@ -6,7 +6,7 @@ import { GoDotFill } from "react-icons/go";
 import { statusStyles } from "../../../modules/helpers";
 import TableMui from "../../../components/TableMui";
 
-export default function InvoiceExpenses() {
+export default function InvoicesAndExpenses() {
   const cards = [
     { title: "Total Invoiced", value: "$47,800", days: "This month" },
     { title: "Total Expenses", value: "$47,800", days: "This month" },
