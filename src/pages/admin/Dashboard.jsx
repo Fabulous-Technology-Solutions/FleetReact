@@ -4,10 +4,11 @@ import BarChartBox from "../../Conponents/Dashboard/BarChartBox";
 import LineChartBox from "../../Conponents/Dashboard/LineChartBox";
 import DoughnutChartBox from "../../Conponents/Dashboard/DoughnutChartBox";
 import MapBox from "../../Conponents/Dashboard/MapBox";
-import Table from "../../Conponents/Table";
 import ArrowIcon from "../../CustomIcons/ArrowIcon";
 import TableMui from "../../Conponents/TableMui";
 import { GoDotFill } from "react-icons/go";
+import { statusStyles } from "../../modules/helpers";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 export default function Dashboard() {
   const cards = [
@@ -50,20 +51,7 @@ export default function Dashboard() {
     },
     // ... rest of your data objects
   ];
-  const statusStyles = {
-    "On Route": {
-      text: "text-[var(--csuccess)]",
-      bg: "bg-[var(--bgsuccess)]",
-    },
-    Delayed: {
-      text: "text-[var(--cwarning)]",
-      bg: "bg-[var(--bgwarning)]",
-    },
-    Scheduled: {
-      text: "text-[var(--catblue)]",
-      bg: "bg-[var(--bgatblue)]",
-    },
-  };
+  
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -118,6 +106,7 @@ export default function Dashboard() {
               departure: "Departure Time",
               eta: "ETA",
               status: "Status",
+              track: ""
             }}
             td={data}
             btnName="Detail"
@@ -154,6 +143,20 @@ export default function Dashboard() {
                     >
                       <GoDotFill />
                       {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "track",
+                data: (value) => {
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center`}
+                    >
+                      <HiOutlineLocationMarker />
+                      Track
                     </div>
                   );
                 },
