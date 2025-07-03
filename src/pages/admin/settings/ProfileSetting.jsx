@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { MessageIcon, PhoneIcon, UploadIcon } from '../../CustomIcons'
-import ProfileImg from '../../assets/images/profile.png'
+import { MessageIcon, PhoneIcon, UploadIcon } from '../../../CustomIcons'
+import ProfileImg from '../../../assets/images/profile.png'
 
 export const ProfileSetting = () => {
     const [selectedImage, setSelectedImage] = useState(ProfileImg);

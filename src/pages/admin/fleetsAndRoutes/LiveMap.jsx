@@ -1,5 +1,5 @@
 import React from "react";
-import truckimg from "../../assets/images/truck.png";
+import truckimg from "../../../assets/images/truck.png";
 import {
   CarWashIcon,
   DriversIcon,
@@ -7,9 +7,9 @@ import {
   OilIcon,
   RoutesIcon,
   TollIcon,
-} from "../../CustomIcons";
-import busimg from "../../assets/images/busimg.png";
-import MapComponent from "../../Conponents/Dashboard/MapComponent";
+} from "../../../CustomIcons";
+import busimg from "../../../assets/images/busimg.png";
+import MapComponent from "../../../components/dashboard/MapComponent";
 
 export default function LiveMap() {
   const boxes = [

@@ -9,8 +9,8 @@ import {
   ReportsIcon,
   RoutesIcon,
 } from "../CustomIcons";
-import Sidebar from "../Conponents/layout/Sidebar";
-import Navbar from "../Conponents/layout/Navbar";
+import Sidebar from "../components/layout/Sidebar";
+import Navbar from "../components/layout/Navbar";
 import SettingIcon from "../CustomIcons/SettingIcon";
 
 export default function AdminLayout() {

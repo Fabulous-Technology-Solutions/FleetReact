@@ -1,10 +1,10 @@
 import React from "react";
-import SlideIcon from "../../CustomIcons/SlideIcon";
-import { statusStyles } from "../../modules/helpers";
+import SlideIcon from "../../../CustomIcons/SlideIcon";
+import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
-import TableMui from "../../Conponents/TableMui";
+import TableMui from "../../../components/TableMui";
 
 export default function PayrollOverview() {
   const cards = [

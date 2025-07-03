@@ -1,13 +1,13 @@
 import React from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import BarChartBox from "../../Conponents/Dashboard/BarChartBox";
-import LineChartBox from "../../Conponents/Dashboard/LineChartBox";
-import DoughnutChartBox from "../../Conponents/Dashboard/DoughnutChartBox";
-import MapBox from "../../Conponents/Dashboard/MapBox";
-import ArrowIcon from "../../CustomIcons/ArrowIcon";
-import TableMui from "../../Conponents/TableMui";
+import BarChartBox from "../../../components/dashboard/BarChartBox";
+import LineChartBox from "../../../components/dashboard/LineChartBox";
+import DoughnutChartBox from "../../../components/dashboard/DoughnutChartBox";
+import MapBox from "../../../components/dashboard/MapBox";
+import ArrowIcon from "../../../CustomIcons/ArrowIcon";
+import TableMui from "../../../components/TableMui";
 import { GoDotFill } from "react-icons/go";
-import { statusStyles } from "../../modules/helpers";
+import { statusStyles } from "../../../modules/helpers";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
 export default function Dashboard() {

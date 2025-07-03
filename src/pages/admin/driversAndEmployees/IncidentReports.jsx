@@ -1,10 +1,10 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../../CustomIcons";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 import { GoDotFill } from "react-icons/go";
-import TableMui from "../../Conponents/TableMui";
-import { statusStyles } from "../../modules/helpers";
+import TableMui from "../../../components/TableMui";
+import { statusStyles } from "../../../modules/helpers";
 import { RiFileDownloadLine } from "react-icons/ri";
 
 export default function IncidentReports() {

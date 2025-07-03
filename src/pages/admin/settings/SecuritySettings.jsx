@@ -1,5 +1,5 @@
 import React from "react";
-import PasswordInput from "../../Conponents/settings/PasswordInput";
+import PasswordInput from "../../../components/settings/PasswordInput";
 
 const SecuritySettings = () => {
   const list = [

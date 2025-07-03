@@ -1,10 +1,10 @@
 import React from "react";
-import SlideIcon from "../../CustomIcons/SlideIcon";
+import SlideIcon from "../../../CustomIcons/SlideIcon";
 import { FiEdit2 } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
-import { statusStyles } from "../../modules/helpers";
-import TableMui from "../../Conponents/TableMui";
+import { statusStyles } from "../../../modules/helpers";
+import TableMui from "../../../components/TableMui";
 
 export default function InvoiceExpenses() {
   const cards = [

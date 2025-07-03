@@ -1,66 +1,65 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
-import { statusStyles } from "../../modules/helpers";
+import { FiltersIcon } from "../../../CustomIcons";
+import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
-import TableMui from "../../Conponents/TableMui";
+import TableMui from "../../../components/TableMui";
 
-export default function JobRequests() {
+export default function Interviews() {
   const cards = [
-    { title: "Active Job Postings", value: "12" },
+    { title: "Total Applications", value: "124", desc: "This Week" },
     {
-      title: "AI-Sourced Candidates",
-      value: "136",
-      desc: "This Week",
+      title: "Interviews Scheduled",
+      value: "28",
     },
     {
-      title: "Avg. Time to First Interview",
-      value: "2.2",
-      desc: "Days",
+      title: "Hires",
+      value: "11",
+      desc: "This Month",
     },
-    { title: "Positions Filled", value: "8", desc: "This Month" },
+    { title: "Avg. Time to Hire", value: "3.4", desc: "Days" },
   ];
 
   const data = [
     {
       id: 1,
-      jobTitle: "CDL Driver",
-      location: "Newark, NJ",
-      openings: 3,
-      status: "Draft",
-      aiSourced: 42,
-      interviews: 5,
+      candidateName: "John Ellis",
+      position: "CDL Driver",
+      source: "Indeed (AI)",
+      stage: "Interview Scheduled",
+      interviewDate: "May 24, 2025",
+      status: "Rejected",
       datePosted: "May 18, 2025",
     },
     {
       id: 2,
-      jobTitle: "Fleet Mechanic",
-      location: "Houston, TX",
-      openings: 1,
-      status: "Hiring",
-      aiSourced: 27,
-      interviews: 2,
+      candidateName: "Maria Khan",
+      position: "Fleet Mechanic",
+      source: "Indeed (AI)",
+      stage: "Screening Complete",
+      interviewDate: "May 24, 2025",
+      status: "Confirmed",
       datePosted: "May 20, 2025",
     },
     {
       id: 3,
-      jobTitle: "Dispatcher",
-      location: "Chicago, IL",
-      openings: 2,
-      status: "Screening",
-      aiSourced: 0,
-      interviews: 0,
+      candidateName: "Leo Martinez",
+      position: "Dispatcher",
+      source: "Indeed (AI)",
+      stage: "Awaiting Screening",
+      interviewDate: "May 24, 2025",
+      status: "In Review",
       datePosted: "May 20, 2025",
     },
     {
       id: 4,
-      jobTitle: "Bus Driver",
-      location: "Chicago, IL",
-      openings: 4,
-      status: "Interviewing",
-      aiSourced: 51,
-      interviews: 7,
+      candidateName: "Brenda Lee",
+      position: "CDL Driver",
+      source: "Indeed (AI)",
+      stage: "Interview Scheduled",
+      interviewDate: "May 24, 2025",
+      status: "Pending",
       datePosted: "May 15, 2025",
     },
   ];
@@ -86,28 +85,23 @@ export default function JobRequests() {
       <div className="mt-4 bg-sidebar border border-main rounded-[12px] overflow-hidden">
         <div className="flex gap-x-4 gap-y-2 flex-wrap items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">
-            AI Job Posting Pipeline
+            AI-Powered Application Pipeline
           </p>
-          <div className="flex items-center gap-2 ms-auto flex-wrap justify-end">
-            <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main">
-              <span>Filters</span>
-              <FiltersIcon className="text-lg" />
-            </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
-              Post New Job
-            </button>
-          </div>
+          <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main ms-auto">
+            <span>Filters</span>
+            <FiltersIcon className="text-lg" />
+          </button>
         </div>
         <div className="my-3">
           <TableMui
             loading={false}
             th={{
-              jobTitle: "Job Title",
-              location: "Location",
-              openings: "Openings",
+              candidateName: "Candidate Name",
+              position: "Position Applied",
+              source: "Source",
+              stage: "Stage",
+              interviewDate: "Interview Date",
               status: "Status",
-              aiSourced: "AI-Sourced Candidates",
-              interviews: "Interviews Scheduled",
               datePosted: "Date Posted",
               action: "",
             }}

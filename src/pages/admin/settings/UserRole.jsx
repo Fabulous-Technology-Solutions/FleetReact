@@ -1,9 +1,8 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
-import userimg from "../../assets/images/dummy-user.png";
+import { FiltersIcon } from "../../../CustomIcons";
 import { FiEdit2 } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
-import TableMui from "../../Conponents/TableMui";
+import TableMui from "../../../components/TableMui";
 
 const UserRole = () => {
   const cards = [

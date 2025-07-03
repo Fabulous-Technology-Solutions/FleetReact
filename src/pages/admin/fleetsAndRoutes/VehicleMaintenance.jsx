@@ -1,7 +1,7 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
-import TableMui from "../../Conponents/TableMui";
-import { statusStyles } from "../../modules/helpers";
+import { FiltersIcon } from "../../../CustomIcons";
+import TableMui from "../../../components/TableMui";
+import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";

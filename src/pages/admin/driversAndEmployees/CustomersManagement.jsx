@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FiltersIcon } from "../../CustomIcons";
-import FleetCustomer from "../../Conponents/customerManagement/FleetCustomer";
-import BusCustomer from "../../Conponents/customerManagement/BusCustomer";
-import CustomTabs from "../../Conponents/CustomTabs";
+import { FiltersIcon } from "../../../CustomIcons";
+import FleetCustomer from "../../../components/customerManagement/FleetCustomer";
+import BusCustomer from "../../../components/customerManagement/BusCustomer";
+import CustomTabs from "../../../components/CustomTabs";
 
 export default function CustomersManagement() {
    const [value, setValue] = useState(0);

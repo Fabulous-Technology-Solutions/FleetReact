@@ -1,8 +1,8 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
-import { statusStyles } from "../../modules/helpers";
+import { FiltersIcon } from "../../../CustomIcons";
+import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
-import TableMui from "../../Conponents/TableMui";
+import TableMui from "../../../components/TableMui";
 
 export default function RouteAssignments() {
   const data = [

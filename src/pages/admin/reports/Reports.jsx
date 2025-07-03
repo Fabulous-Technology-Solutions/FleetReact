@@ -1,6 +1,6 @@
 import React from "react";
-import LineChartBox from "../../Conponents/Dashboard/LineChartBox";
-import BarChartComp from "../../Conponents/Dashboard/BarChartComp";
+import LineChartBox from "../../../components/dashboard/LineChartBox";
+import BarChartComp from "../../../components/dashboard/BarChartComp";
 
 export default function Reports() {
   const cards = [

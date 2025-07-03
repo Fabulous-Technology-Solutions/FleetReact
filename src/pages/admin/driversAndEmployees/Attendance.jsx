@@ -1,10 +1,10 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../../CustomIcons";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { GoDotFill } from "react-icons/go";
-import { statusStyles } from "../../modules/helpers";
+import { statusStyles } from "../../../modules/helpers";
 import { Avatar } from "@mui/material";
-import TableMui from "../../Conponents/TableMui";
+import TableMui from "../../../components/TableMui";
 
 export default function Attendance() {
   const cards = [

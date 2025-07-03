@@ -1,7 +1,7 @@
 import React from "react";
-import { FiltersIcon } from "../../CustomIcons";
-import { statusStyles } from "../../modules/helpers";
-import TableMui from "../../Conponents/TableMui";
+import { FiltersIcon } from "../../../CustomIcons";
+import { statusStyles } from "../../../modules/helpers";
+import TableMui from "../../../components/TableMui";
 import { GoDotFill } from "react-icons/go";
 import { Avatar } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";

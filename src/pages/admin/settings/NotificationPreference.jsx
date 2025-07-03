@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleSwitch from "../../Conponents/settings/ToggleSwitch";
+import ToggleSwitch from "../../../components/settings/ToggleSwitch";
 
 const NotificationPreference = () => {
   const list = [

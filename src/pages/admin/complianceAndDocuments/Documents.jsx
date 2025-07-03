@@ -1,5 +1,5 @@
 import React from "react";
-import CompliantOne from "../../assets/images/comliant1.png";
+import CompliantOne from "../../../assets/images/comliant1.png";
 import { GoDotFill } from "react-icons/go";
 
 export default function Documents() {
