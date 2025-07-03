@@ -123,6 +123,9 @@ button {
 .bg-navlink {
     background-color: var(--navlinkbg);
 }
+.text-blue {
+    color: var(--navlinkbg);
+}
 
 .c-primary {
     color: var(--cprimary);

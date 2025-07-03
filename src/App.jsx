@@ -22,13 +22,14 @@ import { ProfileSettings } from "./pages/admin/settings/ProfileSettings";
 import SecuritySettings from "./pages/admin/settings/SecuritySettings";
 import UserRolesAndPermissions from "./pages/admin/settings/UserRolesAndPermissions";
 import NotificationPreference from "./pages/admin//settings/NotificationPreference";
+import Login from "./pages/auth/Login";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
         <Routes>
-          <Route path="/icons" element={<IconGallery />} />
+          <Route path="/" element={<Login />} />
           <Route element={<AdminLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/all-team-members" element={<AllTeamMembers />} />
