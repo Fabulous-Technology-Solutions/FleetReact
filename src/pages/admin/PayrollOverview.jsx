@@ -1,7 +1,10 @@
 import React from "react";
 import SlideIcon from "../../CustomIcons/SlideIcon";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon } from "../../CustomIcons";
+import { statusStyles } from "../../modules/helpers";
+import { GoDotFill } from "react-icons/go";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+import TableMui from "../../Conponents/TableMui";
 
 export default function PayrollOverview() {
   const cards = [
@@ -11,123 +14,48 @@ export default function PayrollOverview() {
     { title: "Next Payroll Date", value: "June 5, 2025" },
   ];
 
-  const header = [
-    "Employee Name",
-    "Role",
-    "Department",
-    "Pay Period",
-    "Gross Pay",
-    "Deductions",
-    "Net Pay",
-    "Status",
-    "",
-  ];
-
   const data = [
     {
-      ename: "John Devis",
+      id: 1,
+      employee: "John Davis",
       role: "Fleet Driver",
-      department: "Transport",
-      pay_period: "May 2025",
-      gross_pay: "$3,500",
-      deduction: "$450",
-      net_pay: "$3,050",
+      period: "May 2025",
+      gross: "$3,500",
+      deductions: "$450",
+      net: "$3,050",
       status: "Paid",
     },
     {
-      ename: "John Devis",
-      role: "Fleet Driver",
-      department: "Transport",
-      pay_period: "May 2025",
-      gross_pay: "$3,500",
-      deduction: "$450",
-      net_pay: "$3,050",
+      id: 2,
+      employee: "Alicia Morgan",
+      role: "Dispatcher",
+      period: "May 2025",
+      gross: "$3,200",
+      deductions: "$400",
+      net: "$2,800",
       status: "Pending",
     },
     {
-      ename: "John Devis",
-      role: "Fleet Driver",
-      department: "Transport",
-      pay_period: "May 2025",
-      gross_pay: "$3,500",
-      deduction: "$450",
-      net_pay: "$3,050",
-      status: "Overdue",
+      id: 3,
+      employee: "Chris Barton",
+      role: "Mechanic",
+      period: "May 2025",
+      gross: "$2,900",
+      deductions: "$250",
+      net: "$2,650",
+      status: "Pending",
     },
     {
-      ename: "John Devis",
-      role: "Fleet Driver",
-      department: "Transport",
-      pay_period: "May 2025",
-      gross_pay: "$3,500",
-      deduction: "$450",
-      net_pay: "$3,050",
+      id: 4,
+      employee: "Linda James",
+      role: "Compliance Lead",
+      period: "May 2025",
+      gross: "$4,100",
+      deductions: "$500",
+      net: "$3,600",
       status: "Paid",
     },
   ];
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "paid"
-        ? "1"
-        : item.status.toLowerCase() === "pending"
-        ? "2"
-        : item.status.toLowerCase() === "overdue"
-        ? "3"
-        : "4";
-    return [
-      item.ename,
-      item.role,
-      item.department,
-      item.pay_period,
-      item.gross_pay,
-      item.deduction,
-      item.net_pay,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgwarning)]"
-            : status === "3"
-            ? "bg-[var(--bgdanger)]"
-            : "bg-[var(--bgatblue)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cwarning)]"
-              : status === "3"
-              ? "bg-[var(--cdanger)]"
-              : "bg-[var(--catblue)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cwarning)]"
-              : status === "3"
-              ? "text-[var(--cdanger)]"
-              : "text-[var(--catblue)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -147,9 +75,11 @@ export default function PayrollOverview() {
           <div>
             <h4 className="c-primary font-semibold text-xl">Payroll</h4>
           </div>
-          <div className='flex items-center justify-end gap-3 md:mt-0 mt-3 flex-wrap'>
+          <div className="flex items-center justify-end gap-3 md:mt-0 mt-3 flex-wrap">
             <div>
-              <button className='c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main'>Filter <SlideIcon className='c-primary' /></button>
+              <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main">
+                Filter <SlideIcon className="c-primary" />
+              </button>
             </div>
             <div>
               <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md">
@@ -158,8 +88,52 @@ export default function PayrollOverview() {
             </div>
           </div>
         </div>
-        <div className="mt-3">
-          <Table headers={header} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              employee: "Employee Name",
+              role: "Role",
+              period: "Pay Period",
+              gross: "Gross Pay",
+              deductions: "Deductions",
+              net: "Net Pay",
+              status: "Status",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" />
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

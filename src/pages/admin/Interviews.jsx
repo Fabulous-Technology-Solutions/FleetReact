@@ -1,6 +1,10 @@
 import React from "react";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon, FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../CustomIcons";
+import { statusStyles } from "../../modules/helpers";
+import { GoDotFill } from "react-icons/go";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+import TableMui from "../../Conponents/TableMui";
 
 export default function Interviews() {
   const cards = [
@@ -17,217 +21,48 @@ export default function Interviews() {
     { title: "Avg. Time to Hire", value: "3.4", desc: "Days" },
   ];
 
-  const headers = [
-    "Candidate Name",
-    "Position Applied",
-    "Source",
-    "Stage",
-    "Interview Date",
-    "Status",
-    "Date Posted",
-    "",
-  ];
-
   const data = [
     {
-      cname: "John Ellis",
+      id: 1,
+      candidateName: "John Ellis",
       position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Confirmed",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "In Review",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
+      source: "Indeed (AI)",
+      stage: "Interview Scheduled",
+      interviewDate: "May 24, 2025",
       status: "Rejected",
-      dateposted: "2023-10-01",
+      datePosted: "May 18, 2025",
     },
     {
-      cname: "John Ellis",
+      id: 2,
+      candidateName: "Maria Khan",
+      position: "Fleet Mechanic",
+      source: "Indeed (AI)",
+      stage: "Screening Complete",
+      interviewDate: "May 24, 2025",
+      status: "Confirmed",
+      datePosted: "May 20, 2025",
+    },
+    {
+      id: 3,
+      candidateName: "Leo Martinez",
+      position: "Dispatcher",
+      source: "Indeed (AI)",
+      stage: "Awaiting Screening",
+      interviewDate: "May 24, 2025",
+      status: "In Review",
+      datePosted: "May 20, 2025",
+    },
+    {
+      id: 4,
+      candidateName: "Brenda Lee",
       position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
+      source: "Indeed (AI)",
+      stage: "Interview Scheduled",
+      interviewDate: "May 24, 2025",
       status: "Pending",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Confirmed",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "In Review",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Rejected",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Pending",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Confirmed",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "In Review",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Rejected",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Pending",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Confirmed",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "In Review",
-      dateposted: "2023-10-01",
-    },
-    {
-      cname: "John Ellis",
-      position: "CDL Driver",
-      source: "AI Sourcing",
-      stage: "Interviewing",
-      interviewdate: "2023-10-15",
-      status: "Rejected",
-      dateposted: "2023-10-01",
+      datePosted: "May 15, 2025",
     },
   ];
-
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "confirmed"
-        ? "1"
-        : item.status.toLowerCase() === "in review"
-        ? "2"
-        : item.status.toLowerCase() === "rejected"
-        ? "3"
-        : "4";
-    return [
-      item.cname,
-      item.position,
-      item.source,
-      item.stage,
-      item.interviewdate,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgatblue)]"
-            : status === "3"
-            ? "bg-[var(--bgdanger)]"
-            : "bg-[var(--bgwarning)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--catblue)]"
-              : status === "3"
-              ? "bg-[var(--cdanger)]"
-              : "bg-[var(--cwarning)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--catblue)]"
-              : status === "3"
-              ? "text-[var(--cdanger)]"
-              : "text-[var(--cwarning)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      item.dateposted,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -257,8 +92,52 @@ export default function Interviews() {
             <FiltersIcon className="text-lg" />
           </button>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              candidateName: "Candidate Name",
+              position: "Position Applied",
+              source: "Source",
+              stage: "Stage",
+              interviewDate: "Interview Date",
+              status: "Status",
+              datePosted: "Date Posted",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" />
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

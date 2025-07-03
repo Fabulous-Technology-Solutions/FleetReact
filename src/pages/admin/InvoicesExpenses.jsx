@@ -1,7 +1,10 @@
 import React from "react";
 import SlideIcon from "../../CustomIcons/SlideIcon";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon } from "../../CustomIcons";
+import { FiEdit2 } from "react-icons/fi";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { GoDotFill } from "react-icons/go";
+import { statusStyles } from "../../modules/helpers";
+import TableMui from "../../Conponents/TableMui";
 
 export default function InvoiceExpenses() {
   const cards = [
@@ -11,162 +14,48 @@ export default function InvoiceExpenses() {
     { title: "Paid Invoices", value: "26/34" },
   ];
 
-  const header = [
-    "Invoice ID",
-    "Vendor Name",
-    "Category",
-    "Date Issued",
-    "Amount",
-    "Status",
-    "Due Date",
-    "Action",
-  ];
   const data = [
     {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
+      id: 1,
+      invoiceId: "INV-10023",
+      vendor: "FastFuel Co.",
       category: "Fuel",
-      date_issued: "May 5,2025",
+      dateIssued: "May 5, 2025",
       amount: "$3,500",
       status: "Paid",
-      dueDate: "May 5,2025",
+      dueDate: "May 12",
     },
     {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
+      id: 2,
+      invoiceId: "INV-10024",
+      vendor: "AutoCare Center",
+      category: "Maintenance",
+      dateIssued: "May 7, 2025",
+      amount: "$3,200",
       status: "Pending",
-      dueDate: "May 5,2025",
+      dueDate: "May 15",
     },
     {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
+      id: 3,
+      invoiceId: "INV-10025",
+      vendor: "TrackSoft Inc.",
+      category: "Software License",
+      dateIssued: "May 10, 2025",
+      amount: "$2,900",
       status: "Overdue",
-      dueDate: "May 5,2025",
+      dueDate: "May 17",
     },
     {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
+      id: 4,
+      invoiceId: "INV-10026",
+      vendor: "Driver Supply Co.",
+      category: "Uniforms",
+      dateIssued: "May 9, 2025",
+      amount: "$4,100",
       status: "Paid",
-      dueDate: "May 5,2025",
-    },
-    {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
-      status: "Pending",
-      dueDate: "May 5,2025",
-    },
-    {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
-      status: "Overdue",
-      dueDate: "May 5,2025",
-    },
-    {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
-      status: "Paid",
-      dueDate: "May 5,2025",
-    },
-    {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
-      status: "Pending",
-      dueDate: "May 5,2025",
-    },
-    {
-      invoiceid: "INV-10023",
-      vendor_name: "FastFuel Co.",
-      category: "Fuel",
-      date_issued: "May 5,2025",
-      amount: "$3,500",
-      status: "Overdue",
-      dueDate: "May 5,2025",
+      dueDate: "May 20",
     },
   ];
-
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "paid"
-        ? "1"
-        : item.status.toLowerCase() === "pending"
-        ? "2"
-        : item.status.toLowerCase() === "overdue"
-        ? "3"
-        : "4";
-    return [
-      item.invoiceid,
-      item.vendor_name,
-      item.category,
-      item.date_issued,
-      item.amount,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgwarning)]"
-            : status === "3"
-            ? "bg-[var(--bgdanger)]"
-            : "bg-[var(--bgatblue)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cwarning)]"
-              : status === "3"
-              ? "bg-[var(--cdanger)]"
-              : "bg-[var(--catblue)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cwarning)]"
-              : status === "3"
-              ? "text-[var(--cdanger)]"
-              : "text-[var(--catblue)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      item.dueDate,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -184,14 +73,16 @@ export default function InvoiceExpenses() {
           </div>
         ))}
       </div>
-      <div className='border border-main rounded-[16px] bg-sidebar mt-4'>
-        <div className='md:flex items-center justify-between p-4'>
+      <div className="border border-main rounded-[16px] bg-sidebar mt-4">
+        <div className="md:flex items-center justify-between p-4">
           <div>
             <h4 className="c-primary font-semibold text-xl">Invoices</h4>
           </div>
-          <div className='flex items-center justify-end gap-3 md:mt-0 mt-3 flex-wrap'>
+          <div className="flex items-center justify-end gap-3 md:mt-0 mt-3 flex-wrap">
             <div>
-              <button className='c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main'>Filter <SlideIcon className='c-primary' /></button>
+              <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main">
+                Filter <SlideIcon className="c-primary" />
+              </button>
             </div>
             <div>
               <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md">
@@ -200,8 +91,52 @@ export default function InvoiceExpenses() {
             </div>
           </div>
         </div>
-        <div>
-          <Table headers={header} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              invoiceId: "Invoice ID",
+              vendor: "Vendor Name",
+              category: "Category",
+              dateIssued: "Date Issued",
+              amount: "Amount",
+              status: "Status",
+              dueDate: "Due Date",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" />
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

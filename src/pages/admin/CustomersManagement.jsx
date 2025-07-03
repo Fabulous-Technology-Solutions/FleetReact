@@ -1,8 +1,19 @@
-import React from "react";
-import Table from "../../Conponents/Table";
+import React, { useState } from "react";
 import { FiltersIcon } from "../../CustomIcons";
+import FleetCustomer from "../../Conponents/customerManagement/FleetCustomer";
+import BusCustomer from "../../Conponents/customerManagement/BusCustomer";
+import CustomTabs from "../../Conponents/CustomTabs";
 
 export default function CustomersManagement() {
+   const [value, setValue] = useState(0);
+  const navigateToTab = (tabIndex) => {
+    setValue(tabIndex);
+  };
+  const tabLabels = ["Fleet Customer", "Bus Customer"];
+  const tabPanels = [
+    <FleetCustomer navigateToTab={navigateToTab} />,
+    <BusCustomer navigateToTab={navigateToTab} />,
+  ];
   const cards = [
     { title: "Total Customers", value: "125", desc: "Active Accounts" },
     { title: "New Customers", value: "18", desc: "Compared to last month" },
@@ -10,183 +21,6 @@ export default function CustomersManagement() {
     { title: "Satisfaction Rate", value: "94%" },
   ];
 
-  const headers = [
-    "Customer Name",
-    "Company",
-    "Contact Person",
-    "Email",
-    "Phone",
-    "Status",
-    "Total Jobs",
-  ];
-
-  const data = [
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Inactive",
-      totalJobs: "12",
-    },
-    {
-      name: "ABC Logistics",
-      company: "ABC Inc.",
-      contact: "Sarah Lin",
-      email: "sarah@abc.com",
-      phone: "(843) 461-5941",
-      status: "Active",
-      totalJobs: "12",
-    },
-  ];
-
-  const rows = data.map((item) => {
-    const status = item.status.toLowerCase() === "active" ? "1" : "2";
-    return [
-      item.name,
-      item.company,
-      item.contact,
-      item.email,
-      item.phone,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1" ? "bg-[var(--bgsuccess)]" : "bg-[var(--bgwarning)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1" ? "bg-[var(--csuccess)]" : "bg-[var(--cwarning)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1" ? "text-[var(--csuccess)]" : "text-[var(--cwarning)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      item.totalJobs,
-    ];
-  });
 
   return (
     <div>
@@ -220,7 +54,12 @@ export default function CustomersManagement() {
           </div>
         </div>
         <div>
-          <Table headers={headers} rows={rows} />
+          <CustomTabs
+              tabs={tabLabels}
+              panels={tabPanels}
+              setValue={setValue}
+              value={value}
+            />
         </div>
       </div>
     </div>

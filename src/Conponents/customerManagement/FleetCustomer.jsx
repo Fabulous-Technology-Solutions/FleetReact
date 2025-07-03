@@ -1,0 +1,137 @@
+import React from 'react'
+import { FaRegTrashAlt } from 'react-icons/fa';
+import { FiEdit2 } from 'react-icons/fi';
+import { GoDotFill } from 'react-icons/go';
+import { statusStyles } from '../../modules/helpers';
+import TableMui from '../TableMui';
+
+const FleetCustomer = () => {
+    const data = [
+  {
+    id: 1,
+    customerName: "ABC Logistics",
+    company: "ABC Inc.",
+    contactPerson: "Sarah Lin",
+    email: "sarah@abc.com",
+    phone: "(843) 481-5941",
+    status: "In Active",
+    totalJobs: 12
+  },
+  {
+    id: 2,
+    customerName: "MovePro Ltd.",
+    company: "MovePro",
+    contactPerson: "Jason Roy",
+    email: "jason@movepro.com",
+    phone: "(920) 948-1722",
+    status: "Active",
+    totalJobs: 7
+  },
+  {
+    id: 3,
+    customerName: "TransFleet",
+    company: "TransCorp",
+    contactPerson: "Emily Shaw",
+    email: "emily@transcorp.io",
+    phone: "(518) 744-6291",
+    status: "Active",
+    totalJobs: 21
+  },
+  {
+    id: 4,
+    customerName: "FleetXpress",
+    company: "FleetXpress LLC",
+    contactPerson: "Daniel Kim",
+    email: "daniel@fleetxpress.io",
+    phone: "(017) 339-6416",
+    status: "In Active",
+    totalJobs: 15
+  },
+  {
+    id: 5,
+    customerName: "MetroMove",
+    company: "MetroMove Inc.",
+    contactPerson: "Jessica Lee",
+    email: "jessica@metronove.com",
+    phone: "(401) 715-3344",
+    status: "Active",
+    totalJobs: 28
+  },
+  {
+    id: 6,
+    customerName: "GoHeul Freight",
+    company: "GoHeul Logistics",
+    contactPerson: "Aaron Philips",
+    email: "aaron@goheulfreight.com",
+    phone: "(639) 298-7838",
+    status: "Active",
+    totalJobs: 8
+  },
+  {
+    id: 7,
+    customerName: "SwiftTransit",
+    company: "Swift Transit Ltd.",
+    contactPerson: "Priya Nair",
+    email: "priya@swifttransit.net",
+    phone: "(769) 322-1399",
+    status: "In Active",
+    totalJobs: 34
+  }
+];
+
+
+  return (
+    <div className="my-3">
+  <TableMui
+    loading={false}
+    th={{
+      customerName: "Customer Name",
+      company: "Company",
+      contactPerson: "Contact Person",
+      email: "Email",
+      phone: "Phone",
+      status: "Status",
+      totalJobs: "Total Jobs",
+    //   action: ""
+    }}
+    td={data}
+    customFields={[
+      {
+        name: "status",
+        data: (value) => {
+          const styles = statusStyles[value] || {
+            text: "text-gray-400",
+            bg: "bg-gray-100"
+          };
+          return (
+            <div className={`inline-flex gap-2 items-center rounded-full py-1 px-3 ${styles.text} ${styles.bg}`}>
+              <GoDotFill />
+              <span>{value}</span>
+            </div>
+          );
+        }
+      },
+      {
+        name: "totalJobs",
+        data: (value) => (
+          <div className="font-medium text-center">
+            {value}
+          </div>
+        )
+      },
+      {
+        name: "action",
+        data: () => (
+          <div className="inline-flex gap-3 items-center">
+            <FaRegTrashAlt className="cursor-pointer text-lg text-gray-500 hover:text-red-500" />
+            <FiEdit2 className="cursor-pointer text-lg text-gray-500 hover:text-blue-500" />
+          </div>
+        )
+      }
+    ]}
+  />
+</div>
+  )
+}
+
+export default FleetCustomer

@@ -1,21 +1,14 @@
 import React from "react";
-import Table from "../../Conponents/Table";
-import { ArrowIcon, FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../CustomIcons";
+import { statusStyles } from "../../modules/helpers";
+import { GoDotFill } from "react-icons/go";
+import TableMui from "../../Conponents/TableMui";
 
 export default function RouteAssignments() {
-  const headers = [
-    "Route",
-    "Vehicle",
-    "Assigned Driver",
-    "Departure Time",
-    "ETA",
-    "Status",
-  ];
-
   const data = [
     {
-      start: "Newark",
-      end: "Jersey City",
+      id: 1,
+      route: "Newark → Jersey City",
       vehicle: "BUS-204",
       driver: "Kimberly Mastrangelo",
       departure: "May 13, 2025 6:30 pm",
@@ -23,8 +16,8 @@ export default function RouteAssignments() {
       status: "On Route",
     },
     {
-      start: "Queens",
-      end: "Bronx",
+      id: 2,
+      route: "Queens → Bronx",
       vehicle: "BUS-115",
       driver: "Judith Rodriguez",
       departure: "May 14, 2025 10:44 am",
@@ -32,35 +25,26 @@ export default function RouteAssignments() {
       status: "Delayed",
     },
     {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
+      id: 3,
+      route: "LA Downtown → LA Central",
+      vehicle: "VAN-013",
+      driver: "Jerry Helfer",
+      departure: "May 10, 2025 11:18 pm",
+      eta: "May 3, 2025 8:28 am",
       status: "On Route",
     },
     {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
+      id: 4,
+      route: "Brooklyn → Manhattan",
+      vehicle: "BUS-302",
+      driver: "Daniel Hamilton",
+      departure: "Apr 22, 2025 5:03 am",
+      eta: "Apr 22, 2025 2:12 pm",
       status: "Delayed",
     },
     {
-      start: "West Loop",
-      end: "East Loop (CHI)",
+      id: 5,
+      route: "West Loop → East Loop (CHI)",
       vehicle: "VAN-104",
       driver: "Alex Buckmaster",
       departure: "May 20, 2025 7:57 am",
@@ -68,139 +52,15 @@ export default function RouteAssignments() {
       status: "Scheduled",
     },
     {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
+      id: 6,
+      route: "SF Airport → City Center",
+      vehicle: "BUS-408",
+      driver: "Kathy Pacheco",
+      departure: "Apr 28, 2025 5:14 pm",
+      eta: "May 3, 2025 10:36 pm",
       status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
-      status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
-    },
-    {
-      start: "Newark",
-      end: "Jersey City",
-      vehicle: "BUS-204",
-      driver: "Kimberly Mastrangelo",
-      departure: "May 13, 2025 6:30 pm",
-      eta: "May 13, 2025 7:52 pm",
-      status: "On Route",
-    },
-    {
-      start: "Queens",
-      end: "Bronx",
-      vehicle: "BUS-115",
-      driver: "Judith Rodriguez",
-      departure: "May 14, 2025 10:44 am",
-      eta: "Apr 29, 2025 11:40 pm",
-      status: "Delayed",
-    },
-    {
-      start: "West Loop",
-      end: "East Loop (CHI)",
-      vehicle: "VAN-104",
-      driver: "Alex Buckmaster",
-      departure: "May 20, 2025 7:57 am",
-      eta: "May 15, 2025 1:03 am",
-      status: "Scheduled",
     },
   ];
-
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "on route"
-        ? "1"
-        : item.status.toLowerCase() === "delayed"
-        ? "2"
-        : "3";
-    return [
-      <div className="flex items-center gap-2">
-        <p>{item.start}</p>
-        <div className="transform rotate-180">
-          <ArrowIcon />
-        </div>
-        <p>{item.end}</p>
-      </div>,
-      item.vehicle,
-      item.driver,
-      item.departure,
-      item.eta,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgwarning)]"
-            : "bg-[var(--bgatblue)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cwarning)]"
-              : "bg-[var(--catblue)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cwarning)]"
-              : "text-[var(--catblue)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -217,8 +77,40 @@ export default function RouteAssignments() {
             </button>
           </div>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              route: "Route",
+              vehicle: "Vehicle",
+              driver: "Assigned Driver",
+              departure: "Departure Time",
+              eta: "ETA",
+              status: "Status",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

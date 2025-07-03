@@ -1,7 +1,9 @@
 import React from "react";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon, FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../CustomIcons";
 import userimg from "../../assets/images/dummy-user.png";
+import { FiEdit2 } from "react-icons/fi";
+import { FaRegTrashAlt } from "react-icons/fa";
+import TableMui from "../../Conponents/TableMui";
 
 const UserRole = () => {
   const cards = [
@@ -11,41 +13,26 @@ const UserRole = () => {
     { title: "Non-Compliant", value: "92%" },
   ];
 
-  const headers = ["Role Name", "Description", "Total Users Assigned", ""];
-
   const data = [
     {
-      name: "Admin",
-      desc: "Full access to all modules and settings",
-      users: "3",
+      id: 1,
+      role: "Admin",
+      description: "Full access to all modules and settings",
+      users: 3,
     },
     {
-      name: "Fleet Manager",
-      desc: "Manage vehicles, routes, and maintenance",
-      users: "12",
+      id: 2,
+      role: "Fleet Manager",
+      description: "Manage vehicles, routes, and maintenance",
+      users: 12,
     },
     {
-      name: "Finance Manager",
-      desc: "Manage payroll, invoices, and expenses",
-      users: "5",
+      id: 3,
+      role: "Finance Manager",
+      description: "Manage payroll, invoices, and expenses",
+      users: 5,
     },
   ];
-
-  const rows = data.map((item) => {
-    return [
-      item.name,
-      <p className="w-[320px] flex-wrap">{item.desc}</p>,
-      item.users,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -64,8 +51,30 @@ const UserRole = () => {
             </button>
           </div>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              role: "Role Name",
+              description: "Description",
+              users: "Total Users Assigned",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" />
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

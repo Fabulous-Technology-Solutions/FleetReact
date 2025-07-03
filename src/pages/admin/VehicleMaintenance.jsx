@@ -1,194 +1,68 @@
 import React from "react";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon, FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../CustomIcons";
+import TableMui from "../../Conponents/TableMui";
+import { statusStyles } from "../../modules/helpers";
+import { GoDotFill } from "react-icons/go";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
 
 export default function VehicleMaintenance() {
-  const headers = [
-    "Vehicle",
-    "Type",
-    "Last Service Date",
-    "Next Due Date",
-    "Assigned Mechanic",
-    "Status",
-    "",
-  ];
-
   const data = [
     {
+      id: 1,
       vehicle: "Ford Transit 350HD",
       type: "Routine Inspection",
-      lastServiceDate: "May 1, 2025",
-      nextDueDate: "May 13, 2025",
-      assignedMechanic: "John Myers",
+      lastService: "May 1, 2025",
+      nextDue: "May 13, 2025",
+      mechanic: "John Myers",
       status: "On Schedule",
     },
     {
+      id: 2,
       vehicle: "Peterbilt 579",
       type: "Engine Check",
-      lastServiceDate: "May 11, 2025",
-      nextDueDate: "May 14, 2025",
-      assignedMechanic: "Kathy Pacheco",
+      lastService: "May 11, 2025",
+      nextDue: "May 14, 2025",
+      mechanic: "Alex Buckmaster",
       status: "Due Soon",
     },
     {
-      vehicle: "Mercedes Sprinter",
-      type: "Tire Rotation",
-      lastServiceDate: "Apr 29, 2025",
-      nextDueDate: "Apr 22, 2025",
-      assignedMechanic: "Chris Glasser",
-      status: "Overdue",
-    },
-    {
-      vehicle: "Ford Transit 350HD",
-      type: "Routine Inspection",
-      lastServiceDate: "May 1, 2025",
-      nextDueDate: "May 13, 2025",
-      assignedMechanic: "John Myers",
+      id: 3,
+      vehicle: "Tesla Semi X2",
+      type: "Brake Replacement",
+      lastService: "May 17, 2025",
+      nextDue: "May 10, 2025",
+      mechanic: "Kathy Pacheco",
       status: "On Schedule",
     },
     {
-      vehicle: "Peterbilt 579",
-      type: "Engine Check",
-      lastServiceDate: "May 11, 2025",
-      nextDueDate: "May 14, 2025",
-      assignedMechanic: "Kathy Pacheco",
+      id: 4,
+      vehicle: "Mercedes Sprinter",
+      type: "Tire Rotation",
+      lastService: "Apr 29, 2025",
+      nextDue: "Apr 22, 2025",
+      mechanic: "Chris Glasser",
       status: "Due Soon",
     },
     {
-      vehicle: "Mercedes Sprinter",
-      type: "Tire Rotation",
-      lastServiceDate: "Apr 29, 2025",
-      nextDueDate: "Apr 22, 2025",
-      assignedMechanic: "Chris Glasser",
+      id: 5,
+      vehicle: "Peterbilt 579",
+      type: "Oil Change",
+      lastService: "Apr 25, 2025",
+      nextDue: "May 20, 2025",
+      mechanic: "Frances Swann",
       status: "Overdue",
     },
     {
+      id: 6,
       vehicle: "Ford Transit 350HD",
-      type: "Routine Inspection",
-      lastServiceDate: "May 1, 2025",
-      nextDueDate: "May 13, 2025",
-      assignedMechanic: "John Myers",
-      status: "On Schedule",
-    },
-    {
-      vehicle: "Peterbilt 579",
-      type: "Engine Check",
-      lastServiceDate: "May 11, 2025",
-      nextDueDate: "May 14, 2025",
-      assignedMechanic: "Kathy Pacheco",
+      type: "Emergency Repair",
+      lastService: "Apr 22, 2025",
+      nextDue: "Apr 28, 2025",
+      mechanic: "Patricia Sanders",
       status: "Due Soon",
-    },
-    {
-      vehicle: "Mercedes Sprinter",
-      type: "Tire Rotation",
-      lastServiceDate: "Apr 29, 2025",
-      nextDueDate: "Apr 22, 2025",
-      assignedMechanic: "Chris Glasser",
-      status: "Overdue",
-    },
-    {
-      vehicle: "Ford Transit 350HD",
-      type: "Routine Inspection",
-      lastServiceDate: "May 1, 2025",
-      nextDueDate: "May 13, 2025",
-      assignedMechanic: "John Myers",
-      status: "On Schedule",
-    },
-    {
-      vehicle: "Peterbilt 579",
-      type: "Engine Check",
-      lastServiceDate: "May 11, 2025",
-      nextDueDate: "May 14, 2025",
-      assignedMechanic: "Kathy Pacheco",
-      status: "Due Soon",
-    },
-    {
-      vehicle: "Mercedes Sprinter",
-      type: "Tire Rotation",
-      lastServiceDate: "Apr 29, 2025",
-      nextDueDate: "Apr 22, 2025",
-      assignedMechanic: "Chris Glasser",
-      status: "Overdue",
-    },
-    {
-      vehicle: "Ford Transit 350HD",
-      type: "Routine Inspection",
-      lastServiceDate: "May 1, 2025",
-      nextDueDate: "May 13, 2025",
-      assignedMechanic: "John Myers",
-      status: "On Schedule",
-    },
-    {
-      vehicle: "Peterbilt 579",
-      type: "Engine Check",
-      lastServiceDate: "May 11, 2025",
-      nextDueDate: "May 14, 2025",
-      assignedMechanic: "Kathy Pacheco",
-      status: "Due Soon",
-    },
-    {
-      vehicle: "Mercedes Sprinter",
-      type: "Tire Rotation",
-      lastServiceDate: "Apr 29, 2025",
-      nextDueDate: "Apr 22, 2025",
-      assignedMechanic: "Chris Glasser",
-      status: "Overdue",
     },
   ];
-
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "on schedule"
-        ? "1"
-        : item.status.toLowerCase() === "overdue"
-        ? "2"
-        : "3";
-    return [
-      item.vehicle,
-      item.type,
-      item.lastServiceDate,
-      item.nextDueDate,
-      item.assignedMechanic,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgdanger)]"
-            : "bg-[var(--bgwarning)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cdanger)]"
-              : "bg-[var(--cwarning)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cdanger)]"
-              : "text-[var(--cwarning)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -207,8 +81,51 @@ export default function VehicleMaintenance() {
             </button>
           </div>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              vehicle: "Vehicle",
+              type: "Type",
+              lastService: "Last Service Date",
+              nextDue: "Next Due Date",
+              mechanic: "Assigned Mechanic",
+              status: "Status",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" />
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>

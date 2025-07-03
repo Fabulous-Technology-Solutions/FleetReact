@@ -1,6 +1,11 @@
 import React from "react";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon, FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../CustomIcons";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+import { GoDotFill } from "react-icons/go";
+import TableMui from "../../Conponents/TableMui";
+import { statusStyles } from "../../modules/helpers";
+import { RiFileDownloadLine } from "react-icons/ri";
 
 export default function IncidentReports() {
   const cards = [
@@ -10,261 +15,50 @@ export default function IncidentReports() {
     { title: "Most Reported Employee", value: "John Carter" },
   ];
 
-  const headers = [
-    "Report ID",
-    "Date",
-    "Reported By",
-    "Role",
-    "Type",
-    "Severity",
-    "Status",
-    "Assigned To",
-    "",
-  ];
+ const data = [
+  {
+    id: 1,
+    reportId: "#IR-2034",
+    date: "May 9, 2025",
+    reportedBy: "John Carter",
+    role: "Driver",
+    reportDetails: "Download",
+    status: "In Review",
+    assignedTo: "John Carter"
+  },
+  {
+    id: 2,
+    reportId: "#IR-2035",
+    date: "May 14, 2025",
+    reportedBy: "Emma Davis",
+    role: "Mechanic",
+    reportDetails: "Download",
+    status: "Resolved",
+    assignedTo: "Emma Davis"
+  },
+  {
+    id: 3,
+    reportId: "#IR-2036",
+    date: "May 8, 2025",
+    reportedBy: "Ryan Jones",
+    role: "Driver",
+    reportDetails: "Download",
+    status: "Unresolved",
+    assignedTo: "Ryan Jones"
+  },
+  {
+    id: 4,
+    reportId: "#IR-2037",
+    date: "Apr 22, 2025",
+    reportedBy: "Ryan James",
+    role: "Driver",
+    reportDetails: "Download",
+    status: "In Review",
+    assignedTo: "Admin"
+  }
+];
 
-  const data = [
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "High",
-      status: "Resolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Medium",
-      status: "In Review",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Low",
-      status: "Unresolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "High",
-      status: "Resolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Medium",
-      status: "In Review",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Low",
-      status: "Unresolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "High",
-      status: "Resolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Medium",
-      status: "In Review",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Low",
-      status: "Unresolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "High",
-      status: "Resolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Medium",
-      status: "In Review",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Low",
-      status: "Unresolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "High",
-      status: "Resolved",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Medium",
-      status: "In Review",
-      assignedTo: "John Carter",
-    },
-    {
-      reportid: "#IR-2034",
-      date: "May 9, 2025",
-      reportedBy: "John Carter",
-      role: "Driver",
-      type: "Minor Accident",
-      severity: "Low",
-      status: "Unresolved",
-      assignedTo: "John Carter",
-    },
-  ];
 
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "resolved"
-        ? "1"
-        : item.status.toLowerCase() === "in review"
-        ? "2"
-        : "3";
-    const sstatus =
-      item.severity.toLowerCase() === "high"
-        ? "1"
-        : item.severity.toLowerCase() === "medium"
-        ? "2"
-        : "3";
-    return [
-      item.reportid,
-      item.date,
-      item.reportedBy,
-      item.role,
-      item.type,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          sstatus === "1"
-            ? "bg-[var(--bgdanger)]"
-            : sstatus === "2"
-            ? "bg-[var(--bgwarning)]"
-            : "bg-[var(--bgatblue)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            sstatus === "1"
-              ? "bg-[var(--cdanger)]"
-              : sstatus === "2"
-              ? "bg-[var(--cwarning)]"
-              : "bg-[var(--catblue)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            sstatus === "1"
-              ? "text-[var(--cdanger)]"
-              : sstatus === "2"
-              ? "text-[var(--cwarning)]"
-              : "text-[var(--catblue)]"
-          }`}
-        >
-          {item.severity}
-        </p>
-      </div>,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgwarning)]"
-            : "bg-[var(--bgdanger)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cwarning)]"
-              : "bg-[var(--cdanger)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cwarning)]"
-              : "text-[var(--cdanger)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      item.assignedTo,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -289,9 +83,57 @@ export default function IncidentReports() {
             <FiltersIcon className="text-lg" />
           </button>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
-        </div>
+        <div className="my-3">
+  <TableMui
+    loading={false}
+    th={{
+      reportId: "Report ID",
+      date: "Date",
+      reportedBy: "Reported By",
+      role: "Role",
+      reportDetails: "Report Details",
+      status: "Status",
+      assignedTo: "Assigned To",
+      action: ""
+    }}
+    td={data}
+    customFields={[
+      {
+        name: "reportDetails",
+        data: (value) => (
+          <div className="inline-flex gap-3 cursor-pointer">
+            Download  <RiFileDownloadLine className="text-lg" />
+
+          </div>
+        )
+      },
+      {
+        name: "status",
+        data: (value) => {
+          const styles = statusStyles[value] || {
+            text: "text-gray-400",
+            bg: "bg-gray-100"
+          };
+          return (
+            <div className={`inline-flex gap-2 items-center rounded-full py-1 px-3 ${styles.text} ${styles.bg}`}>
+              <GoDotFill />
+              <span>{value}</span>
+            </div>
+          );
+        }
+      },
+      {
+        name: "action",
+        data: () => (
+          <div className="inline-flex gap-3 items-center">
+            <FaRegTrashAlt className="cursor-pointer text-lg text-gray-500 hover:text-red-500" />
+            <FiEdit2 className="cursor-pointer text-lg text-gray-500 hover:text-blue-500" />
+          </div>
+        )
+      }
+    ]}
+  />
+</div>
       </div>
     </div>
   );

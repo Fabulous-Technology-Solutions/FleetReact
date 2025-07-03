@@ -1,6 +1,10 @@
 import React from "react";
-import Table from "../../Conponents/Table";
-import { DeleteIcon, EditIcon, FiltersIcon } from "../../CustomIcons";
+import { FiltersIcon } from "../../CustomIcons";
+import { statusStyles } from "../../modules/helpers";
+import { GoDotFill } from "react-icons/go";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+import TableMui from "../../Conponents/TableMui";
 
 export default function JobRequests() {
   const cards = [
@@ -18,217 +22,48 @@ export default function JobRequests() {
     { title: "Positions Filled", value: "8", desc: "This Month" },
   ];
 
-  const headers = [
-    "Job Title",
-    "Location",
-    "Openings",
-    "Status",
-    <p className="text-wrap min-w-[100px]">AI-Sourced Candidates</p>,
-    <p className="text-wrap min-w-[100px]">Interviews Scheduled</p>,
-    "Date Posted",
-    "",
-  ];
-
   const data = [
     {
-      title: "CDL Driver",
+      id: 1,
+      jobTitle: "CDL Driver",
       location: "Newark, NJ",
-      openings: "3",
-      status: "Hiring",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Interviewing",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Screening",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
+      openings: 3,
       status: "Draft",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
+      aiSourced: 42,
+      interviews: 5,
+      datePosted: "May 18, 2025",
     },
     {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
+      id: 2,
+      jobTitle: "Fleet Mechanic",
+      location: "Houston, TX",
+      openings: 1,
       status: "Hiring",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
+      aiSourced: 27,
+      interviews: 2,
+      datePosted: "May 20, 2025",
     },
     {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Interviewing",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
+      id: 3,
+      jobTitle: "Dispatcher",
+      location: "Chicago, IL",
+      openings: 2,
       status: "Screening",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
+      aiSourced: 0,
+      interviews: 0,
+      datePosted: "May 20, 2025",
     },
     {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Draft",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Hiring",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
+      id: 4,
+      jobTitle: "Bus Driver",
+      location: "Chicago, IL",
+      openings: 4,
       status: "Interviewing",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Screening",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Draft",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Hiring",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Interviewing",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
-    },
-    {
-      title: "CDL Driver",
-      location: "Newark, NJ",
-      openings: "3",
-      status: "Screening",
-      aiCandidates: "42",
-      interviews: "5",
-      datePosted: "2023-10-01",
+      aiSourced: 51,
+      interviews: 7,
+      datePosted: "May 15, 2025",
     },
   ];
-
-  const rows = data.map((item) => {
-    const status =
-      item.status.toLowerCase() === "hiring"
-        ? "1"
-        : item.status.toLowerCase() === "interviewing"
-        ? "2"
-        : item.status.toLowerCase() === "screening"
-        ? "3"
-        : "4";
-    return [
-      item.title,
-      item.location,
-      item.openings,
-      <div
-        className={`inline-flex items-center gap-2 py-1 px-2 rounded-full ${
-          status === "1"
-            ? "bg-[var(--bgsuccess)]"
-            : status === "2"
-            ? "bg-[var(--bgwarning)]"
-            : status === "3"
-            ? "bg-[var(--bgatblue)]"
-            : "bg-[var(--bgdanger)]"
-        }`}
-      >
-        <div
-          className={`size-1.5 min-w-1.5 rounded-full ${
-            status === "1"
-              ? "bg-[var(--csuccess)]"
-              : status === "2"
-              ? "bg-[var(--cwarning)]"
-              : status === "3"
-              ? "bg-[var(--catblue)]"
-              : "bg-[var(--cdanger)]"
-          }`}
-        ></div>
-        <p
-          className={`text-xs ${
-            status === "1"
-              ? "text-[var(--csuccess)]"
-              : status === "2"
-              ? "text-[var(--cwarning)]"
-              : status === "3"
-              ? "text-[var(--catblue)]"
-              : "text-[var(--cdanger)]"
-          }`}
-        >
-          {item.status}
-        </p>
-      </div>,
-      item.aiCandidates,
-      item.interviews,
-      item.datePosted,
-      <div className="flex items-center gap-4">
-        <button>
-          <DeleteIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-        <button>
-          <EditIcon className="text-lg c-secondary cursor-pointer" />
-        </button>
-      </div>,
-    ];
-  });
 
   return (
     <div>
@@ -263,8 +98,52 @@ export default function JobRequests() {
             </button>
           </div>
         </div>
-        <div>
-          <Table headers={headers} rows={rows} />
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              jobTitle: "Job Title",
+              location: "Location",
+              openings: "Openings",
+              status: "Status",
+              aiSourced: "AI-Sourced Candidates",
+              interviews: "Interviews Scheduled",
+              datePosted: "Date Posted",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" />
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </div>
