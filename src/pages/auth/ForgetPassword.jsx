@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { IoMailOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
 
-const Login = () => {
+const ForgetPassword = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -17,10 +17,10 @@ const Login = () => {
             <div className="flex flex-col gap-6">
               <div className="text-center">
                 <h2 className="text-3xl font-semibold c-primary">
-                  Log in to your account
+                  Forgot Password
                 </h2>
                 <p className="c-secondary mt-1">
-                  Welcome back! Please enter your details.
+                  Enter your email to forgot you password.{" "}
                 </p>
               </div>
 
@@ -39,51 +39,20 @@ const Login = () => {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block mb-1 text-sm c-secondary">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="password"
-                      placeholder="••••••••"
-                      className="w-full pe-9 ps-3 py-2 rounded-md c-primary border border-main"
-                    />
-                    <CiLock className="absolute right-3 top-3 c-secondary text-xl" />
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-sm">
-                  <label className="flex items-center gap-2 c-secondary">
-                    <input type="checkbox" />
-                    Remember for 30 days
-                  </label>
-                  <button className="text-blue hover:underline" onClick={() => navigate('/forget-password')}>
-                    Forgot password
-                  </button>
-                </div>
-
                 <button
                   className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px] w-full"
-                  onClick={() => navigate("/dashboard")}
+                  onClick={() => navigate("/check-email")}
                 >
-                  Sign in
-                </button>
-
-                <button className="w-full flex items-center justify-center gap-2 border border-main py-2 rounded-md c-primary hover:bg-[#2A2A2A]">
-                  <img
-                    src="https://www.svgrepo.com/show/475656/google-color.svg"
-                    alt="Google"
-                    className="w-5 h-5"
-                  />
-                  Sign in with Google
+                  Forgot Password
                 </button>
               </div>
-
               <p className="text-center text-sm c-secondary mt-4">
-                Don’t have an account?{" "}
-                <span className="text-blue hover:underline cursor-pointer" onClick={() => navigate('/sign-up')}>
-                  Sign up
+                Remember your password? Go back to{" "}
+                <span
+                  className="text-blue hover:underline cursor-pointer"
+                  onClick={() => navigate("/")}
+                >
+                  Sign in
                 </span>
               </p>
             </div>
@@ -103,4 +72,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgetPassword;

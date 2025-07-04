@@ -23,6 +23,11 @@ import SecuritySettings from "./pages/admin/settings/SecuritySettings";
 import UserRolesAndPermissions from "./pages/admin/settings/UserRolesAndPermissions";
 import NotificationPreference from "./pages/admin//settings/NotificationPreference";
 import Login from "./pages/auth/Login";
+import SignUp from "./pages/auth/SignUp";
+import ForgetPassword from "./pages/auth/ForgetPassword";
+import CheckEmail from "./pages/auth/CheckEmail";
+import CreatePassword from "./pages/auth/CreatePassword";
+import PasswordReset from "./pages/auth/PasswordReset";
 
 function App() {
   return (
@@ -30,6 +35,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/check-email" element={<CheckEmail />} />
+          <Route path="/create-password" element={<CreatePassword />} />
+          <Route path="/password-reset" element={<PasswordReset />} />
           <Route element={<AdminLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/all-team-members" element={<AllTeamMembers />} />
