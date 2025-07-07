@@ -1,10 +1,16 @@
 import React from "react";
+import {useState} from "react";
 import { FiltersIcon } from "../../../CustomIcons";
 import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import TableMui from "../../../components/TableMui";
+import NewRouteModal from "../../../components/modals/NewRouteModal";
 
 export default function RouteAssignments() {
+  const [show, setShow] = useState(false);
+  const [value, setValue] = useState("");
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   const data = [
     {
       id: 1,
@@ -72,7 +78,9 @@ export default function RouteAssignments() {
               <span>Filters</span>
               <FiltersIcon className="text-lg" />
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={handleShow}
+            >
               Add New Route
             </button>
           </div>
@@ -113,6 +121,7 @@ export default function RouteAssignments() {
           />
         </div>
       </div>
+      <NewRouteModal show={show} onHide = {handleClose} />
     </div>
   );
 }

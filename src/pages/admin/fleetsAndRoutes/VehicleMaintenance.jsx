@@ -5,8 +5,12 @@ import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
+import NewMaintenanceModal from "../../../components/modals/NewMaintenanceModal";
 
 export default function VehicleMaintenance() {
+  const [show, setShow] = React.useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const data = [
     {
       id: 1,
@@ -76,7 +80,9 @@ export default function VehicleMaintenance() {
               <span>Filters</span>
               <FiltersIcon className="text-lg" />
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={handleShow}
+            >
               Add New Log Maintenance
             </button>
           </div>
@@ -128,6 +134,7 @@ export default function VehicleMaintenance() {
           />
         </div>
       </div>
+    <NewMaintenanceModal show={show} onHide = {handleClose} />
     </div>
   );
 }

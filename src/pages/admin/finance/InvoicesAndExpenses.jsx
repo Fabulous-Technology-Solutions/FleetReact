@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import SlideIcon from "../../../CustomIcons/SlideIcon";
 import { FiEdit2 } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import { statusStyles } from "../../../modules/helpers";
 import TableMui from "../../../components/TableMui";
+import NewInvoiceModal from "../../../components/modals/NewInvoiceModal";
 
 export default function InvoicesAndExpenses() {
+  const [show, setShow] = useState("")
+  const handleOpen = () => setShow(true)
+  const handleClose = () => setShow(false)
   const cards = [
     { title: "Total Invoiced", value: "$47,800", days: "This month" },
     { title: "Total Expenses", value: "$47,800", days: "This month" },
@@ -85,7 +89,9 @@ export default function InvoicesAndExpenses() {
               </button>
             </div>
             <div>
-              <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md">
+              <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
+              onClick={handleOpen}
+              >
                 Add Invoice
               </button>
             </div>
@@ -139,6 +145,7 @@ export default function InvoicesAndExpenses() {
           />
         </div>
       </div>
+      <NewInvoiceModal show={show} onHide = {handleClose} />
     </div>
   );
 }
