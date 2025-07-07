@@ -3,7 +3,6 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./theme/ThemeContext";
 import AdminLayout from "./layouts/AdminLayout";
-import IconGallery from "./components/IconGallery";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
 import AllTeamMembers from "./pages/admin/driversAndEmployees/AllTeamMembers";
 import AttendanceAndPerformance from "./pages/admin/driversAndEmployees/AttendanceAndPerformance";
@@ -28,13 +27,18 @@ import ForgetPassword from "./pages/auth/ForgetPassword";
 import CheckEmail from "./pages/auth/CheckEmail";
 import CreatePassword from "./pages/auth/CreatePassword";
 import PasswordReset from "./pages/auth/PasswordReset";
+import LandingPageLayout from "./layouts/LandingPageLayout";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route element={<LandingPageLayout />}>
+            <Route path="/" element={<LandingPage />} />
+          </Route>
+          <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/check-email" element={<CheckEmail />} />

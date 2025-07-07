@@ -28,7 +28,7 @@ const PasswordReset = () => {
               <div className="flex flex-col gap-4">
                 <button
                   className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px] w-full"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/sign-in")}
                 >
                   Sign in
                 </button>

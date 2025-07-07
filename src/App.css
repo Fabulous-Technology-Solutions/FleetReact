@@ -106,10 +106,14 @@ button {
     --catblue: #60A5FA;
     --cdanger: #F43F5E;
     --borderColor: #E5E7EB;
+    --bgLight: #F6F6F6;
 }
 
 .bg-body {
     background-color: var(--bgbody);
+}
+.bg_light {
+    background-color: var(--bgLight);
 }
 
 .bg-sidebar {

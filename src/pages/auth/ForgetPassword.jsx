@@ -50,7 +50,7 @@ const ForgetPassword = () => {
                 Remember your password? Go back to{" "}
                 <span
                   className="text-blue hover:underline cursor-pointer"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/sign-in")}
                 >
                   Sign in
                 </span>

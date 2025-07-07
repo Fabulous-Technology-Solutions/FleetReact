@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const saved = localStorage.getItem("theme") || "light";
@@ -20,6 +20,7 @@ export const ThemeProvider = ({ children }) => {
     root.style.setProperty("--cprimary", isDark ? "#F3F4F6" : "#111827");
     root.style.setProperty("--csecondary", isDark ? "#9CA3AF" : "#4B5563");
     root.style.setProperty("--borderColor", isDark ? "#2C2D31" : "#E5E7EB");
+    root.style.setProperty("--bgLight", isDark ? "#0A0B0D" : "#F6F6F6");
   };
 
   const toggleTheme = () => {
