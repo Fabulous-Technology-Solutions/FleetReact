@@ -128,11 +128,11 @@ button {
 }
 
 .c-primary {
-    color: var(--cprimary);
+    color: var(--cprimary) !important;
 }
 
 .c-secondary {
-    color: var(--csecondary);
+    color: var(--csecondary) !important;
 }
 
 .c-inverted {

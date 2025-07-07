@@ -6,8 +6,12 @@ import { GoDotFill } from "react-icons/go";
 import { Avatar } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
+import MemberModal from "../../../components/modals/MemberModal";
 
 export default function AllTeamMembers() {
+  const [show, setShow] = React.useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const cards = [
     { title: "Total Employees", value: "80" },
     { title: "Drivers", value: "85" },
@@ -109,7 +113,11 @@ export default function AllTeamMembers() {
               <span>Filters</span>
               <FiltersIcon className="text-lg" />
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => {
+                handleShow();
+              }}
+              >
               Add New Member
             </button>
           </div>
@@ -187,6 +195,7 @@ export default function AllTeamMembers() {
           />
         </div>
       </div>
+      <MemberModal show={show} onHide = {handleClose}/>
     </div>
   );
 }

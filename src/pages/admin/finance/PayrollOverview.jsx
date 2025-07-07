@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import SlideIcon from "../../../CustomIcons/SlideIcon";
 import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 import TableMui from "../../../components/TableMui";
+import NewPayRollModal from "../../../components/modals/NewPayRollModal";
 
 export default function PayrollOverview() {
+  const [show, setshow] = useState("")
+  const handleOpen  = () => setshow(true)
+  const handleClose  = () => setshow(false)
   const cards = [
     { title: "Total Payroll", value: "$124,000" },
     { title: "Pending Payments", value: "$18,450" },
@@ -82,7 +86,9 @@ export default function PayrollOverview() {
               </button>
             </div>
             <div>
-              <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md">
+              <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
+              onClick={handleOpen}
+              >
                 Add Payroll Entry{" "}
               </button>
             </div>
@@ -136,6 +142,7 @@ export default function PayrollOverview() {
           />
         </div>
       </div>
+      <NewPayRollModal show={show} onHide = {handleClose}/>
     </div>
   );
 }

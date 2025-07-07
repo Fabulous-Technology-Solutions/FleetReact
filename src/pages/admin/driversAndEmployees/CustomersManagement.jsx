@@ -3,9 +3,13 @@ import { FiltersIcon } from "../../../CustomIcons";
 import FleetCustomer from "../../../components/customerManagement/FleetCustomer";
 import BusCustomer from "../../../components/customerManagement/BusCustomer";
 import CustomTabs from "../../../components/CustomTabs";
+import NewCostomerModal from "../../../components/modals/NewCostomerModal";
 
 export default function CustomersManagement() {
-   const [value, setValue] = useState(0);
+    const [value, setValue] = useState(0);
+    const [show, setShow] = React.useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
   const navigateToTab = (tabIndex) => {
     setValue(tabIndex);
   };
@@ -14,7 +18,7 @@ export default function CustomersManagement() {
     <FleetCustomer navigateToTab={navigateToTab} />,
     <BusCustomer navigateToTab={navigateToTab} />,
   ];
-  const cards = [
+  const cards = [ 
     { title: "Total Customers", value: "125", desc: "Active Accounts" },
     { title: "New Customers", value: "18", desc: "Compared to last month" },
     { title: "Avg. Jobs per Customer", value: "4.2", desc: "Past 30 days" },
@@ -48,7 +52,11 @@ export default function CustomersManagement() {
               <span>Filters</span>
               <FiltersIcon className="text-lg" />
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => {
+                handleShow();
+              }}
+            >
               Add New Member
             </button>
           </div>
@@ -62,6 +70,7 @@ export default function CustomersManagement() {
             />
         </div>
       </div>
+      <NewCostomerModal show={show} onHide = {handleClose}/>
     </div>
   );
 }
