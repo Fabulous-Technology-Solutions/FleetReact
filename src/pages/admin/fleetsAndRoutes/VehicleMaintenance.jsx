@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiltersIcon } from "../../../CustomIcons";
 import TableMui from "../../../components/TableMui";
 import { statusStyles } from "../../../modules/helpers";
@@ -8,9 +8,8 @@ import { FiEdit2 } from "react-icons/fi";
 import NewMaintenanceModal from "../../../components/modals/NewMaintenanceModal";
 
 export default function VehicleMaintenance() {
-  const [show, setShow] = React.useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+    const [modalMode, setModalMode] = useState("add");
   const data = [
     {
       id: 1,
@@ -81,7 +80,10 @@ export default function VehicleMaintenance() {
               <FiltersIcon className="text-lg" />
             </button>
             <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
-              onClick={handleShow}
+              onClick={() => {
+                setModalMode("add")
+                setShow(true)
+              }}
             >
               Add New Log Maintenance
             </button>
@@ -125,7 +127,10 @@ export default function VehicleMaintenance() {
                   return (
                     <div className="inline-flex gap-3 items-center">
                       <FaRegTrashAlt className="cursor-pointer text-lg" />
-                      <FiEdit2 className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" onClick={() => {
+                          setModalMode("edit");
+                          setShow(true);
+                        }} />
                     </div>
                   );
                 },
@@ -134,7 +139,7 @@ export default function VehicleMaintenance() {
           />
         </div>
       </div>
-    <NewMaintenanceModal show={show} onHide = {handleClose} />
+    <NewMaintenanceModal show={show} onHide = {() => setShow(false)} modalMode={modalMode} />
     </div>
   );
 }

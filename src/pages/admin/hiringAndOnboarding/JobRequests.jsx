@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiltersIcon } from "../../../CustomIcons";
 import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 import TableMui from "../../../components/TableMui";
+import JobPost from "../../../components/modals/JobPost";
 
 export default function JobRequests() {
+  const [show, setShow] = useState(false)
+  const [modalMode, setModalMode] = useState("add")
   const cards = [
     { title: "Active Job Postings", value: "12" },
     {
@@ -93,7 +96,7 @@ export default function JobRequests() {
               <span>Filters</span>
               <FiltersIcon className="text-lg" />
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]" onClick={() => {setModalMode("add"); setShow(true)}}>
               Post New Job
             </button>
           </div>
@@ -137,7 +140,7 @@ export default function JobRequests() {
                   return (
                     <div className="inline-flex gap-3 items-center">
                       <FaRegTrashAlt className="cursor-pointer text-lg" />
-                      <FiEdit2 className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" onClick={() => {setModalMode("edit"); setShow(true)}} />
                     </div>
                   );
                 },
@@ -146,6 +149,9 @@ export default function JobRequests() {
           />
         </div>
       </div>
+      {
+        show && <JobPost show={show} onHide={() => setShow(false)} modalMode={modalMode} />
+      }
     </div>
   );
 }

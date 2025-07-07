@@ -1,16 +1,17 @@
 import React from "react";
-import {useState} from "react";
+import { useState } from "react";
 import { FiltersIcon } from "../../../CustomIcons";
 import { statusStyles } from "../../../modules/helpers";
 import { GoDotFill } from "react-icons/go";
 import TableMui from "../../../components/TableMui";
 import NewRouteModal from "../../../components/modals/NewRouteModal";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
 export default function RouteAssignments() {
   const [show, setShow] = useState(false);
-  const [value, setValue] = useState("");
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
+  const [modalMode, setModalMode] = useState("add");
   const data = [
     {
       id: 1,
@@ -78,8 +79,12 @@ export default function RouteAssignments() {
               <span>Filters</span>
               <FiltersIcon className="text-lg" />
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
-              onClick={handleShow}
+            <button
+              className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => {
+                setModalMode("add");
+                setShow(true);
+              }}
             >
               Add New Route
             </button>
@@ -95,6 +100,7 @@ export default function RouteAssignments() {
               departure: "Departure Time",
               eta: "ETA",
               status: "Status",
+              track: "Live",
               action: "",
             }}
             td={data}
@@ -117,11 +123,43 @@ export default function RouteAssignments() {
                   );
                 },
               },
+              {
+                name: "track",
+                data: (value) => {
+                  return (
+                    <div className={`inline-flex gap-2 items-center`}>
+                      <HiOutlineLocationMarker />
+                      Track
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center">
+                      <FaRegTrashAlt className="cursor-pointer text-lg" />
+                      <FiEdit2
+                        className="cursor-pointer text-lg"
+                        onClick={() => {
+                          setModalMode("edit");
+                          setShow(true);
+                        }}
+                      />
+                    </div>
+                  );
+                },
+              },
             ]}
           />
         </div>
       </div>
-      <NewRouteModal show={show} onHide = {handleClose} />
+      <NewRouteModal
+        show={show}
+        onHide={() => setShow(false)}
+        modalMode={modalMode}
+      />
     </div>
   );
 }

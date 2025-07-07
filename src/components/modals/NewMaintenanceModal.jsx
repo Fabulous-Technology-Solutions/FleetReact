@@ -15,18 +15,9 @@ import BootstrapSelectInput from "../CustomSelect";
 import { IoIosArrowDown } from "react-icons/io";
 
 const NewMaintenanceModal = ({ show, onHide, modalMode = "add", data }) => {
-  const [role, setRole] = useState("");
   const [selectOne, setSelectOne] = useState("");
   const [selectTwo, setSelectTwo] = useState("");
   if (!show) return null;
-  const roles = [
-    { label: "Admin", value: "admin" },
-    { label: "Editor", value: "editor" },
-    { label: "Viewer", value: "viewer" },
-  ];
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };
 
   return (
     <div
@@ -38,7 +29,7 @@ const NewMaintenanceModal = ({ show, onHide, modalMode = "add", data }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <Typography variant="h6" component="h2">
-          {modalMode === "add" ? "New Maintenance Log" : "Edit Member"}
+          {modalMode === "add" ? "New Maintenance Log" : "Edit Maintenance Log"}
         </Typography>
 
         <Box className="flex flex-col gap-4 mt-5 ">
@@ -149,10 +140,16 @@ const NewMaintenanceModal = ({ show, onHide, modalMode = "add", data }) => {
           </div>
           <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
           <Box className="flex gap-3 mt-4 justify-end">
-            <button className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]">
+            <button
+              className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => onHide()}
+            >
               Cancel
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button
+              className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => onHide()}
+            >
               Save
             </button>
           </Box>

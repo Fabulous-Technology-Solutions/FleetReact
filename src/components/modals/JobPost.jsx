@@ -28,21 +28,20 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <Typography variant="h6" component="h2">
-          {modalMode === "add" ? "New Member" : "Edit Member"}
+          {modalMode === "add" ? "New Job Post" : "Edit Job Post"}
         </Typography>
 
         <Box className="flex flex-col gap-4 mt-5 ">
-          <Box className="flex gap-3 w-full">
             <FormControl fullWidth variant="standard">
               <InputLabel
                 shrink
                 htmlFor="first-name"
                 className="text-sm c-secondary"
               >
-                First Name
+                Job Title
               </InputLabel>
               <BootstrapInput
-                placeholder="Enter first name"
+                placeholder="Enter Job Title"
                 type="text"
                 id="first-name"
                 defaultValue={data?.firstName || ""}
@@ -55,45 +54,37 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
                 htmlFor="last-name"
                 className="text-sm c-secondary"
               >
-                Last Name
+                Location
               </InputLabel>
               <BootstrapInput
-                placeholder="Enter last name"
+                placeholder="Enter Location"
                 type="text"
                 id="last-name"
                 defaultValue={data?.lastName || ""}
               />
             </FormControl>
-          </Box>
-          <InputLabel
-            htmlFor="custom-select"
-            className="text-[8px] text-white mb-1 block c-secondary"
-          >
-            Role
-          </InputLabel>
-          <Select
-            id="custom-select"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            input={<BootstrapSelectInput />}
-            IconComponent={IoIosArrowDown}
-            fullWidth
-            displayEmpty // <-- This line is key
-          >
-            <MenuItem value="" disabled>
-              Select
-            </MenuItem>
-            <MenuItem value="10">Ten</MenuItem>
-            <MenuItem value="20">Twenty</MenuItem>
-          </Select>
           {/* <CustomSelect /> */}
           <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
-              Email
+              Openings
             </InputLabel>
             <BootstrapInput
-              placeholder="Enter email"
-              type="email"
+              placeholder="10"
+              type="number"
+              id="role"
+              defaultValue={data?.role || ""}
+            />
+          </FormControl>
+          <FormControl fullWidth variant="standard">
+            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+              Description
+            </InputLabel>
+            <BootstrapInput
+              placeholder="Write here..."
+              type="text"
+              multiline={true}
+              rows={5}
+              inputComponent="textarea"
               id="role"
               defaultValue={data?.role || ""}
             />

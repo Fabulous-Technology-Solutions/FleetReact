@@ -13,17 +13,7 @@ import BootstrapInput from "../BootstrapInput";
 import CustomSelect from "../CustomSelect";
 
 const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
-  const [role, setRole] = useState('');
   if (!show) return null;
-  const roles = [
-  { label: 'Admin', value: 'admin' },
-  { label: 'Editor', value: 'editor' },
-  { label: 'Viewer', value: 'viewer' },
-];
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };
-
 
   return (
     <div
@@ -35,23 +25,11 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <Typography variant="h6" component="h2">
-          {modalMode === "add" ? "New Customer" : "Edit Member"}
+          {modalMode === "add" ? "New Customer" : "Edit Customer"}
         </Typography>
 
         <Box className="flex flex-col gap-4 mt-5 h-[calc(100vh-300px)] overflow-y-auto">
-          <FormControl fullWidth variant="standard" >
-            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
-              Email
-            </InputLabel>
-            <BootstrapInput
-              placeholder="Enter email"
-              type="email"
-              id="role"
-              defaultValue={data?.role || ""}
-
-            />
-          </FormControl>
-          <FormControl fullWidth variant="standard" >
+          <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Customer Name
             </InputLabel>
@@ -60,10 +38,9 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
               type="text"
               id="customerName"
               defaultValue={data?.role || ""}
-
             />
           </FormControl>
-          <FormControl fullWidth variant="standard" >
+          <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Company
             </InputLabel>
@@ -72,10 +49,9 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
               type="text"
               id="Company"
               defaultValue={data?.role || ""}
-
             />
           </FormControl>
-          <FormControl fullWidth variant="standard" >
+          <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Contact Person Name
             </InputLabel>
@@ -84,10 +60,9 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
               type="text"
               id="personName"
               defaultValue={data?.role || ""}
-
             />
           </FormControl>
-          <FormControl fullWidth variant="standard" >
+          <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Email
             </InputLabel>
@@ -96,10 +71,9 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
               type="email"
               id="role"
               defaultValue={data?.role || ""}
-
             />
           </FormControl>
-          <FormControl fullWidth variant="standard" >
+          <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Phone number
             </InputLabel>
@@ -108,21 +82,23 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
               type="number"
               id="role"
               defaultValue={data?.role || ""}
-
             />
           </FormControl>
-            
-          </Box>
-          <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
-          <Box className="flex gap-3 mt-4 justify-end">
-             <button className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
-              >
-              Cancel
-            </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
-              >
-              Save
-            </button>
+        </Box>
+        <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
+        <Box className="flex gap-3 mt-4 justify-end">
+          <button
+            className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
+            onClick={() => onHide()}
+          >
+            Cancel
+          </button>
+          <button
+            className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+            onClick={() => onHide()}
+          >
+            Save
+          </button>
         </Box>
       </div>
     </div>

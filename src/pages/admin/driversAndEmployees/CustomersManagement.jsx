@@ -57,7 +57,7 @@ export default function CustomersManagement() {
                 handleShow();
               }}
             >
-              Add New Member
+              Add New Customer
             </button>
           </div>
         </div>

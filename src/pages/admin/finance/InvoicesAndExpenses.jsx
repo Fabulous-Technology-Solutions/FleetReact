@@ -8,9 +8,8 @@ import TableMui from "../../../components/TableMui";
 import NewInvoiceModal from "../../../components/modals/NewInvoiceModal";
 
 export default function InvoicesAndExpenses() {
-  const [show, setShow] = useState("")
-  const handleOpen = () => setShow(true)
-  const handleClose = () => setShow(false)
+  const [show, setShow] = useState(false);
+    const [modalMode, setModalMode] = useState("add");
   const cards = [
     { title: "Total Invoiced", value: "$47,800", days: "This month" },
     { title: "Total Expenses", value: "$47,800", days: "This month" },
@@ -90,7 +89,10 @@ export default function InvoicesAndExpenses() {
             </div>
             <div>
               <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
-              onClick={handleOpen}
+             onClick={() => {
+                setModalMode("add")
+                setShow(true)
+              }}
               >
                 Add Invoice
               </button>
@@ -136,7 +138,10 @@ export default function InvoicesAndExpenses() {
                   return (
                     <div className="inline-flex gap-3 items-center">
                       <FaRegTrashAlt className="cursor-pointer text-lg" />
-                      <FiEdit2 className="cursor-pointer text-lg" />
+                      <FiEdit2 className="cursor-pointer text-lg" onClick={() => {
+                          setModalMode("edit");
+                          setShow(true);
+                        }} />
                     </div>
                   );
                 },
@@ -145,7 +150,7 @@ export default function InvoicesAndExpenses() {
           />
         </div>
       </div>
-      <NewInvoiceModal show={show} onHide = {handleClose} />
+      <NewInvoiceModal show={show} onHide = {() => setShow(false)} modalMode={modalMode} />
     </div>
   );
 }

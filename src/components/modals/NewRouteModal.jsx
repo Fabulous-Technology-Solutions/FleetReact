@@ -28,7 +28,7 @@ const NewRouteModal = ({ show, onHide, modalMode = "add", data }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <Typography variant="h6" component="h2">
-          {modalMode === "add" ? "New Route" : "Edit Member"}
+          {modalMode === "add" ? "New Route" : "Edit Route"}
         </Typography>
 
         <Box className="flex flex-col gap-4 mt-5">
@@ -161,12 +161,14 @@ const NewRouteModal = ({ show, onHide, modalMode = "add", data }) => {
 
           <Box className="flex gap-3 mt-4 justify-end">
             <button
-              onClick={onHide}
+              onClick={() => onHide()}
               className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
             >
               Cancel
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+            onClick={() => onHide()}
+            >
               Save
             </button>
           </Box>

@@ -8,9 +8,8 @@ import TableMui from "../../../components/TableMui";
 import NewPayRollModal from "../../../components/modals/NewPayRollModal";
 
 export default function PayrollOverview() {
-  const [show, setshow] = useState("")
-  const handleOpen  = () => setshow(true)
-  const handleClose  = () => setshow(false)
+  const [show, setShow] = useState(false);
+  const [modalMode, setModalMode] = useState("add");
   const cards = [
     { title: "Total Payroll", value: "$124,000" },
     { title: "Pending Payments", value: "$18,450" },
@@ -86,8 +85,12 @@ export default function PayrollOverview() {
               </button>
             </div>
             <div>
-              <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
-              onClick={handleOpen}
+              <button
+                className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
+                onClick={() => {
+                  setModalMode("add");
+                  setShow(true);
+                }}
               >
                 Add Payroll Entry{" "}
               </button>
@@ -133,7 +136,13 @@ export default function PayrollOverview() {
                   return (
                     <div className="inline-flex gap-3 items-center">
                       <FaRegTrashAlt className="cursor-pointer text-lg" />
-                      <FiEdit2 className="cursor-pointer text-lg" />
+                      <FiEdit2
+                        className="cursor-pointer text-lg"
+                        onClick={() => {
+                          setModalMode("edit");
+                          setShow(true);
+                        }}
+                      />
                     </div>
                   );
                 },
@@ -142,7 +151,11 @@ export default function PayrollOverview() {
           />
         </div>
       </div>
-      <NewPayRollModal show={show} onHide = {handleClose}/>
+      <NewPayRollModal
+        show={show}
+        onHide={() => setShow(false)}
+        modalMode={modalMode}
+      />
     </div>
   );
 }

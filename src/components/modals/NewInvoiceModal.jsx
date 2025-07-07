@@ -16,16 +16,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const NewInvoiceModal = ({ show, onHide, modalMode = "add", data }) => {
   const [value, setValue] = useState("");
-  const [role, setRole] = useState("");
   if (!show) return null;
-  const roles = [
-    { label: "Admin", value: "admin" },
-    { label: "Editor", value: "editor" },
-    { label: "Viewer", value: "viewer" },
-  ];
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };
 
   return (
     <div
@@ -37,45 +28,49 @@ const NewInvoiceModal = ({ show, onHide, modalMode = "add", data }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <Typography variant="h6" component="h2">
-          {modalMode === "add" ? "New Invoice" : "Edit Member"}
+          {modalMode === "add" ? "New Invoice" : "Edit Invoice"}
         </Typography>
         {/* <CustomSelect /> */}
         <Box className="flex flex-col gap-4 mt-5 ">
-                    <FormControl fullWidth variant="standard">
-          <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
-            Vendor Name
+          <FormControl fullWidth variant="standard">
+            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+              Vendor Name
+            </InputLabel>
+            <BootstrapInput
+              placeholder="Enter"
+              type="text"
+              id="role"
+              defaultValue={data?.role || ""}
+            />
+          </FormControl>
+          <InputLabel
+            htmlFor="custom-select"
+            className="text-[8px] text-white mb-1 block c-secondary"
+          >
+            Category
           </InputLabel>
-          <BootstrapInput
-            placeholder="Enter"
-            type="text"
-            id="role"
-            defaultValue={data?.role || ""}
-          />
-        </FormControl>
-        <InputLabel
-          htmlFor="custom-select"
-          className="text-[8px] text-white mb-1 block c-secondary"
-        >
-          Category
-        </InputLabel>
-        <Select
-          id="custom-select"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          input={<BootstrapSelectInput />}
-          IconComponent={IoIosArrowDown}
-          fullWidth
-          displayEmpty // <-- This line is key
-        >
-          <MenuItem value="" disabled>
-            Select
-          </MenuItem>
-          <MenuItem value="10">Ten</MenuItem>
-          <MenuItem value="20">Twenty</MenuItem>
-        </Select>
-            <Box className="flex gap-3 w-full">
+          <Select
+            id="custom-select"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            input={<BootstrapSelectInput />}
+            IconComponent={IoIosArrowDown}
+            fullWidth
+            displayEmpty // <-- This line is key
+          >
+            <MenuItem value="" disabled>
+              Select
+            </MenuItem>
+            <MenuItem value="10">Ten</MenuItem>
+            <MenuItem value="20">Twenty</MenuItem>
+          </Select>
+          <Box className="flex gap-3 w-full">
             <FormControl fullWidth variant="standard">
-              <InputLabel shrink htmlFor="first-name" className="text-sm c-secondary">
+              <InputLabel
+                shrink
+                htmlFor="first-name"
+                className="text-sm c-secondary"
+              >
                 Date Issued
               </InputLabel>
               <BootstrapInput
@@ -87,7 +82,11 @@ const NewInvoiceModal = ({ show, onHide, modalMode = "add", data }) => {
             </FormControl>
 
             <FormControl fullWidth variant="standard">
-              <InputLabel shrink htmlFor="last-name" className="text-sm c-secondary">
+              <InputLabel
+                shrink
+                htmlFor="last-name"
+                className="text-sm c-secondary"
+              >
                 Due Date
               </InputLabel>
               <BootstrapInput
@@ -109,7 +108,7 @@ const NewInvoiceModal = ({ show, onHide, modalMode = "add", data }) => {
               </InputLabel>
               <BootstrapInput
                 placeholder="Enter amount"
-                type="date"
+                type="number"
                 id="first-name"
                 defaultValue={data?.firstName || ""}
               />
@@ -141,10 +140,16 @@ const NewInvoiceModal = ({ show, onHide, modalMode = "add", data }) => {
 
           <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
           <Box className="flex gap-3 mt-4 justify-end">
-            <button className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]">
+            <button
+              className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => onHide()}
+            >
               Cancel
             </button>
-            <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+            <button
+              className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => onHide()}
+            >
               Save
             </button>
           </Box>
