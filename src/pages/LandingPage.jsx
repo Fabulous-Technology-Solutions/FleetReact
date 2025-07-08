@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { BiSolidTachometer } from "react-icons/bi";
 import { useTheme } from "../theme/ThemeContext";
-import dashboardLight from "../assets/images/dashboard.png";
+import dashboardLight from "../assets/images/Dashboard.png";
 import dashboardDark from "../assets/images/DashboardDark.png";
 import about from "../assets/images/about.png";
 import Noor from "../assets/images/Noor.png";
