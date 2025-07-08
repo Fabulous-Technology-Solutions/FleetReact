@@ -6,6 +6,7 @@ import { CiLock } from "react-icons/ci";
 
 const Login = () => {
   const navigate = useNavigate();
+  const role = localStorage.getItem("role");
   return (
     <>
       <div className="grid md:grid-cols-2 w-screen h-screen">
@@ -58,14 +59,30 @@ const Login = () => {
                     <input type="checkbox" />
                     Remember for 30 days
                   </label>
-                  <button className="text-blue hover:underline" onClick={() => navigate('/forget-password')}>
+                  <button
+                    className="text-blue hover:underline"
+                    onClick={() => navigate("/forget-password")}
+                  >
                     Forgot password
                   </button>
                 </div>
-
+                <select
+                  name=""
+                  id=""
+                  className="c-primary bg-cardcontainer"
+                  onChange={(e) => localStorage.setItem("role", e.target.value)}
+                >
+                  <option value="" selected disabled>
+                    Select role{" "}
+                  </option>
+                  <option value="CA">Company Admin</option>
+                  <option value="AD">Admin</option>
+                </select>
                 <button
                   className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px] w-full"
-                  onClick={() => navigate("/dashboard")}
+                  onClick={() =>
+                    navigate(role === "AD" ? "/admin/dashboard" : "/dashboard")
+                  }
                 >
                   Sign in
                 </button>
@@ -82,7 +99,10 @@ const Login = () => {
 
               <p className="text-center text-sm c-secondary mt-4">
                 Don’t have an account?{" "}
-                <span className="text-blue hover:underline cursor-pointer" onClick={() => navigate('/sign-up')}>
+                <span
+                  className="text-blue hover:underline cursor-pointer"
+                  onClick={() => navigate("/sign-up")}
+                >
                   Sign up
                 </span>
               </p>

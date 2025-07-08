@@ -86,7 +86,7 @@ export default function DoughnutChart() {
   const COLORS = ["var(--navlinkbg)", "var(--cwarning)", "var(--cdanger)"];
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <PieChart width={250} height={250}>
+      <PieChart width={100} height={100}>
         <Pie
           activeShape={renderActiveShape}
           data={data}

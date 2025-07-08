@@ -157,7 +157,61 @@ export default function AdminLayout() {
       ],
     },
   ];
-
+  const superAdminRoutes = [
+    {
+      title: "Main",
+      list: [
+        {
+          label: "Dashboard",
+          icon: DashboardIcon,
+          path: "/admin/dashboard",
+          activePath: [],
+        },
+        {
+          label: "Companies & Users",
+          icon: DriversIcon,
+          path: "/admin/companies-and-users",
+        },
+        {
+          label: "Subscription & Billings",
+          icon: HiringIcon,
+          path: "/admin/subscription-and-billings ",
+        },
+      ],
+    },
+    {
+      title: "Settings",
+      list: [
+        {
+          label: "Settings",
+          icon: SettingIcon,
+          path: "",
+          subItems: [
+            {
+              label: "Profile Settings",
+              path: "/admin/profile-setting",
+            },
+            {
+              label: "Security Settings",
+              path: "/admin/security-settings",
+            },
+            {
+              label: "Notification Preferences",
+              path: "/admin/notification-preferences",
+            },
+          ],
+          activePath: ["/admin/profile-setting", "/admin/security-settings", "/admin/user-roles-and-permissions", "/admin/notification-preferences"],
+        },
+        {
+          label: "Log out",
+          icon: LogoutIcon,
+          path: "",
+          activePath: [],
+        },
+      ],
+    },
+  ];
+const role = localStorage.getItem("role");
   return (
     <div className="bg-body flex justify-between h-[100vh] w-full p-3">
       <div
@@ -165,11 +219,11 @@ export default function AdminLayout() {
           showsidebar ? "block" : "hidden"
         }`}
       >
-        <Sidebar lists={lists} />
+        <Sidebar lists={ role === "AD" ? superAdminRoutes : lists} />
       </div>
       <div className="w-full sm:w-[calc(100%-274px)]">
         <Navbar onBarClick={setshowsidebar} />
-        <div className="w-full h-[calc(100vh-116px)] overflow-y-auto p-3 ps-0 mt-3">
+        <div className="w-full h-[calc(100vh-116px)] overflow-y-auto overflow-x-hidden p-3 ps-0 mt-3">
           <Outlet />
         </div>
       </div>

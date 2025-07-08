@@ -342,7 +342,7 @@ const LandingPage = () => {
                             Ceo Google Inc
                           </p>
                         </div>
-                        <Rating defaultValue={5} />
+                        <Rating defaultValue={5} readOnly />
                       </div>
                     </div>
                   </div>

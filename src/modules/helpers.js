@@ -323,6 +323,10 @@ const statusStyles = {
       text: "text-[var(--cdanger)]",
       bg: "bg-[var(--bgdanger)]",
     },
+    "Expiring": {
+      text: "text-[var(--cdanger)]",
+      bg: "bg-[var(--bgdanger)]",
+    },
   };
 
 

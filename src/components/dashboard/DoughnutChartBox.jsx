@@ -2,23 +2,7 @@ import React, { useEffect, useState } from "react";
 import DoughnutChart from "./DoughnutChart";
 
 export default function DoughnutChartBox() {
-  const [tickColor, setTickColor] = useState("white");
-
-  useEffect(() => {
-    const updateColor = () => {
-      const rootStyles = getComputedStyle(document.documentElement);
-      const cssVar = rootStyles.getPropertyValue("--bgsidebar").trim();
-      if (cssVar) setTickColor(cssVar);
-    };
-    updateColor();
-    const observer = new MutationObserver(updateColor);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["style", "class"],
-      subtree: true,
-    });
-    return () => observer.disconnect();
-  }, []);
+  
   const data = {
     labels: ["Valid", "Expiring Soon", "Expired"],
     datasets: [
@@ -26,7 +10,6 @@ export default function DoughnutChartBox() {
         label: "Compliance Status",
         data: [60, 25, 15],
         backgroundColor: ["#0058E8", "#FACC15", "#F43F5E"],
-        borderColor: [tickColor, tickColor, tickColor],
         borderWidth: 2,
         borderRadius: 6,
       },

@@ -9,7 +9,7 @@ import userimg from "../../assets/images/dummy-user.png";
 export default function Sidebar({ lists }) {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const role = localStorage.getItem("role");
   const [openItems, setOpenItems] = useState({});
 
   const toggleItem = (key) => {
@@ -40,7 +40,7 @@ export default function Sidebar({ lists }) {
           <div className="w-[calc(100%-64px)]">
             <p className="uppercase text-[11px] font-medium c-primary">Admin</p>
             <p className="text-sm font-medium c-primary truncate">
-              Muhammad Hussnain
+              Sajid Khan
             </p>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function Sidebar({ lists }) {
                 </div>
               );
             })}
-            <div className="p-2 mt-auto">
+            {role === "CA" && <div className="p-2 mt-auto">
               <div className="bg-cardcontainer border border-main p-4 rounded-[28px] flex flex-col items-center ">
                 <p className="c-primary font-primary text-base text-center">
                   Manage Your Plan
@@ -155,7 +155,7 @@ export default function Sidebar({ lists }) {
                   View Subscription
                 </Link>
               </div>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

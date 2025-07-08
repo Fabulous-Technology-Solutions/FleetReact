@@ -29,6 +29,9 @@ import CreatePassword from "./pages/auth/CreatePassword";
 import PasswordReset from "./pages/auth/PasswordReset";
 import LandingPageLayout from "./layouts/LandingPageLayout";
 import LandingPage from "./pages/LandingPage";
+import SuperAdminDashboard from "./pages/superAdmin/SuperAdminDashboard";
+import CompaniesAndUsers from "./pages/superAdmin/CompaniesAndUsers";
+import SubscriptionAndBillings from "./pages/superAdmin/SubscriptionAndBillings";
 
 function App() {
   return (
@@ -63,6 +66,14 @@ function App() {
             <Route path="/security-settings" element={<SecuritySettings />} />
             <Route path="/user-roles-and-permissions" element={<UserRolesAndPermissions />} />
             <Route path="/notification-preferences" element={<NotificationPreference />} />
+          </Route>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin/dashboard" element={<SuperAdminDashboard />} />
+            <Route path="/admin/companies-and-users" element={<CompaniesAndUsers />} />
+            <Route path="/admin/subscription-and-billings" element={<SubscriptionAndBillings />} />
+            <Route path="/admin/profile-setting" element={<ProfileSettings />} />
+            <Route path="/admin/security-settings" element={<SecuritySettings />} />
+            <Route path="/admin/notification-preferences" element={<NotificationPreference />} />
           </Route>
 
         </Routes>

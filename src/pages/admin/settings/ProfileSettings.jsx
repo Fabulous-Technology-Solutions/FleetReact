@@ -15,7 +15,7 @@ export const ProfileSettings = () => {
             reader.readAsDataURL(file);
         }
     };
-
+const role = localStorage.getItem("role");
     return (
         <div className='max-w-3xl mx-auto'>
             <h4 className='c-primary font-semibold text-xl'>Personal Info</h4>
@@ -65,10 +65,10 @@ export const ProfileSettings = () => {
                                 <input type="file" name="" id="upload" className='hidden' onChange={handleImageChange} />
                             </div>
                         </div>
-                        <div className='md:col-span-2'>
+                        {role === "CA" &&<div className='md:col-span-2'>
                             <label htmlFor="" className='c-secondary font-medium text-sm mb-1'>Company name</label>
                             <input type="text" name="" id="" className='c-primary w-full border border-main py-2 px-3 rounded-xl outline-0' placeholder='Fleet Logistics Inc.' />
-                        </div>
+                        </div>}
                         <div className='md:col-span-2'>
                             <label htmlFor="" className='c-secondary font-medium text-sm mb-1'>Time Zone</label>
                             <select name="" id="" className='c-primary w-full border border-main py-2 px-3 rounded-xl outline-0'>
