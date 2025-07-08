@@ -153,7 +153,7 @@ const LandingPage = () => {
   };
   return (
     <div className="bg_light c-primary mt-[73px]">
-      <section className="flex flex-col items-center pt-20">
+      <section className="flex flex-col items-center pt-20" id="home">
         <h1 className="max-w-[550px] font-semibold text-4xl text-center m-2">
           Smarter Fleet Management with Real-Time Live Tracking
         </h1>
@@ -163,7 +163,7 @@ const LandingPage = () => {
         </p>
         <img src={fleet} alt="" className="w-full" />
       </section>
-      <section className="py-18">
+      <section className="py-18" id="features">
         <p className="text-center text-blue font-bold">Features</p>
         <h2 className="font-semibold text-4xl text-center m-2 my-6">
           Powerful Features, One Unified Platform
@@ -202,7 +202,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <section className="xl:px-[120px] sm:px-[60px]">
+      <section className="xl:px-[120px] sm:px-[60px]" id="about_us">
         <div className="flex lg:flex-row flex-col">
           {/* Right Image Panel */}
           <div className="w-full lg:w-1/2">
@@ -230,7 +230,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <section className="xl:px-[120px] sm:px-[60px]">
+      <section className="xl:px-[120px] sm:px-[60px]" id="pricing">
         <h2 className="font-semibold text-4xl text-center m-2 my-6">
           Ready to Get Started?
         </h2>
@@ -351,7 +351,7 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <section className="xl:px-[120px] sm:px-[60px] py-16 px-4">
+      <section className="xl:px-[120px] sm:px-[60px] py-16 px-4" id="contact">
         <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>

@@ -1,10 +1,22 @@
 import { useState } from "react";
 import ThemeToggle from "../layout/ThemeToggle";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate()
+  const location = useLocation();
+
+const isActive = (hash) => {
+  return location.hash === hash && location.pathname === "/";
+};
+const scrollWithOffset = (el) => {
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -80; // adjust this value to control the space from top
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+};
+
   return (
     <nav className="bg_light fixed w-full z-20 top-0 start-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -51,33 +63,19 @@ const Navbar = () => {
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 c-secondary"
-                aria-current="page"
-              >
-                Home
-              </a>
+              <HashLink to="/#home" scroll={scrollWithOffset} smooth className={`block py-2 px-3 ${isActive('#home') ? "c-primary" : "c-secondary"}`}>Home</HashLink>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 c-secondary">
-                Features
-              </a>
+              <HashLink to="#features" scroll={scrollWithOffset} smooth className={`block py-2 px-3 ${isActive('#features') ? "c-primary" : "c-secondary"}`}>Features</HashLink>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 c-secondary">
-                Pricing
-              </a>
+              <HashLink to="#pricing" scroll={scrollWithOffset} smooth className={`block py-2 px-3 ${isActive('#pricing') ? "c-primary" : "c-secondary"}`}>Pricing</HashLink>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 c-secondary">
-                About Us
-              </a>
+              <HashLink to="#about_us" scroll={scrollWithOffset} smooth className={`block py-2 px-3 ${isActive('#about_us') ? "c-primary" : "c-secondary"}`}>About Us</HashLink>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 c-secondary">
-                Contact
-              </a>
+              <HashLink to="#contact" scroll={scrollWithOffset} smooth className={`block py-2 px-3 ${isActive('#contact') ? "c-primary" : "c-secondary"}`}>Contact</HashLink>
             </li>
             <li className="flex items-center">
               <ThemeToggle />

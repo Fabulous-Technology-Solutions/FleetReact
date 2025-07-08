@@ -1,6 +1,18 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const FooterComp = () => {
+  const location = useLocation();
+
+const isActive = (hash) => {
+  return location.hash === hash && location.pathname === "/";
+};
+const scrollWithOffset = (el) => {
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -80; // adjust this value to control the space from top
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+};
   return (
     <footer className="bg_light py-10">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-4">
@@ -19,27 +31,21 @@ const FooterComp = () => {
 
         {/* Center Column: Links */}
         <div className="flex flex-col gap-2 text-sm">
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
+          <HashLink scroll={scrollWithOffset} smooth to="#home" className={`hover:text-blue-600 transition ${isActive('#home') ? "c-primary" : "c-secondary"}`}>
             Home
-          </a>
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
+          </HashLink>
+          <HashLink scroll={scrollWithOffset} smooth to="#features" className={`hover:text-blue-600 transition ${isActive('#features') ? "c-primary" : "c-secondary"}`}>
             Features
-          </a>
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
+          </HashLink>
+          <HashLink scroll={scrollWithOffset} smooth to="#pricing" className={`hover:text-blue-600 transition ${isActive('#pricing') ? "c-primary" : "c-secondary"}`}>
             Pricing
-          </a>
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
+          </HashLink>
+          <HashLink scroll={scrollWithOffset} smooth to="#about_us" className={`hover:text-blue-600 transition ${isActive('#about_us') ? "c-primary" : "c-secondary"}`}>
             About
-          </a>
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
+          </HashLink>
+          <HashLink scroll={scrollWithOffset} smooth to="#contact" className={`hover:text-blue-600 transition ${isActive('#contact') ? "c-primary" : "c-secondary"}`}>
             Contact Us
-          </a>
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
-            Terms and Conditions
-          </a>
-          <a href="#" className="hover:text-blue-600 transition c-secondary">
-            Privacy and Policy
-          </a>
+          </HashLink>
         </div>
 
         {/* Right Column: Newsletter */}
