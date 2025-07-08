@@ -6,6 +6,7 @@ import { CiLock } from "react-icons/ci";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const role = localStorage.getItem("role");
   return (
     <>
       <div className="grid md:grid-cols-2 w-screen h-screen">
@@ -95,7 +96,9 @@ const SignUp = () => {
 
                 <button
                   className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px] w-full"
-                  onClick={() => navigate("/dashboard")}
+                  onClick={() =>
+                    navigate(role === "AD" ? "/admin/dashboard" : "/dashboard")
+                  }
                 >
                   Sign up
                 </button>
