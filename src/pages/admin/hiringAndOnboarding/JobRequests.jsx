@@ -6,8 +6,10 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FiEdit2 } from "react-icons/fi";
 import TableMui from "../../../components/TableMui";
 import JobPost from "../../../components/modals/JobPost";
+import { useNavigate } from "react-router-dom";
 
 export default function JobRequests() {
+  const navigate = useNavigate()
   const [show, setShow] = useState(false)
   const [modalMode, setModalMode] = useState("add")
   const cards = [
@@ -142,6 +144,14 @@ export default function JobRequests() {
                       <FaRegTrashAlt className="cursor-pointer text-lg" />
                       <FiEdit2 className="cursor-pointer text-lg" onClick={() => {setModalMode("edit"); setShow(true)}} />
                     </div>
+                  );
+                },
+              },
+              {
+                name: "jobTitle",
+                data: (value) => {
+                  return (
+                    <button className="c-primary" onClick={() => navigate("/ai-sourced-candidates")}>{value}</button>
                   );
                 },
               },

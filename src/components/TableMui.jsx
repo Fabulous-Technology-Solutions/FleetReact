@@ -66,6 +66,7 @@ export default function TableMui({
                   <MuiTableRow
                     rowRounded
                     values={{ row, th, index, found, customFields }}
+                    key={index}
                   />
                 ))
               ) : (

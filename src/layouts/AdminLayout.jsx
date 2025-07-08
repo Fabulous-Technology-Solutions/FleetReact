@@ -69,7 +69,7 @@ export default function AdminLayout() {
               path: "/applications-and-interviews",
             },
           ],
-          activePath: ["/job-requests", "/applications-and-interviews"],
+          activePath: ["/job-requests", "/applications-and-interviews", "/ai-sourced-candidates"],
         },
         {
           label: "Compliance & Documents",

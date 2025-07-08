@@ -32,6 +32,7 @@ import LandingPage from "./pages/LandingPage";
 import SuperAdminDashboard from "./pages/superAdmin/SuperAdminDashboard";
 import CompaniesAndUsers from "./pages/superAdmin/CompaniesAndUsers";
 import SubscriptionAndBillings from "./pages/superAdmin/SubscriptionAndBillings";
+import AISourcedCandidates from "./pages/admin/hiringAndOnboarding/AISourcedCandidates";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             <Route path="/incident-reports" element={<IncidentReports />} />
             <Route path="/customers-management" element={<CustomersManagement />} />
             <Route path="/job-requests" element={<JobRequests />} />
+            <Route path="/ai-sourced-candidates" element={<AISourcedCandidates />} />
             <Route path="/applications-and-interviews" element={<ApplicationsAndInterviews />} />
             <Route path="/compliance-documents" element={<ComplianceAndDocuments />} />
             <Route path="/live-fleet-map" element={<LiveFleetMap />} />
