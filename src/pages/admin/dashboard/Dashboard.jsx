@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import BarChartBox from "../../../components/dashboard/BarChartBox";
 import LineChartBox from "../../../components/dashboard/LineChartBox";
@@ -9,8 +9,11 @@ import TableMui from "../../../components/TableMui";
 import { GoDotFill } from "react-icons/go";
 import { statusStyles } from "../../../modules/helpers";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import ChatBot from "../../../components/ChatBot"
+import chatBotButton from "../../../assets/images/chatBotButton.png"
 
 export default function Dashboard() {
+  const [showChatBot, setShowChatBot] = useState(false)
   const cards = [
     { title: "Active Drivers", value: "80", percentage: "+11.01%" },
     { title: "On-Duty Vehicles", value: "85", percentage: "-0.03%" },
@@ -54,6 +57,10 @@ export default function Dashboard() {
   
   return (
     <div>
+       <div className="relative">
+        <div className="fixed bottom-6 sm:right-20 right-10 z-40 w-[230px] cursor-pointer" onClick={() => setShowChatBot(true)}><img src={chatBotButton} alt="" /></div>
+      {showChatBot && <ChatBot onHide={() => setShowChatBot(false)} />}
+    </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {cards.map((card, index) => (
           <div
