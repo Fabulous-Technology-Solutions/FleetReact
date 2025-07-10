@@ -370,12 +370,12 @@ const LandingPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
-                placeholder="Last Name"
+                placeholder="First Name"
                 className="w-full px-4 py-2 rounded-md c-primary border border-main bg-cardcontainer"
               />
               <input
                 type="text"
-                placeholder="First Name"
+                placeholder="Last Name"
                 className="w-full px-4 py-2 rounded-md c-primary border border-main bg-cardcontainer"
               />
             </div>
