@@ -19,7 +19,7 @@ export default function DoughnutChartBox() {
     <div className="p-4 rounded-[16px] bg-cardcontainer flex flex-col justify-between h-full">
       <div className="flex items-center gap-x-4 gap-y-2 justify-between flex-wrap">
         <p className="c-primary text-sm font-semibold">
-          Fleet Performance Overview
+          Compliance Document Status
         </p>
       </div>
       <div className="flex flex-col min-[480px]:flex-row items-center gap-4 justify-between mt-4">

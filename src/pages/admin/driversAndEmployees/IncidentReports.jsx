@@ -69,8 +69,9 @@ export default function IncidentReports() {
             className="p-4 rounded-[16px] bg-cardcontainer flex flex-col justify-between h-full"
           >
             <p className="c-secondary text-sm">{card.title}</p>
-            <div className="mt-2">
+            <div className="mt-2 flex justify-between gap-2">
               <p className="text-xl font-semibold c-primary">{card.value}</p>
+              {card.title === "Total Incidents" && <p className="c-secondary">(This Month)</p>}
             </div>
           </div>
         ))}

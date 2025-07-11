@@ -263,6 +263,10 @@ const statusStyles = {
       text: "text-[var(--csuccess)]",
       bg: "bg-[var(--bgsuccess)]",
     },
+    "Approved": {
+      text: "text-[var(--csuccess)]",
+      bg: "bg-[var(--bgsuccess)]",
+    },
     "Delayed": {
       text: "text-[var(--cwarning)]",
       bg: "bg-[var(--bgwarning)]",

@@ -69,6 +69,10 @@ const role = localStorage.getItem("role");
                             <label htmlFor="" className='c-secondary font-medium text-sm mb-1'>Company name</label>
                             <input type="text" name="" id="" className='c-primary w-full border border-main py-2 px-3 rounded-xl outline-0' placeholder='Fleet Logistics Inc.' />
                         </div>}
+                        {role === "CA" &&<div className='md:col-span-2'>
+                            <label htmlFor="" className='c-secondary font-medium text-sm mb-1'>Address</label>
+                            <input type="text" name="" id="" className='c-primary w-full border border-main py-2 px-3 rounded-xl outline-0' placeholder='3522 West Fork Street, Missoula, MT 59801.' />
+                        </div>}
                         <div className='md:col-span-2'>
                             <label htmlFor="" className='c-secondary font-medium text-sm mb-1'>Time Zone</label>
                             <select name="" id="" className='c-primary w-full border border-main py-2 px-3 rounded-xl outline-0'>

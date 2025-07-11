@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import loginImg from "../../assets/images/loginImg.png";
 import { useNavigate } from "react-router-dom";
 import { IoMailOutline } from "react-icons/io5";
@@ -6,7 +6,10 @@ import { CiLock } from "react-icons/ci";
 
 const Login = () => {
   const navigate = useNavigate();
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState("CA");
+  useEffect(() => {
+    localStorage.setItem("role", role);
+  }, [role]);
   return (
     <>
       <div className="grid md:grid-cols-2 w-screen h-screen">
@@ -70,7 +73,7 @@ const Login = () => {
                   name=""
                   id=""
                   className="c-primary bg-cardcontainer"
-                  onChange={(e) => localStorage.setItem("role", e.target.value)}
+                  onChange={(e) => setRole(e.target.value)}
                 >
                   <option value="" selected disabled>
                     Select role{" "}

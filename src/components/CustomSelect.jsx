@@ -46,6 +46,9 @@ const BootstrapSelectInput = styled(InputBase)(({ theme }) => ({
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
     },
   },
+  '& .css-siyuh6-MuiSelect-icon':{
+      color: "var(--cprimary)"
+    },
 }));
 
 export default BootstrapSelectInput

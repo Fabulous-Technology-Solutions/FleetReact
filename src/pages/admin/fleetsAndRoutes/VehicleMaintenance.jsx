@@ -85,7 +85,7 @@ export default function VehicleMaintenance() {
                 setShow(true)
               }}
             >
-              Add New Log Maintenance
+              Add New Maintenance Log
             </button>
           </div>
         </div>

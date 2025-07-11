@@ -61,7 +61,7 @@ const CustomTabs = ({ tabs, panels, setValue, value }) => {
                   style={{
                     backgroundColor: "transparent",
                     // color: value === 0 ? 'black' : 'inherit'
-                    color: value === index ? "var(--navlinkbg)" : "white",
+                    color: value === index ? "var(--navlinkbg)" : "var(--cprimary)",
                     // borderRadius: "5px",
                     // fontWeight: value === index ? "bold" : "",
                     borderBottom:

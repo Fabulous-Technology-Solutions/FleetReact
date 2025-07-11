@@ -6,10 +6,11 @@ import { GoDotFill } from "react-icons/go";
 import { statusStyles } from "../../../modules/helpers";
 import TableMui from "../../../components/TableMui";
 import NewInvoiceModal from "../../../components/modals/NewInvoiceModal";
+import { CiViewTimeline } from "react-icons/ci";
 
 export default function InvoicesAndExpenses() {
   const [show, setShow] = useState(false);
-    const [modalMode, setModalMode] = useState("add");
+  const [modalMode, setModalMode] = useState("add");
   const cards = [
     { title: "Total Invoiced", value: "$47,800", days: "This month" },
     { title: "Total Expenses", value: "$47,800", days: "This month" },
@@ -59,6 +60,26 @@ export default function InvoicesAndExpenses() {
       dueDate: "May 20",
     },
   ];
+  const expenesData = [
+    {
+      expenseId: "EXP-4421",
+      submittedBy: "John Davis",
+      date: "May 5, 2025",
+      category: "Fuel (Driver Card)",
+      amount: "$3,500",
+      paymentMethod: "Plaid (Visa)",
+      status: "Approved",
+    },
+    {
+      expenseId: "EXP-4422",
+      submittedBy: "Alicia Morgan",
+      date: "May 7, 2025",
+      category: "Office Supplies",
+      amount: "$3,200",
+      paymentMethod: "Credit Card",
+      status: "Pending",
+    },
+  ];
 
   return (
     <div>
@@ -88,11 +109,12 @@ export default function InvoicesAndExpenses() {
               </button>
             </div>
             <div>
-              <button className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
-             onClick={() => {
-                setModalMode("add")
-                setShow(true)
-              }}
+              <button
+                className="bg-navlink py-2 c-inverted border border-[#60A5FA] px-5 rounded-md"
+                onClick={() => {
+                  setModalMode("add");
+                  setShow(true);
+                }}
               >
                 Add Invoice
               </button>
@@ -138,10 +160,13 @@ export default function InvoicesAndExpenses() {
                   return (
                     <div className="inline-flex gap-3 items-center">
                       <FaRegTrashAlt className="cursor-pointer text-lg" />
-                      <FiEdit2 className="cursor-pointer text-lg" onClick={() => {
+                      <FiEdit2
+                        className="cursor-pointer text-lg"
+                        onClick={() => {
                           setModalMode("edit");
                           setShow(true);
-                        }} />
+                        }}
+                      />
                     </div>
                   );
                 },
@@ -150,7 +175,72 @@ export default function InvoicesAndExpenses() {
           />
         </div>
       </div>
-      <NewInvoiceModal show={show} onHide = {() => setShow(false)} modalMode={modalMode} />
+      <div className="border border-main rounded-[16px] bg-sidebar mt-4">
+        <div className="md:flex items-center justify-between p-4">
+          <div>
+            <h4 className="c-primary font-semibold text-xl">Expenses</h4>
+          </div>
+          <div className="flex items-center justify-end gap-3 md:mt-0 mt-3 flex-wrap">
+            <div>
+              <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main">
+                Filter <SlideIcon className="c-primary" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="my-3">
+          <TableMui
+            loading={false}
+            th={{
+              expenseId: "Expense ID",
+              submittedBy: "Submitted By",
+              date: "Date",
+              category: "Category",
+              amount: "Amount",
+              paymentMethod: "Payment Method",
+              status: "Status",
+              action: "", // For the "View" button/icon
+            }}
+            td={expenesData}
+            customFields={[
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-700",
+                  };
+
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-2 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      {value}
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: (value) => {
+                  return (
+                    <div className="inline-flex gap-3 items-center cursor-pointer">
+                      <CiViewTimeline className="cursor-pointer text-lg" />
+                      View
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
+        </div>
+      </div>
+      <NewInvoiceModal
+        show={show}
+        onHide={() => setShow(false)}
+        modalMode={modalMode}
+      />
     </div>
   );
 }
