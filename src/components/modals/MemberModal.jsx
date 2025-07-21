@@ -23,11 +23,12 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
       className="fixed inset-0 bg-gray-800/10 backdrop-blur-sm flex items-center justify-center z-1100"
       onClick={onHide}
     >
-      <div
-        className="bg-[var(--bgcardcontainer)] c-primary rounded-lg shadow-lg p-6 w-full max-w-[400px] min-w-[300px]"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <Typography variant="h6" component="h2">
+      <div class="relative p-[1px] w-full max-w-[400px] min-w-[300px] rounded-[12px] bg-gradient-to-br from-[#0058E8] to-[#00318200]">
+        <div
+          className="bg-[var(--bgcardcontainer)] rounded-[12px] c-primarys shadow-lg p-6 "
+          onClick={(e) => e.stopPropagation()}
+        >
+        <Typography variant="h6" component="h2" className="c-primary">
           {modalMode === "add" ? "New Member" : "Edit Member"}
         </Typography>
 
@@ -103,6 +104,7 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
             </button>
           </Box>
         </Box>
+      </div>
       </div>
     </div>
   );

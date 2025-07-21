@@ -181,3 +181,9 @@ button {
 .test{
     border: 2px solid red !important;
 }
+.gradient-border {
+  border: 1px solid;
+  border-radius: 0.75rem;
+  border-image-source: linear-gradient(139.78deg, #0058E8 19.24%, rgba(0, 49, 130, 0) 100%);
+  border-image-slice: 1;
+}
