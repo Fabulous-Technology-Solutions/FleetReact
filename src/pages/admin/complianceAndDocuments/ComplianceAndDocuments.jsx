@@ -17,6 +17,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
     {
       comImg: CompliantOne,
@@ -24,6 +28,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
     {
       comImg: CompliantOne,
@@ -31,6 +39,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
     {
       comImg: CompliantOne,
@@ -38,6 +50,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
     {
       comImg: CompliantOne,
@@ -45,6 +61,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
     {
       comImg: CompliantOne,
@@ -52,6 +72,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
     {
       comImg: CompliantOne,
@@ -59,6 +83,10 @@ export default function ComplianceAndDocuments() {
       title: "Driver's License - John Doe",
       state: "California",
       expire: "Feb 1, 2025",
+      dot: "Certified Commercial Driver Exam Passed",
+      ssn: "123-45-6789",
+      bankInfo: "Direct Deposit",
+      application: "Application",
     },
   ];
 
@@ -117,8 +145,20 @@ export default function ComplianceAndDocuments() {
                 <p className="text-sm c-secondary mt-2">{doc.state}</p>
               </div>
               <div className="flex items-center gap-1">
-                <p className="text-sm c-secondary mt-2">Expires:</p>
-                <p className="text-sm c-secondary mt-2">{doc.expire}</p>
+                <p className="text-sm c-secondary mt-2 md:text-nowrap">Dot Long Medical:</p>
+                <p className="text-sm c-secondary mt-2">{doc.dot}</p>
+              </div>
+              <div className="flex items-center gap-1">
+                <p className="text-sm c-secondary mt-2">SSN:</p>
+                <p className="text-sm c-secondary mt-2">{doc.ssn}</p>
+              </div>
+              <div className="flex items-center gap-1">
+                <p className="text-sm c-secondary mt-2">Bank Info:</p>
+                <p className="text-sm c-secondary mt-2">{doc.bankInfo}</p>
+              </div>
+              <div className="flex items-center gap-1">
+                <p className="text-sm c-secondary mt-2">Application:</p>
+                <p className="text-sm c-secondary mt-2">{doc.application}</p>
               </div>
             </div>
           </div>

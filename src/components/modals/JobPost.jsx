@@ -31,7 +31,7 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
           {modalMode === "add" ? "New Job Post" : "Edit Job Post"}
         </Typography>
 
-        <Box className="flex flex-col gap-4 mt-5 ">
+        <Box className="flex flex-col gap-4 mt-5 max-h-[calc(100vh-300px)] overflow-y-auto">
             <FormControl fullWidth variant="standard">
               <InputLabel
                 shrink
@@ -63,7 +63,36 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
                 defaultValue={data?.lastName || ""}
               />
             </FormControl>
-          {/* <CustomSelect /> */}
+          <InputLabel
+            htmlFor="custom-select"
+            className="text-[8px] text-white mb-1 block c-secondary"
+          >
+            Type
+          </InputLabel>
+          <Select
+            id="custom-select"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            input={<BootstrapSelectInput />}
+            IconComponent={IoIosArrowDown}
+            fullWidth
+            displayEmpty // <-- This line is key
+          >
+            
+            <MenuItem value="10" selected>Hourly</MenuItem>
+            <MenuItem value="20">Daily</MenuItem>
+          </Select>
+          <FormControl fullWidth variant="standard">
+            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+              Salary
+            </InputLabel>
+            <BootstrapInput
+              placeholder="$1.449,30"
+              type="number"
+              id="role"
+              defaultValue={data?.role || ""}
+            />
+          </FormControl>
           <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Openings
@@ -89,6 +118,7 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
               defaultValue={data?.role || ""}
             />
           </FormControl>
+        </Box>
           <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
           <Box className="flex gap-3 mt-4 justify-end">
             <button
@@ -104,7 +134,6 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
               Save
             </button>
           </Box>
-        </Box>
       </div>
     </div>
   );

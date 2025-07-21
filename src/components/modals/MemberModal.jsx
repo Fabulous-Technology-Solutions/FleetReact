@@ -65,28 +65,17 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
               />
             </FormControl>
           </Box>
-          <InputLabel
-            htmlFor="custom-select"
-            className="text-[8px] text-white mb-1 block c-secondary"
-          >
-            Role
-          </InputLabel>
-          <Select
-            id="custom-select"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            input={<BootstrapSelectInput />}
-            IconComponent={IoIosArrowDown}
-            fullWidth
-            displayEmpty // <-- This line is key
-          >
-            <MenuItem value="" disabled>
-              Select
-            </MenuItem>
-            <MenuItem value="10">Ten</MenuItem>
-            <MenuItem value="20">Twenty</MenuItem>
-          </Select>
-          {/* <CustomSelect /> */}
+          <FormControl fullWidth variant="standard">
+            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+              Phone Number
+            </InputLabel>
+            <BootstrapInput
+              placeholder="+924749749894"
+              type="email"
+              id="role"
+              defaultValue={data?.role || ""}
+            />
+          </FormControl>
           <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Email

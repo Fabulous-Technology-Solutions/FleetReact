@@ -15,7 +15,7 @@ export default function BarChartComp({
   radius = [0, 0, 0, 0],
   barSize = "50",
   colors,
-  dashboard=false
+  dashboard = false,
 }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -34,7 +34,19 @@ export default function BarChartComp({
       >
         <XAxis dataKey="name" axisLine={false} tickLine={false} />
         <YAxis axisLine={false} tickLine={false} />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            backgroundColor: "var(--bgbody)", // dark background
+            border: "none",
+            borderRadius: "8px",
+            color: "var(--cprimary)",
+          }}
+          labelStyle={{
+            color: "var(--cprimary)", // white label text
+          }}
+          cursor={{ fill: "transparent" }} // optional: customize the hover bar background
+        />
+
         <Bar
           dataKey="pv"
           stackId="a"

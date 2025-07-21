@@ -28,7 +28,7 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
           {modalMode === "add" ? "New Customer" : "Edit Customer"}
         </Typography>
 
-        <Box className="flex flex-col gap-4 mt-5 h-[calc(100vh-300px)] overflow-y-auto">
+        <Box className="flex flex-col gap-4 mt-5 max-h-[calc(100vh-300px)] overflow-y-auto">
           <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
               Customer Name
@@ -57,6 +57,17 @@ const NewCostomerModal = ({ show, onHide, modalMode = "add", data }) => {
             </InputLabel>
             <BootstrapInput
               placeholder="Enter Contact Person Name"
+              type="text"
+              id="personName"
+              defaultValue={data?.role || ""}
+            />
+          </FormControl>
+          <FormControl fullWidth variant="standard">
+            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+              Location
+            </InputLabel>
+            <BootstrapInput
+              placeholder="184 Griffin Street, Gilbert, AZ 85233"
               type="text"
               id="personName"
               defaultValue={data?.role || ""}

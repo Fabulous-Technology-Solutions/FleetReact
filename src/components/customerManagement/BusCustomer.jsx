@@ -7,6 +7,7 @@ const BusCustomer = () => {
   const data = [
     {
       id: 1,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "ABC Logistics",
       company: "ABC Inc.",
       contactPerson: "Sarah Lin",
@@ -17,6 +18,7 @@ const BusCustomer = () => {
     },
     {
       id: 2,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "MovePro Ltd.",
       company: "MovePro",
       contactPerson: "Jason Roy",
@@ -27,6 +29,7 @@ const BusCustomer = () => {
     },
     {
       id: 3,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "TransFleet",
       company: "TransCorp",
       contactPerson: "Emily Shaw",
@@ -37,6 +40,7 @@ const BusCustomer = () => {
     },
     {
       id: 4,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "FleetXpress",
       company: "FleetXpress LLC",
       contactPerson: "Daniel Kim",
@@ -47,6 +51,7 @@ const BusCustomer = () => {
     },
     {
       id: 5,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "MetroMove",
       company: "MetroMove Inc.",
       contactPerson: "Jessica Lee",
@@ -57,6 +62,7 @@ const BusCustomer = () => {
     },
     {
       id: 6,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "GoHaul Freight",
       company: "GoHaul Logistics",
       contactPerson: "Aaron Phillips",
@@ -67,6 +73,7 @@ const BusCustomer = () => {
     },
     {
       id: 7,
+      location: "184 Griffin Street, Gilbert, AZ 85233",
       customerName: "SwiftTransit",
       company: "Swift Transit Ltd.",
       contactPerson: "Priya Nair",
@@ -85,6 +92,7 @@ const BusCustomer = () => {
           customerName: "Customer Name",
           company: "Company",
           contactPerson: "Contact Person",
+          location: "Location",
           email: "Email",
           phone: "Phone",
           status: "Status",
