@@ -127,9 +127,9 @@ const NewRouteModal = ({ show, onHide, modalMode = "add", data }) => {
               />
             </FormControl>
 
-            <a href="" className="flex text-[#0058E8] justify-end underline">
+            <button className="flex text-[#0058E8] justify-end underline">
               Add stop
-            </a>
+            </button>
 
             <FormControl fullWidth variant="standard">
               <InputLabel
@@ -146,9 +146,9 @@ const NewRouteModal = ({ show, onHide, modalMode = "add", data }) => {
                 defaultValue={data?.role || ""}
               />
             </FormControl>
-            <a href="" className="flex text-[#0058E8] justify-end underline">
+            <button className="flex text-[#0058E8] justify-end underline">
               Add stop
-            </a>
+            </button>
 
             <Box className="flex gap-3 w-full">
               <div className="w-full">

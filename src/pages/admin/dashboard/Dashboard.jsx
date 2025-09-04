@@ -11,9 +11,11 @@ import { statusStyles } from "../../../modules/helpers";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import ChatBot from "../../../components/ChatBot"
 import chatBotButton from "../../../assets/images/chatBotButton.png"
+import NewRouteModal from "../../../components/modals/NewRouteModal";
 
 export default function Dashboard() {
   const [showChatBot, setShowChatBot] = useState(false)
+  const [show, setShow] = useState(false)
   const cards = [
     { title: "Active Drivers", value: "80", percentage: "+11.01%" },
     { title: "On-Duty Vehicles", value: "85", percentage: "-0.03%" },
@@ -99,7 +101,11 @@ export default function Dashboard() {
       <div className="mt-4 bg-sidebar border border-main rounded-[12px] overflow-hidden">
         <div className="flex items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">Route Management</p>
-          <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]">
+          <button className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+          onClick={() => {
+                setShow(true);
+              }}
+          >
             Add New Route
           </button>
         </div>
@@ -172,6 +178,11 @@ export default function Dashboard() {
           />
         </div>
       </div>
+      <NewRouteModal
+        show={show}
+        onHide={() => setShow(false)}
+        modalMode={"add"}
+      />
     </div>
   );
 }

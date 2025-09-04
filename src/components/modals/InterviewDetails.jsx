@@ -53,7 +53,7 @@ const InterviewDetails = ({ show, onHide }) => {
                 <FaLink />
               </div>
               {showTranscript && (
-                <div className="mt-3">
+                <div className="mt-3 c-primary">
                   {Array(5)
                     .fill(0)
                     .map((e, i) => (
