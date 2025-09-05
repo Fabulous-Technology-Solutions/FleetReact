@@ -151,6 +151,34 @@ export default function RouteAssignments() {
                   );
                 },
               },
+              {
+                name: "vehicle",
+                data: (value) => {
+                  return (
+                    <div className={`inline-flex gap-2 items-center`}>
+                      <select name="" id="" className="bg-transparent outline-none border rounded-2xl px-2 py-1">
+                        <option value="BUS-204" className="bg-cardcontainer">BUS-204</option>
+                        <option value="BUS-115" className="bg-cardcontainer">BUS-115</option>
+                        <option value="VAN-013" className="bg-cardcontainer">VAN-013</option>
+                      </select>
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "driver",
+                data: (value) => {
+                  return (
+                    <div className={`inline-flex gap-2 items-center`}>
+                      <select name="" id="" className="bg-transparent outline-none border rounded-2xl px-2 py-1">
+                        <option value="Kimberly Mastrangelo" className="bg-cardcontainer">Kimberly Mastrangelo</option>
+                        <option value="Judith Rodriguez" className="bg-cardcontainer">Judith Rodriguez</option>
+                        <option value="Jerry Helfer" className="bg-cardcontainer">Jerry Helfer</option>
+                      </select>
+                    </div>
+                  );
+                },
+              },
             ]}
           />
         </div>

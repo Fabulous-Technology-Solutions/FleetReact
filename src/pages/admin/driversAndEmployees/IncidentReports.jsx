@@ -15,50 +15,48 @@ export default function IncidentReports() {
     { title: "Most Reported Employee", value: "John Carter" },
   ];
 
- const data = [
-  {
-    id: 1,
-    reportId: "#IR-2034",
-    date: "May 9, 2025",
-    reportedBy: "John Carter",
-    role: "Driver",
-    reportDetails: "Download",
-    status: "In Review",
-    assignedTo: "John Carter"
-  },
-  {
-    id: 2,
-    reportId: "#IR-2035",
-    date: "May 14, 2025",
-    reportedBy: "Emma Davis",
-    role: "Mechanic",
-    reportDetails: "Download",
-    status: "Resolved",
-    assignedTo: "Emma Davis"
-  },
-  {
-    id: 3,
-    reportId: "#IR-2036",
-    date: "May 8, 2025",
-    reportedBy: "Ryan Jones",
-    role: "Driver",
-    reportDetails: "Download",
-    status: "Unresolved",
-    assignedTo: "Ryan Jones"
-  },
-  {
-    id: 4,
-    reportId: "#IR-2037",
-    date: "Apr 22, 2025",
-    reportedBy: "Ryan James",
-    role: "Driver",
-    reportDetails: "Download",
-    status: "In Review",
-    assignedTo: "Admin"
-  }
-];
-
-
+  const data = [
+    {
+      id: 1,
+      reportId: "#IR-2034",
+      date: "May 9, 2025",
+      reportedBy: "John Carter",
+      role: "Driver",
+      reportDetails: "Download",
+      status: "In Review",
+      assignedTo: "John Carter",
+    },
+    {
+      id: 2,
+      reportId: "#IR-2035",
+      date: "May 14, 2025",
+      reportedBy: "Emma Davis",
+      role: "Mechanic",
+      reportDetails: "Download",
+      status: "Resolved",
+      assignedTo: "Emma Davis",
+    },
+    {
+      id: 3,
+      reportId: "#IR-2036",
+      date: "May 8, 2025",
+      reportedBy: "Ryan Jones",
+      role: "Driver",
+      reportDetails: "Download",
+      status: "Unresolved",
+      assignedTo: "Ryan Jones",
+    },
+    {
+      id: 4,
+      reportId: "#IR-2037",
+      date: "Apr 22, 2025",
+      reportedBy: "Ryan James",
+      role: "Driver",
+      reportDetails: "Download",
+      status: "In Review",
+      assignedTo: "Admin",
+    },
+  ];
 
   return (
     <div>
@@ -71,7 +69,9 @@ export default function IncidentReports() {
             <p className="c-secondary text-sm">{card.title}</p>
             <div className="mt-2 flex justify-between gap-2">
               <p className="text-xl font-semibold c-primary">{card.value}</p>
-              {card.title === "Total Incidents" && <p className="c-secondary">(This Month)</p>}
+              {card.title === "Total Incidents" && (
+                <p className="c-secondary">(This Month)</p>
+              )}
             </div>
           </div>
         ))}
@@ -85,56 +85,79 @@ export default function IncidentReports() {
           </button>
         </div>
         <div className="my-3">
-  <TableMui
-    loading={false}
-    th={{
-      reportId: "Report ID",
-      date: "Date",
-      reportedBy: "Reported By",
-      role: "Role",
-      reportDetails: "Report Details",
-      status: "Status",
-      assignedTo: "Assigned To",
-      action: ""
-    }}
-    td={data}
-    customFields={[
-      {
-        name: "reportDetails",
-        data: (value) => (
-          <div className="inline-flex gap-3 cursor-pointer">
-            Download  <RiFileDownloadLine className="text-lg" />
-
-          </div>
-        )
-      },
-      {
-        name: "status",
-        data: (value) => {
-          const styles = statusStyles[value] || {
-            text: "text-gray-400",
-            bg: "bg-gray-100"
-          };
-          return (
-            <div className={`inline-flex gap-2 items-center rounded-full py-1 px-3 ${styles.text} ${styles.bg}`}>
-              <GoDotFill />
-              <span>{value}</span>
-            </div>
-          );
-        }
-      },
-      {
-        name: "action",
-        data: () => (
-          <div className="inline-flex gap-3 items-center">
-            <FaRegTrashAlt className="cursor-pointer text-lg text-gray-500 hover:text-red-500" />
-            <FiEdit2 className="cursor-pointer text-lg text-gray-500 hover:text-blue-500" />
-          </div>
-        )
-      }
-    ]}
-  />
-</div>
+          <TableMui
+            loading={false}
+            th={{
+              reportId: "Report ID",
+              date: "Date",
+              reportedBy: "Reported By",
+              role: "Role",
+              reportDetails: "Report Details",
+              status: "Status",
+              assignedTo: "Assigned To",
+              action: "",
+            }}
+            td={data}
+            customFields={[
+              {
+                name: "reportDetails",
+                data: (value) => (
+                  <div className="inline-flex gap-3 cursor-pointer">
+                    Download <RiFileDownloadLine className="text-lg" />
+                  </div>
+                ),
+              },
+              {
+                name: "status",
+                data: (value) => {
+                  const styles = statusStyles[value] || {
+                    text: "text-gray-400",
+                    bg: "bg-gray-100",
+                  };
+                  return (
+                    <div
+                      className={`inline-flex gap-2 items-center rounded-full py-1 px-3 ${styles.text} ${styles.bg}`}
+                    >
+                      <GoDotFill />
+                      <span>{value}</span>
+                    </div>
+                  );
+                },
+              },
+              {
+                name: "action",
+                data: () => (
+                  <div className="inline-flex gap-3 items-center">
+                    <FaRegTrashAlt className="cursor-pointer text-lg text-gray-500 hover:text-red-500" />
+                    <FiEdit2 className="cursor-pointer text-lg text-gray-500 hover:text-blue-500" />
+                  </div>
+                ),
+              },
+              {
+                name: "assignedTo",
+                data: (value) => {
+                  return (
+                    <div className={`inline-flex gap-2 items-center`}>
+                      <select
+                        name=""
+                        id=""
+                        className="bg-transparent outline-none border rounded-2xl px-2 py-1"
+                      >
+                        <option value="Kimberly Mastrangelo" className="bg-cardcontainer">
+                          Kimberly Mastrangelo
+                        </option>
+                        <option value="Judith Rodriguez" className="bg-cardcontainer">
+                          Judith Rodriguez
+                        </option>
+                        <option value="Jerry Helfer" className="bg-cardcontainer">Jerry Helfer</option>
+                      </select>
+                    </div>
+                  );
+                },
+              },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );
