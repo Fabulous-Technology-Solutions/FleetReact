@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 export default function Notifications() {
-  // Dummy notifications (you can replace with API data)
   const [notifications, setNotifications] = useState([
     {
       id: 1,
@@ -21,39 +20,45 @@ export default function Notifications() {
     },
   ]);
 
-  // Handle approve/reject
   const handleAction = (id, action) => {
     setNotifications((prev) =>
-      prev.map((n) =>
-        n.id === id ? { ...n, status: action } : n
-      )
+      prev.map((n) => (n.id === id ? { ...n, status: action } : n))
     );
   };
 
   return (
-    <div style={styles.container}>
-      <h2 className="c-secondary" style={styles.header}>Notifications</h2>
+    <div className="p-5 mx-auto">
+      <h2 className="c-secondary mb-5 text-xl font-semibold">Notifications</h2>
 
       {notifications.length === 0 ? (
         <p>No notifications</p>
       ) : (
         notifications.map((n) => (
-          <div key={n.id} style={styles.card}>
-            <h3 className="c-primary">{n.title}</h3>
-            <p className="c-secondary"><strong >Bus:</strong> {n.busNumber}</p>
-            <p className="c-secondary"><strong>Time Required:</strong> {n.timeRequired}</p>
-            <p className="c-secondary"><strong>Description:</strong> {n.description}</p>
+          <div
+            key={n.id}
+            className="border border-main rounded-lg p-4 mb-4 bg-cardcontainer shadow-sm"
+          >
+            <h3 className="c-primary text-lg font-semibold mb-2">{n.title}</h3>
+            <p className="c-secondary">
+              <strong>Bus:</strong> {n.busNumber}
+            </p>
+            <p className="c-secondary">
+              <strong>Time Required:</strong> {n.timeRequired}
+            </p>
+            <p className="c-secondary">
+              <strong>Description:</strong> {n.description}
+            </p>
 
             {n.status === "pending" ? (
-              <div style={styles.actions}>
+              <div className="mt-3 flex gap-3">
                 <button
-                  style={styles.approveBtn}
+                  className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
                   onClick={() => handleAction(n.id, "approved")}
                 >
                   Approve
                 </button>
                 <button
-                  style={styles.rejectBtn}
+                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
                   onClick={() => handleAction(n.id, "rejected")}
                 >
                   Reject
@@ -61,10 +66,9 @@ export default function Notifications() {
               </div>
             ) : (
               <p
-                style={{
-                  color: n.status === "approved" ? "green" : "red",
-                  fontWeight: "bold",
-                }}
+                className={`mt-2 font-bold ${
+                  n.status === "approved" ? "text-green-600" : "text-red-600"
+                }`}
               >
                 {n.status.toUpperCase()}
               </p>
@@ -75,45 +79,3 @@ export default function Notifications() {
     </div>
   );
 }
-
-// Simple inline styles
-const styles = {
-  container: {
-    padding: "20px",
-    margin: "auto",
-  },
-  header: {
-    marginBottom: "20px",
-  },
-  card: {
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    padding: "15px",
-    marginBottom: "15px",
-   
-  },
-  title: {
-    marginBottom: "10px",
-  },
-  actions: {
-    marginTop: "10px",
-    display: "flex",
-    gap: "10px",
-  },
-  approveBtn: {
-    background: "green",
-    color: "white",
-    border: "none",
-    padding: "8px 12px",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-  rejectBtn: {
-    background: "red",
-    color: "white",
-    border: "none",
-    padding: "8px 12px",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-};
