@@ -6,8 +6,10 @@ import {
   SolorIcon,
 } from "../../CustomIcons";
 import ThemeToggle from "./ThemeToggle";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar({ onBarClick }) {
+  const navigate = useNavigate();
   return (
     <div className="bg-sidebar p-4 rounded-[16px] border border-main">
       <div className="flex items-center gap-4 justify-between">
@@ -26,7 +28,7 @@ export default function Navbar({ onBarClick }) {
         </label>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <button className="text-xl c-primary relative">
+          <button className="text-xl c-primary relative" onClick={()=>navigate("/notification")}>
             <NotificationIcon />
             <div className="absolute size-2 border-2 rounded-full bg-navlink top-0 right-0 border-[var(--bgbody)]"></div>
           </button>

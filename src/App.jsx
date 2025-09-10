@@ -33,6 +33,7 @@ import SuperAdminDashboard from "./pages/superAdmin/SuperAdminDashboard";
 import CompaniesAndUsers from "./pages/superAdmin/CompaniesAndUsers";
 import SubscriptionAndBillings from "./pages/superAdmin/SubscriptionAndBillings";
 import AISourcedCandidates from "./pages/admin/hiringAndOnboarding/AISourcedCandidates";
+import Notifications from "./pages/Notifications";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/create-password" element={<CreatePassword />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route element={<AdminLayout />}>
+            <Route path="/notification" element={<Notifications />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/all-team-members" element={<AllTeamMembers />} />
             <Route path="/attendance-and-performance" element={<AttendanceAndPerformance />} />
@@ -70,6 +72,7 @@ function App() {
             <Route path="/notification-preferences" element={<NotificationPreference />} />
           </Route>
           <Route element={<AdminLayout />}>
+          <Route path="/notification" element={<Notifications />} />
             <Route path="/admin/dashboard" element={<SuperAdminDashboard />} />
             <Route path="/admin/companies-and-users" element={<CompaniesAndUsers />} />
             <Route path="/admin/subscription-and-billings" element={<SubscriptionAndBillings />} />
