@@ -9,6 +9,7 @@ import {
   ReportsIcon,
   RoutesIcon,
 } from "../CustomIcons";
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import Sidebar from "../components/layout/Sidebar";
 import Navbar from "../components/layout/Navbar";
 import SettingIcon from "../CustomIcons/SettingIcon";
@@ -112,6 +113,12 @@ export default function AdminLayout() {
             },
           ],
           activePath: ["/payroll-overview", "/invoices-and-expenses"],
+        },
+        {
+          label: "Support",
+          icon: SupportAgentIcon,
+          path: "/support",
+          activePath: [],
         },
       ],
     },

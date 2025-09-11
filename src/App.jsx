@@ -34,6 +34,7 @@ import CompaniesAndUsers from "./pages/superAdmin/CompaniesAndUsers";
 import SubscriptionAndBillings from "./pages/superAdmin/SubscriptionAndBillings";
 import AISourcedCandidates from "./pages/admin/hiringAndOnboarding/AISourcedCandidates";
 import Notifications from "./pages/Notifications";
+import Chat from "./pages/chat/Chat";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="/create-password" element={<CreatePassword />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route element={<AdminLayout />}>
+          <Route path="/support" element={<Chat />} />
             <Route path="/notification" element={<Notifications />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/all-team-members" element={<AllTeamMembers />} />
@@ -73,6 +75,7 @@ function App() {
           </Route>
           <Route element={<AdminLayout />}>
           <Route path="/notification" element={<Notifications />} />
+          <Route path="/support" element={<Chat />} />
             <Route path="/admin/dashboard" element={<SuperAdminDashboard />} />
             <Route path="/admin/companies-and-users" element={<CompaniesAndUsers />} />
             <Route path="/admin/subscription-and-billings" element={<SubscriptionAndBillings />} />
