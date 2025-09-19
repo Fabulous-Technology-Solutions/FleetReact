@@ -27,6 +27,7 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Verified",
       lastActive: "1h ago",
+      address: "123 Main St, New York, NY",
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Verified",
       lastActive: "2 days ago",
+      address: "456 Oak Ave, Los Angeles, CA",
     },
     {
       id: 3,
@@ -45,6 +47,7 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Verified",
       lastActive: "3h ago",
+      address: "789 Pine Rd, Chicago, IL",
     },
     {
       id: 4,
@@ -54,6 +57,7 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Not Verified",
       lastActive: "1h ago",
+      address: "321 Maple St, Houston, TX",
     },
     {
       id: 5,
@@ -63,6 +67,7 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Not Verified",
       lastActive: "3h ago",
+      address: "654 Cedar Ln, Phoenix, AZ",
     },
     {
       id: 6,
@@ -72,6 +77,7 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Verified",
       lastActive: "6h ago",
+      address: "987 Birch Blvd, Miami, FL",
     },
     {
       id: 7,
@@ -81,8 +87,10 @@ export default function AllTeamMembers() {
       status: "Active",
       checkerStatus: "Not Verified",
       lastActive: "3h ago",
+      address: "159 Walnut Dr, Dallas, TX",
     },
   ];
+  
 
   return (
     <div>
@@ -129,6 +137,7 @@ export default function AllTeamMembers() {
             th={{
               name: "Name",
               role: "Role",
+              address: "Address",
               email: "Email address",
               status: "Status",
               checkerStatus: "Checker Status",
