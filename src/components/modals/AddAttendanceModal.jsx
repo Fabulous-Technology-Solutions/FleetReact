@@ -54,9 +54,11 @@ const AddAttendanceModal = ({ show, onHide, modalMode = "add", data }) => {
                 <MenuItem value="" disabled>
                   Select
                 </MenuItem>
-                <MenuItem value="driver1">Driver 1</MenuItem>
-                <MenuItem value="driver2">Driver 2</MenuItem>
-                <MenuItem value="driver3">Driver 3</MenuItem>
+                {data?.map((val, i) => (
+                  <MenuItem key={i} value={val?.employee}>
+                    {val?.employee}
+                  </MenuItem>
+                ))}
               </Select>
             </div>
 

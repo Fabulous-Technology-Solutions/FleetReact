@@ -198,11 +198,13 @@ export default function AttendanceAndPerformance() {
         show={showAttendance}
         onHide={() => setShowAttendance(false)}
         modalMode="add"
+        data={data}
       />
       <AddBreakModal
         show={showBreak}
         onHide={() => setShowBreak(false)}
         modalMode="add"
+        data={data}
       />
     </div>
   );

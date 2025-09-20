@@ -191,15 +191,3 @@ button {
   );
   border-image-slice: 1;
 }
-
-/* Target the datetime-local picker icon */
-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  filter: invert(0); /* default (light mode) */
-}
-
-/* Dark mode: invert the icon to white */
-@media (prefers-color-scheme: dark) {
-  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
-}
