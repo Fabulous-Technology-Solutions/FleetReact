@@ -6,6 +6,8 @@ import { statusStyles } from "../../../modules/helpers";
 import { Avatar } from "@mui/material";
 import TableMui from "../../../components/TableMui";
 
+// uzair branch added
+
 export default function AttendanceAndPerformance() {
   const cards = [
     { title: "Today’s Attendance", value: "85%" },
@@ -14,7 +16,7 @@ export default function AttendanceAndPerformance() {
     { title: "Missed Shifts (This Month)", value: "6" },
   ];
 
-const data = [
+  const data = [
     {
       id: 1,
       employee: "James Hall",
@@ -98,7 +100,9 @@ const data = [
             <p className="c-secondary text-sm">{card.title}</p>
             <div className="mt-2 flex justify-between gap-2">
               <p className="text-xl font-semibold c-primary">{card.value}</p>
-              {card.title === "Today’s Attendance" && <p className="c-secondary">Present</p>}
+              {card.title === "Today’s Attendance" && (
+                <p className="c-secondary">Present</p>
+              )}
             </div>
           </div>
         ))}

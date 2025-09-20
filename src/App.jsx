@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./theme/ThemeContext";
 import AdminLayout from "./layouts/AdminLayout";
@@ -51,39 +51,80 @@ function App() {
           <Route path="/create-password" element={<CreatePassword />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route element={<AdminLayout />}>
-          <Route path="/support" element={<Chat />} />
+            <Route path="/support" element={<Chat />} />
             <Route path="/notification" element={<Notifications />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/all-team-members" element={<AllTeamMembers />} />
-            <Route path="/attendance-and-performance" element={<AttendanceAndPerformance />} />
+            <Route
+              path="/attendance-and-performance"
+              element={<AttendanceAndPerformance />}
+            />
             <Route path="/incident-reports" element={<IncidentReports />} />
-            <Route path="/customers-management" element={<CustomersManagement />} />
+            <Route
+              path="/customers-management"
+              element={<CustomersManagement />}
+            />
             <Route path="/job-requests" element={<JobRequests />} />
-            <Route path="/ai-sourced-candidates" element={<AISourcedCandidates />} />
-            <Route path="/applications-and-interviews" element={<ApplicationsAndInterviews />} />
-            <Route path="/compliance-documents" element={<ComplianceAndDocuments />} />
+            <Route
+              path="/ai-sourced-candidates"
+              element={<AISourcedCandidates />}
+            />
+            <Route
+              path="/applications-and-interviews"
+              element={<ApplicationsAndInterviews />}
+            />
+            <Route
+              path="/compliance-documents"
+              element={<ComplianceAndDocuments />}
+            />
             <Route path="/live-fleet-map" element={<LiveFleetMap />} />
             <Route path="/route-assignments" element={<RouteAssignments />} />
-            <Route path="/vehicle-maintenance" element={<VehicleMaintenance />} />
+            <Route
+              path="/vehicle-maintenance"
+              element={<VehicleMaintenance />}
+            />
             <Route path="/payroll-overview" element={<PayrollOverview />} />
-            <Route path="/invoices-and-expenses" element={<InvoicesAndExpenses />} />
+            <Route
+              path="/invoices-and-expenses"
+              element={<InvoicesAndExpenses />}
+            />
             <Route path="/reports" element={<Reports />} />
             <Route path="/profile-setting" element={<ProfileSettings />} />
             <Route path="/security-settings" element={<SecuritySettings />} />
-            <Route path="/user-roles-and-permissions" element={<UserRolesAndPermissions />} />
-            <Route path="/notification-preferences" element={<NotificationPreference />} />
+            <Route
+              path="/user-roles-and-permissions"
+              element={<UserRolesAndPermissions />}
+            />
+            <Route
+              path="/notification-preferences"
+              element={<NotificationPreference />}
+            />
           </Route>
           <Route element={<AdminLayout />}>
-          <Route path="/notification" element={<Notifications />} />
-          <Route path="/support" element={<Chat />} />
+            <Route path="/notification" element={<Notifications />} />
+            <Route path="/support" element={<Chat />} />
             <Route path="/admin/dashboard" element={<SuperAdminDashboard />} />
-            <Route path="/admin/companies-and-users" element={<CompaniesAndUsers />} />
-            <Route path="/admin/subscription-and-billings" element={<SubscriptionAndBillings />} />
-            <Route path="/admin/profile-setting" element={<ProfileSettings />} />
-            <Route path="/admin/security-settings" element={<SecuritySettings />} />
-            <Route path="/admin/notification-preferences" element={<NotificationPreference />} />
+            <Route
+              path="/admin/companies-and-users"
+              element={<CompaniesAndUsers />}
+            />
+            <Route
+              path="/admin/subscription-and-billings"
+              element={<SubscriptionAndBillings />}
+            />
+            <Route
+              path="/admin/profile-setting"
+              element={<ProfileSettings />}
+            />
+            <Route
+              path="/admin/security-settings"
+              element={<SecuritySettings />}
+            />
+            <Route
+              path="/admin/notification-preferences"
+              element={<NotificationPreference />}
+            />
           </Route>
-
         </Routes>
       </Router>
     </ThemeProvider>
