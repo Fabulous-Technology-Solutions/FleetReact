@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiltersIcon } from "../../../CustomIcons";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { GoDotFill } from "react-icons/go";
 import { statusStyles } from "../../../modules/helpers";
 import { Avatar } from "@mui/material";
 import TableMui from "../../../components/TableMui";
-
-// uzair branch added
+import AddAttendanceModal from "../../../components/modals/AddAttendanceModal";
+import AddBreakModal from "../../../components/modals/AddBreakModal";
 
 export default function AttendanceAndPerformance() {
+  const [showAttendance, setShowAttendance] = useState(false);
+  const [showBreak, setShowBreak] = useState(false);
+
   const cards = [
     { title: "Today’s Attendance", value: "85%" },
     { title: "Late Check-ins Today", value: "12" },
@@ -110,10 +113,28 @@ export default function AttendanceAndPerformance() {
       <div className="mt-4 bg-sidebar border border-main rounded-[12px] overflow-hidden">
         <div className="flex gap-x-4 gap-y-2 flex-wrap items-center justify-between p-4">
           <p className="c-primary text-sm font-semibold">Attendance</p>
-          <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main ms-auto">
-            <span>Filters</span>
-            <FiltersIcon className="text-lg" />
-          </button>
+          <div className="flex items-center gap-2 ms-auto flex-wrap justify-end">
+            <button className="c-primary flex items-center gap-2 text-sm font-semibold py-3 px-4 rounded-[12px] border border-main">
+              <span>Filters</span>
+              <FiltersIcon className="text-lg" />
+            </button>
+
+            {/* Add Attendance Button */}
+            <button
+              className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => setShowAttendance(true)}
+            >
+              Add Attendance
+            </button>
+
+            {/* Add Break Button */}
+            <button
+              className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+              onClick={() => setShowBreak(true)}
+            >
+              Add Break
+            </button>
+          </div>
         </div>
         <div className="my-3">
           <TableMui
@@ -171,6 +192,18 @@ export default function AttendanceAndPerformance() {
           />
         </div>
       </div>
+
+      {/* Separate Modals */}
+      <AddAttendanceModal
+        show={showAttendance}
+        onHide={() => setShowAttendance(false)}
+        modalMode="add"
+      />
+      <AddBreakModal
+        show={showBreak}
+        onHide={() => setShowBreak(false)}
+        modalMode="add"
+      />
     </div>
   );
 }

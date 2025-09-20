@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Select,
   MenuItem,
@@ -6,52 +6,52 @@ import {
   styled,
   alpha,
   InputBase,
-  useTheme
-} from '@mui/material';
+  useTheme,
+} from "@mui/material";
 import { IoIosArrowDown } from "react-icons/io";
 
 const BootstrapSelectInput = styled(InputBase)(({ theme }) => ({
-  '& .MuiSelect-select': {
+  "& .MuiSelect-select": {
     borderRadius: 12,
-    position: 'relative',
-    backgroundColor: 'transparent',
-    border: '1px solid var(--borderColor)',
+    position: "relative",
+    backgroundColor: "transparent",
+    border: "1px solid var(--borderColor)",
     fontSize: 16,
-    width: '100%',
-    padding: '10px 12px',
-    color: 'var(--cprimary)',
+    width: "100%",
+    padding: "10px 12px",
+    color: "var(--cprimary)",
     transition: theme.transitions.create([
-      'border-color',
-      'background-color',
-      'box-shadow',
+      "border-color",
+      "background-color",
+      "box-shadow",
     ]),
     fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
-    '&::placeholder': {
-      color: 'var(--cprimary)', // or 'var(--cprimary)'
+    ].join(","),
+    "&::placeholder": {
+      color: "var(--cprimary)", // or 'var(--cprimary)'
       // opacity: 1,
     },
-    '&:focus': {
+    "&:focus": {
       borderColor: theme.palette.primary.main,
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
     },
   },
-  '& .css-siyuh6-MuiSelect-icon':{
-      color: "var(--cprimary)"
-    },
+  "& .css-siyuh6-MuiSelect-icon": {
+    color: "var(--cprimary)",
+  },
 }));
 
-export default BootstrapSelectInput
+export default BootstrapSelectInput;
 //  CustomSelect() {
 //   const [value, setValue] = React.useState('');
 

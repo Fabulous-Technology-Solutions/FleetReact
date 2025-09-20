@@ -90,7 +90,6 @@ export default function AllTeamMembers() {
       address: "159 Walnut Dr, Dallas, TX",
     },
   ];
-  
 
   return (
     <div>
@@ -211,7 +210,11 @@ export default function AllTeamMembers() {
           />
         </div>
       </div>
-      <MemberModal show={show} onHide={() => setShow(false)} modalMode={modalMode} />
+      <MemberModal
+        show={show}
+        onHide={() => setShow(false)}
+        modalMode={modalMode}
+      />
     </div>
   );
 }
