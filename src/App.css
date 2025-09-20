@@ -1,189 +1,193 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-Black.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-Black.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-ExtraBold.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-ExtraBold.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-Bold.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-SemiBold.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-Medium.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-Medium.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-Regular.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-Light.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-Light.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-ExtraLight.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-ExtraLight.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/Inter24pt-Thin.woff2') format('woff2'),
-        url('./assets/fonts/Inter24pt-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter24pt-Thin.woff2") format("woff2"),
+    url("./assets/fonts/Inter24pt-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
-    font-family: "Inter";
+  font-family: "Inter";
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 :root {
-    --bgbody: #ffffff;
-    --bgsidebar: #F3F4F6;
-    --bgcardcontainer: #F9FAFB;
-    --navlinkbg: #0058E8;
-    --bgsuccess: #3DD5981A;
-    --bgwarning: #FACC151A;
-    --bgatblue: #60A5FA1A;
-    --bgdanger: #F43F5E1A;
-    --cprimary: #111827;
-    --csecondary: #4B5563;
-    --cinverted: #F3F4F6;
-    --csuccess: #22C55E;
-    --cwarning: #FACC15;
-    --catblue: #60A5FA;
-    --cdanger: #F43F5E;
-    --borderColor: #E5E7EB;
-    --bgLight: #F6F6F6;
+  --bgbody: #ffffff;
+  --bgsidebar: #f3f4f6;
+  --bgcardcontainer: #f9fafb;
+  --navlinkbg: #0058e8;
+  --bgsuccess: #3dd5981a;
+  --bgwarning: #facc151a;
+  --bgatblue: #60a5fa1a;
+  --bgdanger: #f43f5e1a;
+  --cprimary: #111827;
+  --csecondary: #4b5563;
+  --cinverted: #f3f4f6;
+  --csuccess: #22c55e;
+  --cwarning: #facc15;
+  --catblue: #60a5fa;
+  --cdanger: #f43f5e;
+  --borderColor: #e5e7eb;
+  --bgLight: #f6f6f6;
 }
 
 .bg-body {
-    background-color: var(--bgbody);
+  background-color: var(--bgbody);
 }
 .bg_light {
-    background-color: var(--bgLight);
+  background-color: var(--bgLight);
 }
 
 .bg-sidebar {
-    background-color: var(--bgsidebar);
+  background-color: var(--bgsidebar);
 }
 
 .bg-cardcontainer {
-    background-color: var(--bgcardcontainer);
+  background-color: var(--bgcardcontainer);
 }
 
 .bg-navlink {
-    background-color: var(--navlinkbg);
+  background-color: var(--navlinkbg);
 }
 .text-blue {
-    color: var(--navlinkbg);
+  color: var(--navlinkbg);
 }
 
 .c-primary {
-    color: var(--cprimary) !important;
+  color: var(--cprimary) !important;
 }
 
 .c-secondary {
-    color: var(--csecondary) !important;
+  color: var(--csecondary) !important;
 }
 
 .c-inverted {
-    color: var(--cinverted);
+  color: var(--cinverted);
 }
 
 .text-border-main {
-    color: var(--borderColor);
+  color: var(--borderColor);
 }
 
 .border-main {
-    border-color: var(--borderColor);
+  border-color: var(--borderColor);
 }
 
 .border-secondary {
-    border-color: var(--csecondary);
+  border-color: var(--csecondary);
 }
 
 .scroll-x-hidden::-webkit-scrollbar {
-    height: 0px;
+  height: 0px;
 }
 
 .scroll-y-hidden::-webkit-scrollbar {
-    width: 0px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--borderColor);
-    border-radius: 999px;
+  background-color: var(--borderColor);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--navlinkbg);
-    border: 1px solid var(--borderColor);
-    border-radius: 999px;
+  background-color: var(--navlinkbg);
+  border: 1px solid var(--borderColor);
+  border-radius: 999px;
 }
-.test{
-    border: 2px solid red !important;
+.test {
+  border: 2px solid red !important;
 }
 .gradient-border {
   border: 1px solid;
   border-radius: 0.75rem;
-  border-image-source: linear-gradient(139.78deg, #0058E8 19.24%, rgba(0, 49, 130, 0) 100%);
+  border-image-source: linear-gradient(
+    139.78deg,
+    #0058e8 19.24%,
+    rgba(0, 49, 130, 0) 100%
+  );
   border-image-slice: 1;
 }

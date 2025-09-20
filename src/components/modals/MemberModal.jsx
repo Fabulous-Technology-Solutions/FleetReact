@@ -28,83 +28,83 @@ const MemberModal = ({ show, onHide, modalMode = "add", data }) => {
           className="bg-[var(--bgcardcontainer)] rounded-[12px] c-primarys shadow-lg p-6 "
           onClick={(e) => e.stopPropagation()}
         >
-        <Typography variant="h6" component="h2" className="c-primary">
-          {modalMode === "add" ? "New Member" : "Edit Member"}
-        </Typography>
+          <Typography variant="h6" component="h2" className="c-primary">
+            {modalMode === "add" ? "New Member" : "Edit Member"}
+          </Typography>
 
-        <Box className="flex flex-col gap-4 mt-5 ">
-          <Box className="flex gap-3 w-full">
+          <Box className="flex flex-col gap-4 mt-5 ">
+            <Box className="flex gap-3 w-full">
+              <FormControl fullWidth variant="standard">
+                <InputLabel
+                  shrink
+                  htmlFor="first-name"
+                  className="text-sm c-secondary"
+                >
+                  First Name
+                </InputLabel>
+                <BootstrapInput
+                  placeholder="Enter first name"
+                  type="text"
+                  id="first-name"
+                  defaultValue={data?.firstName || ""}
+                />
+              </FormControl>
+
+              <FormControl fullWidth variant="standard">
+                <InputLabel
+                  shrink
+                  htmlFor="last-name"
+                  className="text-sm c-secondary"
+                >
+                  Last Name
+                </InputLabel>
+                <BootstrapInput
+                  placeholder="Enter last name"
+                  type="text"
+                  id="last-name"
+                  defaultValue={data?.lastName || ""}
+                />
+              </FormControl>
+            </Box>
             <FormControl fullWidth variant="standard">
-              <InputLabel
-                shrink
-                htmlFor="first-name"
-                className="text-sm c-secondary"
-              >
-                First Name
+              <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+                Phone Number
               </InputLabel>
               <BootstrapInput
-                placeholder="Enter first name"
-                type="text"
-                id="first-name"
-                defaultValue={data?.firstName || ""}
+                placeholder="+924749749894"
+                type="email"
+                id="role"
+                defaultValue={data?.role || ""}
               />
             </FormControl>
-
             <FormControl fullWidth variant="standard">
-              <InputLabel
-                shrink
-                htmlFor="last-name"
-                className="text-sm c-secondary"
-              >
-                Last Name
+              <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
+                Email
               </InputLabel>
               <BootstrapInput
-                placeholder="Enter last name"
-                type="text"
-                id="last-name"
-                defaultValue={data?.lastName || ""}
+                placeholder="Enter email"
+                type="email"
+                id="role"
+                defaultValue={data?.role || ""}
               />
             </FormControl>
+            <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
+            <Box className="flex gap-3 mt-4 justify-end">
+              <button
+                className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
+                onClick={() => onHide()}
+              >
+                Cancel
+              </button>
+              <button
+                className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
+                onClick={() => onHide()}
+              >
+                Save
+              </button>
+            </Box>
           </Box>
-          <FormControl fullWidth variant="standard">
-            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
-              Phone Number
-            </InputLabel>
-            <BootstrapInput
-              placeholder="+924749749894"
-              type="email"
-              id="role"
-              defaultValue={data?.role || ""}
-            />
-          </FormControl>
-          <FormControl fullWidth variant="standard">
-            <InputLabel shrink htmlFor="role" className="text-sm c-secondary">
-              Email
-            </InputLabel>
-            <BootstrapInput
-              placeholder="Enter email"
-              type="email"
-              id="role"
-              defaultValue={data?.role || ""}
-            />
-          </FormControl>
-          <hr className="w-full border-t border-[var(--borderColor)] mt-5" />
-          <Box className="flex gap-3 mt-4 justify-end">
-            <button
-              className="text-sm font-semibold c-primary bg-[var(--bgcardcontainer)] border border-[var(--borderColor)] c-inverted py-3 px-4 rounded-[12px]"
-              onClick={() => onHide()}
-            >
-              Cancel
-            </button>
-            <button
-              className="text-sm font-semibold bg-navlink border border-[var(--catblue)] c-inverted py-3 px-4 rounded-[12px]"
-              onClick={() => onHide()}
-            >
-              Save
-            </button>
-          </Box>
-        </Box>
-      </div>
+        </div>
       </div>
     </div>
   );
